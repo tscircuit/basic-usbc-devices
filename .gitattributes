@@ -1,0 +1,4 @@
+*.hex text eol=lf
+*.map -whitespace
+*.mem -whitespace
+*.svg -whitespace

@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-11-08T08:13:08.717Z",
+  "board": "hub",
+  "components": 70,
+  "traces": 820,
+  "vias": 121,
+  "errors": 0,
+  "warnings": 0,
+  "layers": 2,
+  "viaDrillMm": 0.3,
+  "minTraceWidthMm": 0.15,
+  "schematicSheets": 1,
+  "mountingPatternMm": [
+    19,
+    25
+  ],
+  "hardwareTested": false,
+  "usbHighSpeedComplianceTested": false
+}

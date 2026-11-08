@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-11-08T08:13:03.431Z",
+  "boards": [
+    {
+      "name": "limit",
+      "components": 12,
+      "traces": 36,
+      "vias": 16,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "button",
+      "components": 12,
+      "traces": 38,
+      "vias": 20,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "toggle",
+      "components": 12,
+      "traces": 36,
+      "vias": 16,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "dial",
+      "components": 15,
+      "traces": 44,
+      "vias": 29,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "position",
+      "components": 14,
+      "traces": 39,
+      "vias": 28,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "distance",
+      "components": 21,
+      "traces": 66,
+      "vias": 31,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6,
+      "schematicSheets": 1,
+      "allComponentsAssignedToSheet": true
+    },
+    {
+      "name": "panel2",
+      "components": 86,
+      "traces": 259,
+      "vias": 140,
+      "errors": 0,
+      "warnings": 0,
+      "layers": 2,
+      "viaDrillMm": 0.3,
+      "viaPadMm": 0.6
+    }
+  ],
+  "assembly": {
+    "status": "BLOCKED_PENDING_USER_CHOICE",
+    "reason": "C91199 is JLCPCB Standard-only; Economic assembly with the onboard sensor is not available."
+  },
+  "hardwareTested": false
+}

@@ -1,0 +1,22 @@
+{
+  "browser": "Chromium",
+  "individualSchematics": {
+    "limit": {
+      "sheetCount": 1,
+      "symbolsAndWiringVisible": true
+    },
+    "button": {
+      "sheetCount": 1,
+      "symbolsAndWiringVisible": true
+    },
+    "distance": {
+      "sheetCount": 1,
+      "symbolsAndWiringVisible": true
+    }
+  },
+  "panelSheetSelector": {
+    "limit_sheet": "passed",
+    "button_sheet": "passed",
+    "distance_sheet": "passed"
+  }
+}

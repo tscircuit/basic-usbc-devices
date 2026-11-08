@@ -1,0 +1,25 @@
+{
+  "command": "tsci check <circuit.json>",
+  "results": {
+    "limit": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "button": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "distance": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "panel": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "fabrication-panel": {
+      "errors": 0,
+      "warnings": 0
+    }
+  }
+}

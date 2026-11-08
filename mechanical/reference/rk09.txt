@@ -1,0 +1,276 @@
+                                                                                                                                                    Update：2510
+
+
+Potentiometers Rotary Potentiometer (Insulated shaft type)
+   9mm Size Insulated Shaft Snap-in Type
+   RK09K/RK09D Series
+   Compact type with a 9.8mm body width, supporting high-density set designs.
+
+                                                                    ▪Total resistance tolerance：±20%
+                                                                    ▪Maximum operating voltage：50V AC, 20V DC
+                                                                    ▪Rotational torque：1 to 8mN·m
+                                                                    ▪Operating life：5,000 cycles
+                                                                    ▪Operating temperature range：-10℃ to +70℃
+
+                                                                     Applications：Home：Major home appliances,Office equipment
+                                                                                  Audio̲TV：Visual,Audio,Pro audio
+
+
+
+▪Product List
+                                  Number of      Control part                     Length of the
+                                                                                                                    Total      Resistance                Drawing
+   Products No.        Type        resistor       orientation       Shaft types    shaft LM1         Detent                                 Automotive
+                                                                                                                  resistance     taper                     No.
+                                  elements      (Mounting height)                   （mm）
+
+ RK09K113004U                     Single-unit       Vertical           Flat           15.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           1
+ RK09K1130A6S                     Single-unit       Vertical           Flat           15.0          Without         10kΩ          1B            ―
+
+
+ RK09K11300DR                     Single-unit       Vertical           Knob           15.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           2
+ RK09K1130A8G                     Single-unit       Vertical           Knob           15.0          Without         10kΩ          1B            ―
+
+
+  RK09K1130081                    Single-unit       Vertical           Knob           20.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           3
+ RK09K1130A5R                     Single-unit       Vertical           Knob           20.0          Without         10kΩ          1B            ―
+
+
+ RK09K1130AP5                     Single-unit       Vertical          Driver          15.0          Without         10kΩ          1B            ―          4
+
+
+ RK09K1130AST                     Single-unit       Vertical          Driver          20.0          Without         10kΩ          1B            ―          5
+
+
+  RK09K111009J                    Single-unit     Horizontal           Flat           15.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           6
+ RK09K1110AK4                     Single-unit     Horizontal           Flat           15.0          Without         10kΩ          1B            ―
+
+
+ RK09K11100DN           ―         Single-unit     Horizontal           Flat           20.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           7
+ RK09K1110AAR                     Single-unit     Horizontal           Flat           20.0          Without         10kΩ          1B            ―
+
+
+  RK09K1110077                    Single-unit     Horizontal           Knob           20.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           8
+ RK09K1110A0J                     Single-unit     Horizontal           Knob           20.0          Without         10kΩ          1B            ―
+
+
+ RK09K1110AMJ                     Single-unit     Horizontal           Flat           15.0          Without         10kΩ          1B            ―          9
+
+
+ RK09K1110B26                     Single-unit     Horizontal           Flat           20.0          Without         10kΩ          1B            ―          10
+
+
+ RK09D1130C3W                     Single-unit       Vertical           Flat           20.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           11
+ RK09D1130C1B                     Single-unit       Vertical           Flat           20.0          Without         10kΩ          1B            ―
+
+
+ RK09D1130C3C                     Single-unit       Vertical           Flat           25.0        Center detent     10kΩ          1B            ―
+                                                                                                                                                           12
+ RK09D1130C2P                     Single-unit       Vertical           Flat           25.0          Without         10kΩ          1B            ―
+
+
+ RK09D1110C1A                     Single-unit     Horizontal           Flat           25.0          Without         10kΩ          1B            ―          13
+
+
+ RK09K1130D62       Clear-shaft   Single-unit       Vertical           Knob           20.0          Without         10kΩ          1B            ―          14
+
+
+
+
+   Note
+1. This catalog shows only outline specifications. When using the products, please obtain formal specifications for supply.
+2. Please place purchase orders per minimum order unit (integer).
+3. Products other than those listed in above products are also available. Please contact us for details.
+                                                                                                                                      Update：2510
+
+
+Potentiometers       Rotary Potentiometer (Insulated shaft type)
+ 9mm Size Insulated Shaft Snap-in Type
+ RK09K/RK09D Series
+
+▪Packing Specifications
+Bulk
+       Number of packages(pcs.)                                    Export package
+                                                                    measurements
+  1 case / Japan    1 case / export packing                             (mm)
+
+      1,000                    2,000                               528 x 369 x 178
+
+
+
+
+ Drawing No.1
+
+▪Dimensions                                                                        ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                                   Viewed from mounting side.
+
+
+
+ Drawing No.2
+
+▪Dimensions                                                                        ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                                   Viewed from mounting side.
+                                                                                                                    Update：2510
+
+
+Potentiometers     Rotary Potentiometer (Insulated shaft type)
+ 9mm Size Insulated Shaft Snap-in Type
+ RK09K/RK09D Series
+
+ Drawing No.3
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.4
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.5
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+                                                                                                                    Update：2510
+
+
+Potentiometers     Rotary Potentiometer (Insulated shaft type)
+ 9mm Size Insulated Shaft Snap-in Type
+ RK09K/RK09D Series
+
+ Drawing No.6
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.7
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.8
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+                                                                                                                    Update：2510
+
+
+Potentiometers     Rotary Potentiometer (Insulated shaft type)
+ 9mm Size Insulated Shaft Snap-in Type
+ RK09K/RK09D Series
+
+ Drawing No.9
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.10
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.11
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+                                                                                                                    Update：2510
+
+
+Potentiometers     Rotary Potentiometer (Insulated shaft type)
+ 9mm Size Insulated Shaft Snap-in Type
+ RK09K/RK09D Series
+
+ Drawing No.12
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.13
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+
+
+
+ Drawing No.14
+
+▪Dimensions                                                      ▪Mounting Hole Dimensions    ▪Terminal Layout / Circuit Diagram
+
+
+
+
+                                                                 Viewed from mounting side.
+

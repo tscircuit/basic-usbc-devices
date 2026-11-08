@@ -1,0 +1,288 @@
+{
+  "checked_on": "2026-11-08",
+  "stock_reserved": false,
+  "parts": [
+    {
+      "lcsc": "C14663",
+      "mpn": "CC0603KRX7R9BB104",
+      "value": "100nF",
+      "package": "C0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C14663",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C23186",
+      "mpn": "0603WAF5101T5E",
+      "value": "5.1k\u03a9",
+      "package": "R0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C23186",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C15849",
+      "mpn": "CL10A105KB8NNNC",
+      "value": "1uF",
+      "package": "C0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C15849",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C165948",
+      "mpn": "TYPE-C-31-M-12",
+      "value": null,
+      "package": "USB-C_SMD-TYPE-C-31-M-12_1",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C165948",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page"
+    },
+    {
+      "lcsc": "C7519",
+      "mpn": "USBLC6-2SC6",
+      "value": null,
+      "package": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C7519",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page"
+    },
+    {
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "value": "10k\u03a9",
+      "package": "R0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C25804",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C22975",
+      "mpn": "0603WAF2001T5E",
+      "value": "2k\u03a9",
+      "package": "R0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C22975",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C84681",
+      "mpn": "CH340C",
+      "value": null,
+      "package": "SOP-16_L10.0-W3.9-P1.27-LS6.0-BL",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C84681",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page"
+    },
+    {
+      "lcsc": "C22962",
+      "mpn": "0603WAF2200T5E",
+      "value": "220\u03a9",
+      "package": "R0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C22962",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C1663",
+      "mpn": "CL10C330JB8NNNC",
+      "value": "33pF",
+      "package": "C0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C1663",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C2681582",
+      "mpn": "JL010",
+      "value": null,
+      "package": "SW-TH_JL010",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C2681582",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page"
+    },
+    {
+      "lcsc": "C5446",
+      "mpn": "XC6206P332MR-G",
+      "value": null,
+      "package": "SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C5446",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C91199",
+      "mpn": "VL53L0CXV0DH/1",
+      "value": null,
+      "package": "OPTO-SMD_12P_VL53L0CXV0DH-1",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C91199",
+      "assembly": "Standard only",
+      "note": "Standard-only classification verified on JLCPCB product page"
+    },
+    {
+      "lcsc": "C9002",
+      "mpn": "X322512MSB4SI",
+      "value": "12MHz",
+      "package": "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C9002",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C19666",
+      "mpn": "CL10A475KO8NNNC",
+      "value": "4.7uF",
+      "package": "C0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C19666",
+      "assembly": "Economic and Standard",
+      "note": "Basic part"
+    },
+    {
+      "lcsc": "C23971",
+      "mpn": "CH341T",
+      "package": "SSOP-20",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C23971",
+      "assembly": "Economic and Standard",
+      "note": "Fixed-function USB to I2C; replaces CH341A."
+    },
+    {
+      "lcsc": "C2930544",
+      "mpn": "K2-1102SP-Q4SC-04",
+      "package": "SMD 6x6mm, H12mm",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C2930544",
+      "assembly": "Economic and Standard",
+      "note": "12 mm total actuator height; catalog mesh corrected for preview."
+    },
+    {
+      "lcsc": "C496154",
+      "mpn": "1MS1T1B1M1QES-5",
+      "package": "Through-hole SPDT",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C496154",
+      "assembly": "Economic and Standard",
+      "note": "Maintained toggle; Economic/Standard wave soldering service."
+    },
+    {
+      "lcsc": "C470754",
+      "mpn": "EC11E15244B2",
+      "package": "Through-hole encoder",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C470754",
+      "assembly": "Economic and Standard",
+      "note": "20 mm D-shaft; Economic/Standard wave soldering service; footprint corrected against ALPS drawing."
+    },
+    {
+      "lcsc": "C967938",
+      "mpn": "CH552E",
+      "package": "MSOP-10",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C967938",
+      "assembly": "Economic and Standard",
+      "note": "Requires supplied USB dial firmware."
+    },
+    {
+      "lcsc": "C209779",
+      "mpn": "RK09K1130A5R",
+      "package": "Through-hole potentiometer",
+      "value": "10k\u03a9",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130A5R/C209779",
+      "assembly": "Economic and Standard",
+      "note": "Wave soldering; 10k linear, 280 degree travel, 20 mm knurled plastic shaft."
+    },
+    {
+      "lcsc": "C5187527",
+      "mpn": "CH334F",
+      "package": "QFN24 4x4",
+      "url": "https://jlcpcb.com/partdetail/C5187527",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C2674046",
+      "mpn": "TUSB321AIRWBR",
+      "package": "X2QFN12 1.6x1.6",
+      "url": "https://jlcpcb.com/partdetail/C2674046",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C46506",
+      "mpn": "TPS2552DBVR",
+      "package": "SOT23-6",
+      "url": "https://jlcpcb.com/partdetail/C46506",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C91874",
+      "mpn": "SN74LVC2G32DCUR",
+      "package": "VSSOP8",
+      "url": "https://jlcpcb.com/partdetail/C91874",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C1972424",
+      "mpn": "865060243005",
+      "package": "SMD D6.3x5.5",
+      "url": "https://jlcpcb.com/partdetail/C1972424",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C22961",
+      "mpn": "0603WAF2203T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22961",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C23263",
+      "mpn": "0603WAF9103T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C23263",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C8545",
+      "mpn": "2N7002",
+      "package": "SOT23",
+      "url": "https://jlcpcb.com/partdetail/C8545",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    },
+    {
+      "lcsc": "C21190",
+      "mpn": "0603WAF1001T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C21190",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved"
+    }
+  ]
+}

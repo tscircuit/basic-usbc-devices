@@ -1,0 +1,28 @@
+{
+  "mainEntrypoint": "output/panel2.viewer.circuit.json",
+  "siteDefaultComponentPath": "output/panel2.viewer.circuit.json",
+  "includeBoardFiles": [
+    "output/limit.circuit.json",
+    "output/button.circuit.json",
+    "output/toggle.circuit.json",
+    "output/dial.circuit.json",
+    "output/position.circuit.json",
+    "output/distance.circuit.json",
+    "output/hub.circuit.json",
+    "output/panel.viewer.circuit.json",
+    "output/panel2.viewer.circuit.json"
+  ],
+  "ignoredFiles": [
+    "references/hub/*.pdf",
+    "references/hub/*.txt",
+    "**/*.log",
+    "**/__pycache__/**",
+    "imports/*.json",
+    "dist/**",
+    "output/hub.unrouted.json",
+    "output/hub.dsn.json",
+    "output/*.dsn",
+    "output/*.ses",
+    "output/hub.net-map.json"
+  ]
+}

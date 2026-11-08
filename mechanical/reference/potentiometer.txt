@@ -1,0 +1,159 @@
+2018/3/30                                               RK09K/RK09D Series - Basic information
+
+
+
+
+            9mm Size Insulated Shaft Snap-in Type RK09K/RK09D
+            Series
+
+
+            Part number                                   RK09K1130A5R
+
+            Number of resistor elements                   Single-unit
+                                                          (20V DC)
+
+
+            Mounting direction (Mounting height)          Vertical type
+
+
+            Collar (Sleeve type)                          Without
+
+
+            Shaft types                                   Knob
+
+
+            Length of the shaft LM1                       20mm
+
+
+            Center detent                                 Without
+
+
+            Total resistance                              10kΩ
+
+
+            Resistance taper                              1B
+
+
+            Operating temperature range                   -10℃ to +70℃
+
+
+            Electrical             Total resistance       ±20%
+            Performance            tolerance
+
+
+                                   Rated power            0.05W
+
+
+                                   Maximum operating 50V AC, 20V DC
+                                   voltage
+
+
+                                   Insulation resistance 100MΩ min. 250V DC
+
+
+                                   Voltage proof          250V AC for 1 minute
+
+
+            Mechanical             Total rotational       280°±5°
+            Performance            angle
+
+
+                                   Rotational torque      1 to 8mN·m
+
+
+                                   Stopper strength       0.3N·m
+
+
+                                   Push-pull strength     50N max.
+
+
+                                   Vibration              10 to 55 to 10Hz/min., the amplitude is 1.5mm for all the
+                                                          frequencies, in the 3 direction of X, Y and Z and for 2 hours
+                                                          respectively
+
+http://www.alps.com/prod/info/E/HTML/Potentiometer/RotaryPotentiometers/RK09K/RK09K1130A5R.html                           1/4
+2018/3/30                                              RK09K/RK09D Series - Basic information
+
+
+            Durability            Operating life          5,000 cycles
+
+
+            Minimum order unit Japan                      1,000
+            (pcs.)
+                                  Export                  2,000
+
+
+
+            Photo
+
+
+
+
+            Dimensions
+
+
+
+
+            Mounting Hole Dimensions
+
+
+
+
+http://www.alps.com/prod/info/E/HTML/Potentiometer/RotaryPotentiometers/RK09K/RK09K1130A5R.html   2/4
+2018/3/30                                              RK09K/RK09D Series - Basic information
+
+
+
+
+             Viewed from mounting side.
+
+
+            Terminal Layout / Circuit Diagram
+
+
+
+
+            Packing Speciﬁcations
+
+            Bulk
+
+            Number of packages 1 case / Japan             1,000
+            (pcs.)
+                                  1 case / export         2,000
+                                  packing
+
+
+            Export package measurements (mm)              368×530×180
+
+
+
+            Soldering Conditions
+
+            Reference for Hand Soldering
+
+            Tip temperature                                                       350℃ max.
+
+
+            Soldering time                                                        3s max.
+
+
+            No. of solders                                                        1 time
+
+http://www.alps.com/prod/info/E/HTML/Potentiometer/RotaryPotentiometers/RK09K/RK09K1130A5R.html   3/4
+2018/3/30                                              RK09K/RK09D Series - Basic information
+
+
+
+
+            Notes are common to this series/models.
+
+            1. This site catalog shows only outline speciﬁcations. When using the products, please obtain formal
+              speciﬁcations for supply.
+            2. Please place purchase orders per minimum order unit (integer).
+            3. Products other than those listed in above products are also available. Please contact us for details.
+
+
+
+
+http://www.alps.com/prod/info/E/HTML/Potentiometer/RotaryPotentiometers/RK09K/RK09K1130A5R.html                        4/4
+

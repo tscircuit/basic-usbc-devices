@@ -1,0 +1,36 @@
+{
+  "name": "@tsci/seveibar.basic-usbc-devices",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "bun build.tsx && bun export.tsx && bun make-viewer.ts && bun verify.ts && bun render.ts panel limit button toggle dial position distance",
+    "check": "tsc --noEmit && bun verify.ts && bun verify.ts panel2 && bun verify-hub.ts",
+    "test": "python3 -m unittest discover -s host -v",
+    "build:panel2": "bun export.tsx panel2 && bun make-viewer.ts panel2 && bun verify.ts panel2 && bun render.ts panel2",
+    "build:hub": "bun build.tsx hub && bun export-hub.ts && bun verify-hub.ts && bun render.ts hub",
+    "build:all": "bun run build && bun run build:panel2 && bun run build:hub"
+  },
+  "dependencies": {
+    "tscircuit": "0.0.3069",
+    "@tscircuit/checks": "0.0.268",
+    "circuit-to-svg": "0.0.455",
+    "circuit-json-to-gerber": "0.0.120",
+    "react": "19.2.6",
+    "polygon-clipping": "0.15.7",
+    "@resvg/resvg-js": "2.6.2",
+    "easyeda": "0.0.388",
+    "circuit-json-to-3d-png": "0.0.6",
+    "poppygl": "0.0.37",
+    "dsn-converter": "0.0.90"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/bun": "1.3.14"
+  },
+  "version": "0.0.1",
+  "description": "Compact USB-C input and homing modules, six-up panels, and a four-port USB 2.0 hub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tscircuit/basic-usbc-devices.git"
+  }
+}
