@@ -1,0 +1,16 @@
+{
+  "panel": "panel3",
+  "width": 67,
+  "height": 157,
+  "boards": 7,
+  "schematicSheets": 7,
+  "mountingHoles": 28,
+  "traces": 927,
+  "vias": 273,
+  "errors": 0,
+  "warnings": 0,
+  "layers": 2,
+  "thicknessMm": 1.6,
+  "viaDrillMm": 0.3,
+  "hardwareTested": false
+}

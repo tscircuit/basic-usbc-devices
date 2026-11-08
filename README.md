@@ -1,6 +1,6 @@
 # Basic USB-C devices
 
-Six compact USB-C peripherals and a separate computer-powered four-port USB 2.0 hub, designed in tscircuit. Each peripheral board is 24 × 30 mm with the same 19 × 25 mm mounting pattern. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
+Six compact USB-C peripherals and a computer-powered four-port USB 2.0 hub, designed in tscircuit. Each peripheral board is 24 × 30 mm with the same 19 × 25 mm mounting pattern. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
 
 | Board | Interface | Host reading |
 |---|---|---|
@@ -78,7 +78,7 @@ bun run check
 bun run test
 ```
 
-`compose-panel.ts` translates each checked board, preserving all copper, drills, component attributes and schematic sheets without rerouting. `export.tsx` converts the six-board design into one physical fabrication-panel outline, merges touching routing slots, and assigns unique references and net names. It preserves routed copper. This normalization is needed because the standalone checks API applies the first board outline to the entire input; running it directly on unrelated board envelopes produces false edge-clearance findings. Individual boards and the normalized physical panel each run the full `runAllChecks` suite. Individual schematics are checked before the manufacturing export removes schematic drawing records.
+`compose-panel.ts` translates each checked board, preserving all copper, drills, component attributes and schematic sheets without rerouting. `export.tsx` converts the selected six- or seven-board design into one physical fabrication-panel outline, merges touching routing slots, and assigns unique references and net names. It preserves routed copper. This normalization is needed because the standalone checks API applies the first board outline to the entire input; running it directly on unrelated board envelopes produces false edge-clearance findings. Individual boards run the full `runAllChecks` suite. The fabrication panel runs the same suite with connector orientation evaluated against each retained module outline: connectors are used after depanelization, and the upstream rule otherwise compares them to the outer manufacturing rails. A reversed-connector regression verifies that this scoped check still catches real orientation errors. Individual schematics are checked before the manufacturing export removes schematic drawing records.
 
 The build also verifies power and USB pin connectivity, distinct CC resistors and USB data nets, switch polarity connections, two layers, minimum trace widths, exact via sizes, unique references, and JLCPCB part coverage. Python tests cover debounce, polarity, invalid readings and distance hysteresis. These are CAD/software checks: no physical boards have been fabricated or tested, and no JLCPCB order-specific DFM review has been run. Review the assembler's component orientation preview, especially the USB connectors, switch, crystal, and optical sensor.
 
@@ -119,7 +119,7 @@ After building the individual modules, run `bun run build:panel2`. Outputs inclu
 
 ## Four-port hub
 
-`hub.circuit.tsx` is a separate 64 × 48 mm, two-layer, 1.0 mm board with the same 19 × 25 mm mounting-hole spacing. Its four outputs use attach detection, current-limited switching, ganged overcurrent reporting and switched discharge. Allocate up to 100 mA per downstream module; this is not a charging hub. The six modules remain on `panel2.tsx` in two rows and three columns.
+`hub.circuit.tsx` is a 44 × 42 mm, two-layer, 1.6 mm board (40% less area than the previous 64 × 48 mm revision), with four M2 holes on a 38 × 10 mm pattern. Hub routing uses 0.15 mm nominal traces with 0.1124 mm neck-downs, above JLCPCB’s 0.10 mm minimum for two-layer 1 oz copper. Its four outputs use attach detection, current-limited switching, ganged overcurrent reporting and switched discharge. Allocate up to 100 mA per downstream module; this is not a charging hub. `panel3.tsx` includes the hub and all six modules; `panel2.tsx` remains the original six-module grid.
 
 The hub's components are selected from JLCPCB Economic-compatible listings. See [hub design notes](references/hub/design-notes.md) for the circuit, power budget, footprint sources and required hardware validation. CAD checks do not certify 480 Mbit/s signal integrity or USB compliance; no assembled hardware has been tested.
 
@@ -132,4 +132,10 @@ tsci check output/hub.circuit.json
 tsci build --site --use-cdn-javascript
 ```
 
-The default published preview uses the checked, routed `output/panel2.viewer.circuit.json`. All TSX design sources, firmware, host tools and generated manufacturing files are included. `tscircuit.config.json` lists each board and both panels for the site viewer.
+The default published preview uses the checked, routed `output/panel3.viewer.circuit.json`. All TSX design sources, firmware, host tools and generated manufacturing files are included. `tscircuit.config.json` lists each board and all three panels for the site viewer.
+
+## Hub-inclusive panel
+
+`panel3.tsx` is **67 × 157 mm**, containing all seven independent boards. Six 24 × 30 mm modules form two columns and three rows; the 44 × 42 mm hub sits at one end. This is the minimum-area guillotine packing among the rectangular board orientations evaluated, including 3 mm channels and 5 mm solid outer rails. All seven share a two-layer, 1.6 mm stackup and 0.30 mm via drills. Each board has four mounting holes; the hub alone uses the narrower 38 × 10 mm pattern.
+
+Run `bun run build:panel3` after building the individual boards. The exported panel preserves every checked route, includes breakaway tabs and tooling features, and provides seven schematic sheets (one per board). The hub schematic uses explicit functional sections; validation rejects overlapping schematic symbols as well as electrical and PCB errors.

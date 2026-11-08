@@ -21,13 +21,13 @@ const capacitors={
  '4.7uF':['C19666','CL10A475KO8NNNC'],
  '33pF':['C1663','CL10C330JB8NNNC'],
 } as const
-export function R({name,value,x,y,a,b,rotation=0}:{name:string,value:keyof typeof resistors,x:number,y:number,a:string,b:string,rotation?:number}){
+export function R({name,value,x,y,a,b,rotation=0,schX,schY}:{schX?:number,schY?:number,name:string,value:keyof typeof resistors,x:number,y:number,a:string,b:string,rotation?:number}){
  const [id,mpn]=resistors[value]
- return <resistor name={name} resistance={value} footprint="0603" pcbX={x} pcbY={y} pcbRotation={rotation} supplierPartNumbers={{jlcpcb:[id]}} manufacturerPartNumber={mpn} connections={{pin1:a,pin2:b}} />
+ return <resistor name={name} resistance={value} footprint="0603" pcbX={x} pcbY={y} pcbRotation={rotation} schX={schX} schY={schY} supplierPartNumbers={{jlcpcb:[id]}} manufacturerPartNumber={mpn} connections={{pin1:a,pin2:b}} />
 }
-export function C({name,value,x,y,a,b='net.GND',rotation=0}:{name:string,value:keyof typeof capacitors,x:number,y:number,a:string,b?:string,rotation?:number}){
+export function C({name,value,x,y,a,b='net.GND',rotation=0,schX,schY}:{schX?:number,schY?:number,name:string,value:keyof typeof capacitors,x:number,y:number,a:string,b?:string,rotation?:number}){
  const [id,mpn]=capacitors[value]
- return <capacitor name={name} capacitance={value} footprint="0603" pcbX={x} pcbY={y} pcbRotation={rotation} supplierPartNumbers={{jlcpcb:[id]}} manufacturerPartNumber={mpn} connections={{pin1:a,pin2:b}} />
+ return <capacitor name={name} capacitance={value} footprint="0603" pcbX={x} pcbY={y} pcbRotation={rotation} schX={schX} schY={schY} supplierPartNumbers={{jlcpcb:[id]}} manufacturerPartNumber={mpn} connections={{pin1:a,pin2:b}} />
 }
 export function Wiring({nets}:{nets:Record<string,string[]>}){
  return <>{Object.entries(nets).flatMap(([net,pins])=>pins.map(pin=><trace name={`${net}_${pin.replace(/[^a-zA-Z0-9]/g,'')}`} key={pin} from={pin} to={`net.${net}`} />))}</>

@@ -1,6 +1,6 @@
 # Four-port USB-C hub
 
-The hub is a separate 64 × 48 mm board. J1 is the computer connection; J2–J5 are downstream USB-C ports. All ports carry USB 2.0 data only. No USB Power Delivery or charging modes are advertised. Use passive USB 2.0 data cables and the low-power input/sensor modules in this repository.
+The hub is a 44 × 42 mm board. J1 is the computer connection; J2–J5 are downstream USB-C ports. All ports carry USB 2.0 data only. No USB Power Delivery or charging modes are advertised. Use passive USB 2.0 data cables and the low-power input/sensor modules in this repository.
 
 ## Electrical design
 
@@ -17,7 +17,7 @@ The intended allocation is at most 100 mA per downstream device after configurat
 
 ## PCB and mounting
 
-Two copper layers, 1.0 mm FR-4, 0.30 mm via drills, 0.60 mm via pads, 1 oz copper, 0.20 mm nominal traces with 0.15 mm neck-downs and 0.15 mm pad clearance. All components are on top. Four 2.2 mm M2 holes form the same 19 × 25 mm rectangle as the six modules; the hub pattern is centered at (0, −8) mm, hence holes at (±9.5, −20.5) and (±9.5, 4.5). Keepouts are 4.6 mm diameter.
+Two copper layers, 1.6 mm FR-4, 0.30 mm via drills, 0.60 mm via pads, 1 oz copper, 0.15 mm signal traces and 0.20 mm clock traces and 0.15 mm pad clearance. All components are on top. Four 2.2 mm M2 holes are located at (±19, ±5) mm, a 38 × 10 mm pattern. Keepouts are 4.6 mm diameter. This revised pattern permits a 40% area reduction from the earlier 64 × 48 mm board. The 1.6 mm stackup matches the six modules for fabrication together on panel3.
 
 CAD routing/connectivity checks do not establish 90 Ω USB differential impedance, return-path quality, pair skew, an eye diagram, or USB compliance. High-speed layout and assembled electrical validation must be completed before treating the hub as production-ready at 480 Mbit/s. The controller's rated speed is not a measured board result.
 
@@ -33,8 +33,23 @@ The bulk-capacitor footprint follows the manufacturer's 3.5 × 1.6 mm pads with 
 
 ## Routing reproduction
 
-`hub-routes.json` holds the imported copper. `hub-router.ts` replays it through the normal tscircuit renderer, which regenerates the ground pour and reruns the checks. Placement or connectivity changes require rerouting; do not reuse the cache without checking the rebuilt board. The crystal uses four explicit `pcbPath` traces. Three local routes (DM2, DP3, and the adjacent VBUS decoupler connection) were completed after the automatic routing pass. Those paths are included in the checked cache.
+`hub-routes.json` holds the final copper, and `hub-route-ports.json` maps its nets to physical pads. `hub-router.ts` transforms both when the hub is placed on a panel, then replays the copper through the normal tscircuit renderer. The renderer regenerates the ground pour and checks the result. The crystal uses four explicit `pcbPath` traces.
 
-For a placement-only render, run `HUB_PLACEMENT_ONLY=1 bun build.tsx hub`; unconnected-net findings are expected at this stage. To reroute from that newly rendered placement, run `bun route-hub.ts`, route `output/hub.dsn` in Freerouting (tested with Java release 2.5.0), save `output/hub.ses`, then run `bun import-hub-routes.ts` and `bun run build:hub`. The DSN/SES files are temporary routing handoffs; the checked final copper is in `hub-routes.json`. A new automatic pass may need local completion before checks pass. Nominal width is 0.20 mm with 0.15 mm neck-downs. Automatic routing uses 0.18 mm clearance; the local completion uses at least 0.15 mm copper clearance. Via-to-SMD clearance is 0.20 mm. Mounting exclusions use their square bounding boxes in the router to satisfy the tscircuit keepout checks; locator-hole obstacles include an extra 0.03 mm radial margin.
+To reroute after a placement or connectivity change:
 
-The 0.15 mm minimum trace width exceeds JLCPCB’s published 0.10 mm minimum for 1 oz, two-layer boards ([fabrication capabilities](https://jlcpcb.com/capabilities/pcb-capabilities)). Use 1 oz copper; the thicker-copper rules differ.
+1. Run `HUB_PLACEMENT_ONLY=1 bun build.tsx hub`, then `bun route-hub.ts`. Unconnected-net findings are expected in this intermediate render.
+2. Install `requirements-routing.txt`, then run `python prepare-hub-fanouts.py` and `bun check-hub-fanout-geometry.ts`. This reserves the critical controller pin escapes before global routing. The intermediate geometry check excludes the stale ground pour; the final build regenerates and checks it.
+3. Run `HUB_INCLUDE_FANOUT=1 bun route-hub.ts`, then `java -Xmx3g -Djava.awt.headless=true -jar freerouting-2.5.0.jar -de output/hub.dsn -do output/hub.ses --gui.enabled=false --router.fanout.enabled=false --router.autorouter.max_passes=60 --router.optimizer.max_threads=2 --router.optimizer.max_passes=3 --profile.allow_telemetry=false`.
+4. Run `bun import-hub-routes.ts`, `bun normalize-hub-routes.ts`, `bun run build:hub`, and `bun verify-hub-transform.tsx`. Run `tsci check` and the shorts check on the final circuit JSON.
+
+The final cache includes a local CC1A route and ground stitching; rebuilding the cache after placement changes requires rechecking physical ground continuity. The normalization step joins independently exported vias to their adjoining wire records and asserts that every copper segment and via is preserved. The DSN/SES files are temporary handoffs; checked copper and its pad metadata are committed. Automatic routing uses 0.15 mm nominal traces with 0.1124 mm neck-downs, 0.16 mm copper clearance, 0.21 mm via-to-SMD clearance, and 0.30/0.60 mm vias. Crystal routes are 0.20 mm wide. Mounting exclusions use square bounding boxes to satisfy tscircuit's keepout checks. Locator-hole obstacles include 0.03 mm additional radial margin. A completed search does not establish that all final checks pass.
+
+The 0.11 mm minimum trace-width rule (0.1124 mm narrowest actual copper) exceeds JLCPCB’s published 0.10 mm minimum for 1 oz, two-layer boards ([fabrication capabilities](https://jlcpcb.com/capabilities/pcb-capabilities)). Use 1 oz copper; the thicker-copper rules differ.
+
+## Routing regeneration
+
+The normal build replays the checked `hub-routes.json` through tscircuit's pour and DRC pipeline. `hub-route-ports.json` maps the saved nets by pad positions, so the hub can also be translated or rotated inside a parent panel. `hub-placements.json` holds the compact component coordinates; `hub-layout.ts` contains the single-sheet schematic positions.
+
+`complete-hub-routing.py` can finish local gaps with clearance-aware searches and trace rip-up; its dependencies are in `requirements-routing.txt`. After any manual cache edits, run `bun update-hub-route-metadata.ts`. Always rebuild and run `bun verify-hub.ts` and `tsci check` afterward. A routing search completing is not itself a passing electrical or manufacturing check.
+
+The physical audit (`pip install -r requirements-routing.txt`, then `bun run check:physical`) independently unions pads, wires, vias, internal component connections, and the final ground-pour polygons. It requires every used net, including ground, to form one connected copper network. CI runs this alongside the tscircuit checks.

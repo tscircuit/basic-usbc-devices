@@ -1,6 +1,6 @@
 import {readFileSync,writeFileSync} from 'node:fs'
 import assert from 'node:assert/strict'
-import {runAllChecks} from '@tscircuit/checks'
+import {runPanelChecks} from './check-panel'
 const read=(n:string)=>JSON.parse(readFileSync(`output/${n}`,'utf8'))
 const panelName=process.argv[2]??'panel'
 const native:any[]=read(`${panelName}.design.json`), fab:any[]=read(`${panelName}.circuit.json`)
@@ -20,12 +20,12 @@ for(const e of schematic){
  if(e.type==='schematic_net_label'&&e.source_net_id&&nets.has(e.source_net_id))e.text=nets.get(e.source_net_id)
 }
 const viewer=[...fab,...schematic]
-const checks=await runAllChecks(viewer)
+const checks=await runPanelChecks(viewer,read(`${panelName}.design.json`).filter((e:any)=>e.type==='pcb_board'))
 assert.equal(checks.length,0,JSON.stringify(checks,null,2))
 for(const name of ['limit','button','toggle','dial','position','distance',panelName]){
  const j=name===panelName?viewer:read(`${name}.circuit.json`)
  const sheets=j.filter((e:any)=>e.type==='schematic_sheet')
- assert.equal(sheets.length,name===panelName?6:1)
+ assert.equal(sheets.length,name===panelName?(panelName==='panel3'?7:6):1)
  const ids=new Set(sheets.map((e:any)=>e.schematic_sheet_id))
  const components=j.filter((e:any)=>e.type==='schematic_component')
  for(const c of components)assert.ok(ids.has(c.schematic_sheet_id),`${name}: ${c.schematic_component_id} is not on its sheet`)

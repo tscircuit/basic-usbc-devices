@@ -3,7 +3,7 @@ import { VL53L0CXV0DH_1 } from './imports/C91199'
 import { XC6206P332MR_G } from './imports/C5446'
 import { X322512MSB4SI } from './imports/C9002'
 import { boardRules, UsbInput, R, C, Wiring, Mounts } from './common'
-export function DistanceBoard({pcbX=0,pcbY=0}:{pcbX?:number,pcbY?:number}={}){return <board {...boardRules} name="distance" pcbX={pcbX} pcbY={pcbY}>
+export function DistanceBoard({pcbX=0,pcbY=0,pcbRotation=0}:{pcbX?:number,pcbY?:number,pcbRotation?:number}={}){return <board {...boardRules} name="distance" pcbX={pcbX} pcbY={pcbY} pcbRotation={pcbRotation}>
  <schematicsheet name="distance_sheet" displayName="USB-C distance sensor" sheetSize="A4"><UsbInput compactDistance/><Mounts/><net name="V3V3"/>
  <CH341T name="U1" pcbX={0} pcbY={0}/>
  <XC6206P332MR_G name="U2" pcbX={-8.5} pcbY={0}/>

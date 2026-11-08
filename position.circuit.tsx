@@ -1,7 +1,7 @@
 import { CH552E } from './imports/C967938'
 import { RK09K1130A5R } from './imports/C209779'
 import { boardRules, UsbInput, R, C, Wiring, Mounts } from './common'
-export function PositionBoard({pcbX=0,pcbY=0}:{pcbX?:number,pcbY?:number}={}){return <board {...boardRules} name="position" pcbX={pcbX} pcbY={pcbY}>
+export function PositionBoard({pcbX=0,pcbY=0,pcbRotation=0}:{pcbX?:number,pcbY?:number,pcbRotation?:number}={}){return <board {...boardRules} name="position" pcbX={pcbX} pcbY={pcbY} pcbRotation={pcbRotation}>
  <schematicsheet name="position_sheet" displayName="USB-C absolute position dial" sheetSize="A4"><UsbInput dial/><Mounts/>
  <CH552E name="U1" pcbX={0} pcbY={-4.15} pcbRotation={90} noConnect={["pin2","pin3","pin4","pin5"]}/>
  <RK09K1130A5R name="POT1" pcbX={0} pcbY={2.65} pinAttributes={{pin1:{isPassive:true,requiresGround:true},pin2:{isPassive:true},pin3:{isPassive:true},pin4:{isPassive:true},pin5:{isPassive:true},EH1:{isPassive:true},EH2:{isPassive:true}}}/>

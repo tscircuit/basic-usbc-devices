@@ -1,3 +1,4 @@
+import {hubSize} from './hub-layout'
 import {readFileSync,writeFileSync} from 'node:fs'
 // Emit physical, globally placed pads and unioned source nets. This avoids
 // footprint rotation/deduplication and multi-trace-net ambiguity in DSN export.
@@ -51,18 +52,32 @@ const wiring=of('pcb_trace').map((t:any)=>{
  if(t.route.some((p:any)=>p.route_type!=='wire'))throw new Error('Expected top-layer protected crystal wires')
  return `(wire (path F.Cu 200 ${t.route.map((p:any)=>`${num(p.x)} ${num(p.y)}`).join(' ')}) (net ${q(net)}) (type protect))`
 })
+
+if(process.env.HUB_INCLUDE_FANOUT==='1'){
+ const fanouts=JSON.parse(readFileSync('hub-fanouts.json','utf8'))
+ for(const t of fanouts){
+  const st=of('source_trace').find((e:any)=>e.source_trace_id===t.source_trace_id)
+  const net=netNames.get(root(st.connected_source_port_ids[0]));let points:any[]=[]
+  const flush=()=>{if(points.length>1)wiring.push(`(wire (path ${points[0].layer==='top'?'F.Cu':'B.Cu'} 150 ${points.map((p:any)=>`${num(p.x)} ${num(p.y)}`).join(' ')}) (net ${q(net!)}) (type protect))`);points=[]}
+  for(const p of t.route){
+   if(p.route_type==='wire')points.push(p)
+   else {flush();wiring.push(`(via "Via[0-1]_600:300_um" ${num(p.x)} ${num(p.y)} (net ${q(net!)}) (type protect))`)}
+  }
+  flush()
+ }
+}
 const text=`(pcb hub
 (parser (string_quote ") (space_in_quoted_tokens on) (host_cad "tscircuit") (host_version "0.0.3069"))
 (resolution um 10) (unit um)
 (structure (layer F.Cu (type signal) (property (index 0))) (layer B.Cu (type signal) (property (index 1)))
-(boundary (path pcb 0 -31700 -23700 31700 -23700 31700 23700 -31700 23700 -31700 -23700))
+(boundary (rect pcb ${num(-hubSize.width/2+.3)} ${num(-hubSize.height/2+.3)} ${num(hubSize.width/2-.3)} ${num(hubSize.height/2-.3)}))
 ${shapes}
-(via "Via[0-1]_600:300_um") (rule (width 200) (clearance 180) (clearance 200 (type via_smd))))
+(via "Via[0-1]_600:300_um") (rule (width 150) (clearance 160) (clearance 210 (type via_smd))))
 (placement ${placements.join('\n')})
 (library ${lib.join('\n')} ${padstacks.join('\n')}
 (padstack "Via[0-1]_600:300_um" (shape (circle F.Cu 600)) (shape (circle B.Cu 600)) (attach off)))
 (network ${Object.entries(netPins).map(([n,p])=>`(net ${q(n)} (pins ${p.join(' ')}))`).join('\n')}
-(class default ${Object.keys(netPins).map(q).join(' ')} (circuit (use_via "Via[0-1]_600:300_um")) (rule (width 200) (clearance 180))))
+(class default ${Object.keys(netPins).map(q).join(' ')} (circuit (use_via "Via[0-1]_600:300_um")) (rule (width 150) (clearance 160))))
 (wiring ${wiring.join('\n')}))`
 writeFileSync('output/hub.unrouted.json',JSON.stringify(base,null,2))
 writeFileSync('output/hub.net-map.json',JSON.stringify(netSourceTrace,null,2))

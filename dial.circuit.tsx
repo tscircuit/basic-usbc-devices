@@ -1,7 +1,7 @@
 import { CH552E } from './imports/C967938'
 import { EC11E15244B2 } from './imports/C470754'
 import { boardRules, UsbInput, R, C, Wiring, Mounts } from './common'
-export function DialBoard({pcbX=0,pcbY=0}:{pcbX?:number,pcbY?:number}={}){return <board {...boardRules} name="dial" pcbX={pcbX} pcbY={pcbY}>
+export function DialBoard({pcbX=0,pcbY=0,pcbRotation=0}:{pcbX?:number,pcbY?:number,pcbRotation?:number}={}){return <board {...boardRules} name="dial" pcbX={pcbX} pcbY={pcbY} pcbRotation={pcbRotation}>
  <schematicsheet name="dial_sheet" displayName="USB-C rotary dial" sheetSize="A4"><UsbInput dial/><Mounts/>
  <CH552E name="U1" pcbX={0} pcbY={-4.15} pcbRotation={90} noConnect={["pin2","pin5"]}/>
  <EC11E15244B2 name="ENC1" pcbX={0} pcbY={6.5}/>

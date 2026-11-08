@@ -1,6 +1,6 @@
 {
-  "mainEntrypoint": "output/panel2.viewer.circuit.json",
-  "siteDefaultComponentPath": "output/panel2.viewer.circuit.json",
+  "mainEntrypoint": "output/panel3.viewer.circuit.json",
+  "siteDefaultComponentPath": "output/panel3.viewer.circuit.json",
   "includeBoardFiles": [
     "output/limit.circuit.json",
     "output/button.circuit.json",
@@ -10,7 +10,8 @@
     "output/distance.circuit.json",
     "output/hub.circuit.json",
     "output/panel.viewer.circuit.json",
-    "output/panel2.viewer.circuit.json"
+    "output/panel2.viewer.circuit.json",
+    "output/panel3.viewer.circuit.json"
   ],
   "ignoredFiles": [
     "references/hub/*.pdf",

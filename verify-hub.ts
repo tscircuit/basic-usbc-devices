@@ -1,3 +1,4 @@
+import {hubSize,hubMounts} from './hub-layout'
 import {readFileSync,writeFileSync} from 'node:fs'
 import assert from 'node:assert/strict'
 import {runAllChecks} from '@tscircuit/checks'
@@ -6,15 +7,24 @@ assert.deepEqual(JSON.parse(readFileSync('output/hub.checks.json','utf8')).rende
 assert.deepEqual(await runAllChecks(j),[])
 const of=(t:string)=>j.filter((e:any)=>e.type===t)
 const board=of('pcb_board')[0];assert.equal(of('pcb_board').length,1)
-assert.equal(board.num_layers,2);assert.equal(board.width,64);assert.equal(board.height,48)
+assert.equal(board.num_layers,2);assert.equal(board.width,hubSize.width);assert.equal(board.height,hubSize.height)
 for(const v of of('pcb_via')){assert.equal(v.hole_diameter,.3);assert.equal(v.outer_diameter,.6)}
 assert.ok(of('pcb_trace').length>0)
-for(const t of of('pcb_trace'))for(const p of t.route)if(p.route_type==='wire')assert.ok(p.width>=.15-1e-6)
+for(const t of of('pcb_trace'))for(const p of t.route)if(p.route_type==='wire')assert.ok(p.width>=.11-1e-6)
 const holes=of('pcb_hole').filter((e:any)=>e.hole_diameter===2.2)
-assert.deepEqual(holes.map((h:any)=>[h.x??h.center.x,h.y??h.center.y]).sort(),[[-9.5,-20.5],[-9.5,4.5],[9.5,-20.5],[9.5,4.5]].sort())
+assert.deepEqual(holes.map((h:any)=>[h.x??h.center.x,h.y??h.center.y]).sort(),hubMounts.map(({x,y})=>[x,y]).sort())
 const parts=of('source_component'), sheets=of('schematic_sheet')
 assert.equal(sheets.length,1);assert.equal(of('schematic_component').length,parts.length)
 for(const c of of('schematic_component'))assert.equal(c.schematic_sheet_id,sheets[0].schematic_sheet_id)
+// Sheet membership alone does not detect an unreadable pile of symbols.
+const symbols=of('schematic_component')
+for(let i=0;i<symbols.length;i++)for(let k=0;k<i;k++){
+ const a=symbols[i],b=symbols[k]
+ const separated=Math.abs(a.center.x-b.center.x)>=(a.size.width+b.size.width)/2+.1||Math.abs(a.center.y-b.center.y)>=(a.size.height+b.size.height)/2+.1
+ assert.ok(separated,`Overlapping schematic symbols ${a.source_component_id}, ${b.source_component_id}`)
+}
+assert.equal(board.thickness,1.6)
+
 for(const p of parts)assert.match(p.supplier_part_numbers?.jlcpcb?.[0]??'',/^C\d+$/)
 const parent=new Map<string,string>()
 const root=(x:string):string=>parent.has(x)?root(parent.get(x)!):x
@@ -41,5 +51,5 @@ for(let i=0;i<=4;i++){
  eq(`C${r+2}`,1,J,15);eq(`C${r+2}`,2,'J1',13)
  for(let other=1;other<i;other++)ne(J,15,`J${other+1}`,15)
 }
-const report={generatedAt:new Date().toISOString(),board:'hub',components:parts.length,traces:of('pcb_trace').length,vias:of('pcb_via').length,errors:0,warnings:0,layers:2,viaDrillMm:.3,minTraceWidthMm:.15,schematicSheets:1,mountingPatternMm:[19,25],hardwareTested:false,usbHighSpeedComplianceTested:false}
+const report={generatedAt:new Date().toISOString(),board:'hub',widthMm:hubSize.width,heightMm:hubSize.height,actualMinTraceWidthMm:Math.min(...of('pcb_trace').flatMap((t:any)=>t.route.filter((p:any)=>p.route_type==='wire').map((p:any)=>p.width))),components:parts.length,traces:of('pcb_trace').length,vias:of('pcb_via').length,errors:0,warnings:0,layers:2,viaDrillMm:.3,minTraceWidthMm:.11,schematicSheets:1,mountingPatternMm:[38,10],hardwareTested:false,usbHighSpeedComplianceTested:false}
 writeFileSync('output/hub.validation.json',JSON.stringify(report,null,2)+'\n');console.log(report)

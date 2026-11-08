@@ -20,3 +20,6 @@ for(const n of ses.routes.network_out.nets){
 }
 writeFileSync('hub-routes.json',JSON.stringify(traces,null,2)+'\n')
 console.log({resolution:r,scale,traces:traces.length})
+
+import {writeHubRouteMetadata} from './update-hub-route-metadata'
+writeHubRouteMetadata(traces)

@@ -1,18 +1,21 @@
 {
-  "generatedAt": "2026-11-08T08:13:08.717Z",
+  "generatedAt": "2026-11-08T20:40:45.493Z",
   "board": "hub",
+  "widthMm": 44,
+  "heightMm": 42,
+  "actualMinTraceWidthMm": 0.1124,
   "components": 70,
-  "traces": 820,
-  "vias": 121,
+  "traces": 668,
+  "vias": 133,
   "errors": 0,
   "warnings": 0,
   "layers": 2,
   "viaDrillMm": 0.3,
-  "minTraceWidthMm": 0.15,
+  "minTraceWidthMm": 0.11,
   "schematicSheets": 1,
   "mountingPatternMm": [
-    19,
-    25
+    38,
+    10
   ],
   "hardwareTested": false,
   "usbHighSpeedComplianceTested": false

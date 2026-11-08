@@ -3,9 +3,9 @@ import {transformPCBElement} from '@tscircuit/circuit-json-util'
 import assert from 'node:assert/strict'
 // Translate verified modules without rerouting or reinflating component types.
 // The inflator currently loses pin attributes and cannot inflate crystals.
-export function composePanel(positions:{x:number,y:number,rotation?:number}[]=Array.from({length:6},(_,i)=>({x:(i-2.5)*27,y:0}))){
+export function composePanel(positions:{x:number,y:number,rotation?:number,name?:string}[]=Array.from({length:6},(_,i)=>({x:(i-2.5)*27,y:0}))){
  const raw:any[]=[]
- for(const [i,name] of ['limit','button','toggle','dial','position','distance'].entries()){
+ for(const [i,name] of positions.map((p,i)=>p.name??['limit','button','toggle','dial','position','distance'][i]).entries()){
   const j:any[]=JSON.parse(readFileSync(`output/${name}.circuit.json`,'utf8'))
   assert.equal(j.filter(e=>e.type.endsWith('_error')||e.type.endsWith('_warning')).length,0)
   const ids=new Map<string,string>()

@@ -9,6 +9,9 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
+      - run: python3 -m pip install -r requirements-routing.txt
       - run: bun build.tsx hub
+      - run: bun run check:physical
+      - run: bun run build:panel3
       - run: bun run check
       - run: bun run test
