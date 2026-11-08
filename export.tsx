@@ -7,9 +7,10 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import * as rowPanel from './panel.circuit'
 import * as gridPanel from './panel2'
 import * as hubPanel from './panel3'
+import * as allPanel from './panel4'
 const panelName=process.argv[2]??'panel'
-if(!['panel','panel2','panel3'].includes(panelName))throw new Error('Expected panel, panel2, or panel3')
-const {PanelFrame,panelSize,modules}=panelName==='panel3'?hubPanel:panelName==='panel2'?gridPanel:rowPanel
+if(!['panel','panel2','panel3','panel4'].includes(panelName))throw new Error('Expected panel, panel2, panel3, or panel4')
+const {PanelFrame,panelSize,modules}=panelName==='panel4'?allPanel:panelName==='panel3'?hubPanel:panelName==='panel2'?gridPanel:rowPanel
 import {composePanel} from './compose-panel'
 const raw=composePanel(modules)
 const frame=new Circuit();frame.add(<PanelFrame/>);await frame.renderUntilSettled()
@@ -29,7 +30,7 @@ await writeFile(`output/${panelName}.design.json`,JSON.stringify(raw,null,2))
 // its first pcb_board boundary to every module on a multi-board panel.
 // Keep all copper, drills and cutouts; replace only the board envelopes.
 const boards=raw.filter((e:any)=>e.type==='pcb_board') as any[]
-const prefixes=new Map(boards.map((b,i)=>[b.subcircuit_id,['L','B','T','E','A','D','H'][i]]))
+const prefixes=new Map(boards.map((b,i)=>[b.subcircuit_id,['L','B','T','E','A','D','H','S','R','Z'][i]]))
 const refs=new Map<string,{old:string,new:string}>()
 const counts:Record<string,number>={}
 for(const e of raw as any[]) if(e.type==='source_component'){
@@ -39,7 +40,7 @@ for(const e of raw as any[]) if(e.type==='source_component'){
 }
 const pcToSc=new Map((raw as any[]).filter(e=>e.type==='pcb_component').map(e=>[e.pcb_component_id,e.source_component_id]))
 const json:any[]=JSON.parse(JSON.stringify(raw)).filter((e:any)=>e.type!=='pcb_board'&&e.type!=='pcb_panel'&&!e.type.startsWith('schematic_'))
-json.unshift({...boards[0],pcb_board_id:'pcb_board_panel',center:{x:0,y:0},...panelSize,min_trace_width:panelName==='panel3'?.11:.2,subcircuit_id:undefined,position_mode:undefined,display_offset_x:undefined,display_offset_y:undefined})
+json.unshift({...boards[0],pcb_board_id:'pcb_board_panel',center:{x:0,y:0},...panelSize,...(panelName==='panel4'?{min_trace_to_pad_edge_clearance:.1,min_pad_edge_to_pad_edge_clearance:.1,min_via_edge_to_pad_edge_clearance:.1,min_board_edge_clearance:.2}:{}),min_trace_width:panelName==='panel4'?.1:panelName==='panel3'?.11:.2,subcircuit_id:undefined,position_mode:undefined,display_offset_x:undefined,display_offset_y:undefined})
 for(const e of json){
  if(e.type==='source_net') e.name=`${prefixes.get(e.subcircuit_id)??'P'}_${e.name}`
  if(e.type==='source_component')e.name=refs.get(e.source_component_id)!.new

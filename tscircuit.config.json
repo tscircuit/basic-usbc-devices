@@ -1,6 +1,6 @@
 {
-  "mainEntrypoint": "output/panel3.viewer.circuit.json",
-  "siteDefaultComponentPath": "output/panel3.viewer.circuit.json",
+  "mainEntrypoint": "output/panel4.viewer.circuit.json",
+  "siteDefaultComponentPath": "output/panel4.viewer.circuit.json",
   "includeBoardFiles": [
     "output/limit.circuit.json",
     "output/button.circuit.json",
@@ -11,7 +11,11 @@
     "output/hub.circuit.json",
     "output/panel.viewer.circuit.json",
     "output/panel2.viewer.circuit.json",
-    "output/panel3.viewer.circuit.json"
+    "output/panel3.viewer.circuit.json",
+    "output/display.circuit.json",
+    "output/resetter.circuit.json",
+    "output/buzzer.circuit.json",
+    "output/panel4.viewer.circuit.json"
   ],
   "ignoredFiles": [
     "references/hub/*.pdf",
@@ -24,6 +28,8 @@
     "output/hub.dsn.json",
     "output/*.dsn",
     "output/*.ses",
-    "output/hub.net-map.json"
+    "output/hub.net-map.json",
+    "output/display.unrouted.json",
+    "output/display.net-map.json"
   ]
 }

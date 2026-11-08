@@ -25,7 +25,7 @@ assert.equal(checks.length,0,JSON.stringify(checks,null,2))
 for(const name of ['limit','button','toggle','dial','position','distance',panelName]){
  const j=name===panelName?viewer:read(`${name}.circuit.json`)
  const sheets=j.filter((e:any)=>e.type==='schematic_sheet')
- assert.equal(sheets.length,name===panelName?(panelName==='panel3'?7:6):1)
+ assert.equal(sheets.length,name===panelName?(panelName==='panel4'?10:panelName==='panel3'?7:6):1)
  const ids=new Set(sheets.map((e:any)=>e.schematic_sheet_id))
  const components=j.filter((e:any)=>e.type==='schematic_component')
  for(const c of components)assert.ok(ids.has(c.schematic_sheet_id),`${name}: ${c.schematic_component_id} is not on its sheet`)

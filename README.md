@@ -1,6 +1,6 @@
 # Basic USB-C devices
 
-Six compact USB-C peripherals and a computer-powered four-port USB 2.0 hub, designed in tscircuit. Each peripheral board is 24 × 30 mm with the same 19 × 25 mm mounting pattern. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
+Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules and the buzzer are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
 
 | Board | Interface | Host reading |
 |---|---|---|
@@ -10,6 +10,9 @@ Six compact USB-C peripherals and a computer-powered four-port USB 2.0 hub, desi
 | Rotary dial | CH552E + ALPS EC11E15244B2, 20 mm D-shaft, push switch | Relative detent count and push state |
 | Absolute-position dial | CH552E + ALPS RK09K1130A5R 10 kΩ linear potentiometer | Absolute 0–255 reading / calibrated 0–100% |
 | Distance | CH341T + VL53L0CXV0DH/1 | millimeters and threshold state; target 30–300 mm |
+| Display adapter | CH552T + ILI9488 50-pin parallel LCD interface | Host sends RGB565 pixels and commands over USB CDC |
+| USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
+| Buzzer | CH552E + 5 V active buzzer | Host commands timed 2.8 kHz beeps |
 | Four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
 
 The 177 × 46 mm panel has side breakaway tabs, 0.5 mm mouse-bite holes, 3 mm routing slots, tooling holes, and exposed 1 mm fiducials. Each board has four 2.2 mm non-plated M2 clearance holes, 2.5 mm in from each edge, with 4.6 mm diameter copper and placement keepouts for screw heads. All assembled parts are on the top side. The boards are independent USB devices; the panel is a manufacturing panel, not a USB hub.
@@ -24,7 +27,7 @@ The dial uses [C470754](https://jlcpcb.com/partdetail/C470754), an ALPS EC11E152
 
 The absolute-position dial uses [C209779](https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130A5R/C209779), an ALPS RK09K1130A5R 10 kΩ linear potentiometer with 280° ±5° mechanical travel and a 20 mm-high, 6 mm-diameter knurled plastic shaft. The shaft center is (0, 6.5) mm. `mechanical/position-knob.stl` has a 6 mm round friction-fit socket for its 7 mm knurled section; adjust `shaft_style="round"` and `round_diameter` in `dial-knob.scad` to suit printing tolerances. This potentiometer has no push switch. It retains physical position without power.
 
-All mounting centers are **(±9.5, ±12.5) mm**, with four 2.2 mm NPTH holes and 4.6 mm diameter screw-head keepouts. PCB thickness is 1.6 mm. Use M2 hardware without larger washers; hardware and printed parts are not assembly BOM items. USB connectors face negative Y. The identical base pattern supports a common enclosure mounting plate; lid openings differ by actuator. Keep the sensor optics and limit lever unobstructed.
+The six original modules, buzzer and display adapter have mounting centers **(±9.5, ±12.5) mm**, with four 2.2 mm NPTH holes and 4.6 mm diameter screw-head keepouts. PCB thickness is 1.6 mm. Use M2 hardware without larger washers; hardware and printed parts are not assembly BOM items. USB connectors face negative Y. The identical base pattern supports a common enclosure mounting plate; lid openings differ by actuator. Keep the sensor optics and limit lever unobstructed.
 
 ## Unresolved assembly constraint
 
@@ -36,9 +39,9 @@ The current files preserve a complete onboard distance sensor as a reviewable **
 
 - Two copper layers, 1.6 mm FR-4; JLCPCB economy fabrication preset.
 - All routing vias: **0.30 mm drill / 0.60 mm pad**, through both layers.
-- Minimum trace width 0.20 mm; trace-to-pad and pad-to-pad clearance 0.15 mm; via-to-pad clearance 0.20 mm.
+- Original six modules and buzzer: minimum trace width 0.20 mm, trace-to-pad/pad-to-pad clearance 0.15 mm, via-to-pad clearance 0.20 mm. Hub and display: 0.15 mm nominal routing with 0.1124 mm neck-downs. Resetter: 0.15 mm or wider traces with 0.10 mm copper clearance. Panel4 uses the strictest common fabrication minimum of 0.10 mm, with every module checked separately against its own rules.
 - Minimum copper-to-board-edge clearance 0.30 mm; ground-pour inset 0.60 mm also clears panel mouse bites.
-- Top assembly, 0603 passives, no via-in-pad or blind/buried vias.
+- Top assembly, 0402/0603 passives (1206 backlight resistor), no via-in-pad or blind/buried vias.
 - Milled slot corners may have the fabricator's normal cutter radius. No component depends on a sharp internal corner.
 
 Both CC pins have independent 5.1 kΩ pull-downs for USB-C device operation. D+/D− are connected for both cable orientations. USBLC6-2SC6 protection is provided on every USB interface. Use USB data cables, not charge-only cables.
@@ -57,7 +60,7 @@ The absolute-position board uses a VCC-referenced 8-bit ADC, a 220 Ω / 100 nF w
 
 ## Schematics
 
-Each board has exactly one populated A4 schematic sheet. All components and wiring are children of that sheet, so they render in the interactive viewer. The panel viewer contains six sheets, one per independent board, with references matching the fabrication panel. `make-viewer.ts` combines those schematic drawings with the unchanged manufacturing geometry and verifies sheet membership and CAD checks.
+Each board has exactly one populated schematic sheet (A4, or A2 for the wider inherited resetter diagram). All components and wiring are children of that sheet, so they render in the interactive viewer. The panel4 viewer contains ten sheets, one per independent board, with references matching the fabrication panel. `make-viewer.ts` combines those schematic drawings with the unchanged manufacturing geometry and verifies sheet membership and CAD checks.
 
 ## Files and reproducibility
 
@@ -78,7 +81,7 @@ bun run check
 bun run test
 ```
 
-`compose-panel.ts` translates each checked board, preserving all copper, drills, component attributes and schematic sheets without rerouting. `export.tsx` converts the selected six- or seven-board design into one physical fabrication-panel outline, merges touching routing slots, and assigns unique references and net names. It preserves routed copper. This normalization is needed because the standalone checks API applies the first board outline to the entire input; running it directly on unrelated board envelopes produces false edge-clearance findings. Individual boards run the full `runAllChecks` suite. The fabrication panel runs the same suite with connector orientation evaluated against each retained module outline: connectors are used after depanelization, and the upstream rule otherwise compares them to the outer manufacturing rails. A reversed-connector regression verifies that this scoped check still catches real orientation errors. Individual schematics are checked before the manufacturing export removes schematic drawing records.
+`compose-panel.ts` translates each checked board, preserving all copper, drills, component attributes and schematic sheets without rerouting. `export.tsx` converts the selected six-, seven-, or ten-board design into one physical fabrication-panel outline, merges touching routing slots, and assigns unique references and net names. It preserves routed copper. This normalization is needed because the standalone checks API applies the first board outline to the entire input; running it directly on unrelated board envelopes produces false edge-clearance findings. Individual boards run the full `runAllChecks` suite. The fabrication panel runs the same suite with connector orientation evaluated against each retained module outline: connectors are used after depanelization, and the upstream rule otherwise compares them to the outer manufacturing rails. A reversed-connector regression verifies that this scoped check still catches real orientation errors. Individual schematics are checked before the manufacturing export removes schematic drawing records.
 
 The build also verifies power and USB pin connectivity, distinct CC resistors and USB data nets, switch polarity connections, two layers, minimum trace widths, exact via sizes, unique references, and JLCPCB part coverage. Python tests cover debounce, polarity, invalid readings and distance hysteresis. These are CAD/software checks: no physical boards have been fabricated or tested, and no JLCPCB order-specific DFM review has been run. Review the assembler's component orientation preview, especially the USB connectors, switch, crystal, and optical sensor.
 
@@ -132,10 +135,35 @@ tsci check output/hub.circuit.json
 tsci build --site --use-cdn-javascript
 ```
 
-The default published preview uses the checked, routed `output/panel3.viewer.circuit.json`. All TSX design sources, firmware, host tools and generated manufacturing files are included. `tscircuit.config.json` lists each board and all three panels for the site viewer.
+The default published preview uses the checked, routed `output/panel4.viewer.circuit.json`. All TSX design sources, firmware, host tools and generated manufacturing files are included. `tscircuit.config.json` lists each board and all four panels for the site viewer.
 
 ## Hub-inclusive panel
 
 `panel3.tsx` is **67 × 157 mm**, containing all seven independent boards. Six 24 × 30 mm modules form two columns and three rows; the 44 × 42 mm hub sits at one end. This is the minimum-area guillotine packing among the rectangular board orientations evaluated, including 3 mm channels and 5 mm solid outer rails. All seven share a two-layer, 1.6 mm stackup and 0.30 mm via drills. Each board has four mounting holes; the hub alone uses the narrower 38 × 10 mm pattern.
 
 Run `bun run build:panel3` after building the individual boards. The exported panel preserves every checked route, includes breakaway tabs and tooling features, and provides seven schematic sheets (one per board). The hub schematic uses explicit functional sections; validation rejects overlapping schematic symbols as well as electrical and PCB errors.
+
+## Panel4: ten boards
+
+`panel4.tsx` packs all ten boards into **112 × 140 mm**, with 3 mm routed channels, breakaway mouse-bite tabs and 5 mm solid handling rails. `pack-panel4.py` exhaustively searches guillotine arrangements with quarter-turn rotations; this is the minimum area within that search class. It is a fabrication panel: depanelize and connect modules separately. The four-port hub connects up to four devices at once, not all nine peripherals.
+
+The display adapter uses the 8-bit ILI9488 interface from [abse/gameboy-advance@0.0.45](https://tscircuit.com/abse/gameboy-advance). Its **32 × 42 mm** PCB retains the common four-hole M2 pattern. The actual 3.5-inch LCD is larger and mounts separately. Order the **BuyDisplay ER-TFT035IPS-6 non-touch LCD** separately; it is not a JLCPCB component. The adapter supports host-controlled images through USB CDC, not an operating-system monitor interface. The 100 Ω backlight resistor intentionally limits brightness to fit the low-power budget. See [display provenance](references/display/README.md) and [firmware and host instructions](firmware/USB-OUTPUTS.md).
+
+The **42 × 42 mm resetter** adapts [seveibar/usb-reseter@1.1.4](https://tscircuit.com/seveibar/usb-reseter), preserving its RP2040 control circuit and three USB ports. Its four M3 holes use a **35 × 21 mm** pattern. The source's two-hole outline was extended, routing vias changed to 0.30/0.60 mm, affected copper repaired, and all components assigned to one schematic sheet. Original editable blocks and MicroPython firmware are in `references/resetter/`. The checked `resetter-layout.json` is the manufacturing source of truth; `build-resetter.ts` validates and exports it. Use the original firmware's `on`, `off`, `cycle`, and `status` commands on the control port. Confirm the installed MicroPython USB power descriptor before connecting its control port through the 100 mA-per-port hub; a direct computer connection avoids that unverified descriptor dependency. Its separate passthrough input supplies the switched output load.
+
+The **24 × 30 mm buzzer** has the common four M2 holes and a 5 V active 2.8 kHz buzzer driven by a MOSFET with a flyback diode. Its firmware accepts bounded timed beeps and switches off on USB reset, disconnect or suspend. The speaker module was omitted as requested.
+
+```sh
+bun run build:display
+bun run build:buzzer
+bun run build:resetter
+bun run build:panel4
+bun run check
+bun run check:physical
+bun run test
+tsci check output/display.circuit.json
+tsci check output/buzzer.circuit.json
+tsci check output/resetter.circuit.json
+```
+
+Panel4 validation checks all ten populated schematic sheets, 40 mounting holes, routing continuity, exact copper transformations including pad/slot rotation, and 0.30/0.60 mm vias. The display and buzzer firmware compile with CH55xDuino 0.0.26; host/parser regression tests exercise the actual C frame parser. Firmware has not been tested on hardware. JLCPCB eligibility is recorded in `references/new-parts-jlcpcb.json`: every newly added PCB part is Economic-compatible, but the existing distance sensor still requires Standard assembly. The display glass is an external purchase.

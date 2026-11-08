@@ -1,0 +1,89 @@
+{
+  "panelSize": {
+    "width": 112,
+    "height": 140
+  },
+  "modules": [
+    {
+      "name": "hub",
+      "x": -27.0,
+      "y": -40.0,
+      "w": 42,
+      "h": 44,
+      "rotation": 90
+    },
+    {
+      "name": "display",
+      "x": -27.0,
+      "y": 1.0,
+      "w": 42,
+      "h": 32,
+      "rotation": 90
+    },
+    {
+      "name": "resetter",
+      "x": -27.0,
+      "y": 41.0,
+      "w": 42,
+      "h": 42,
+      "rotation": 90
+    },
+    {
+      "name": "toggle",
+      "x": 9.0,
+      "y": -47.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "dial",
+      "x": 9.0,
+      "y": -14.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "button",
+      "x": 36.0,
+      "y": -47.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "position",
+      "x": 36.0,
+      "y": -14.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "limit",
+      "x": 9.0,
+      "y": 19.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "distance",
+      "x": 36.0,
+      "y": 19.0,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "buzzer",
+      "x": 12.0,
+      "y": 49.0,
+      "w": 30,
+      "h": 24,
+      "rotation": 90
+    }
+  ],
+  "method": "Exhaustive Pareto-pruned guillotine packing with 90-degree rotations, 3 mm channels, 8 mm outer margins; minimal area in this search class."
+}

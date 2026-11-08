@@ -22,3 +22,7 @@ A 4 kHz Timer2 interrupt counts encoder transitions independently of USB transfe
 Flash `build-position/position.ino.hex` on the potentiometer board. Source is `position/position.ino`; use the same FQBN above, replacing the sketch/output paths. TP1–TP2 bootloader entry is the same on both boards. Do not interchange the two firmware images.
 
 The fixed-range dial reads P1.4 with the CH552E 8-bit ADC (0–255), referenced to the same VCC used across the 10 kΩ potentiometer. Eight samples are averaged at 2 ms intervals; reports carry `module: "position"`, `raw`, `max: 255`, and `uptime_ms`. Heartbeat is 250 ms. No position counter is stored: the physical potentiometer supplies the absolute reading at every startup. Host endpoint calibration maps this to 0–1; mechanical travel is nominally 280°. ADC quantization, potentiometer linearity and end travel limit angular accuracy. This board has no encoder push switch.
+
+## Display and buzzer
+
+See [USB output firmware](USB-OUTPUTS.md) for wiring, compiled binaries, flashing, host commands and the framed CDC protocol. The resetter uses the original [MicroPython firmware](../references/resetter/firmware/main.py).

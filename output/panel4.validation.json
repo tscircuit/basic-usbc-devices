@@ -1,0 +1,16 @@
+{
+  "panel": "panel4",
+  "width": 112,
+  "height": 140,
+  "boards": 10,
+  "schematicSheets": 10,
+  "mountingHoles": 40,
+  "traces": 1325,
+  "vias": 426,
+  "errors": 0,
+  "warnings": 0,
+  "layers": 2,
+  "thicknessMm": 1.6,
+  "viaDrillMm": 0.3,
+  "hardwareTested": false
+}

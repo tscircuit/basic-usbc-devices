@@ -1,1 +1,16 @@
-{"compilerOptions":{"jsx":"react-jsx","target":"ESNext","module":"ESNext","moduleResolution":"Bundler","allowImportingTsExtensions":true,"skipLibCheck":true,"noEmit":true,"strict":true}}
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true
+  },
+  "exclude": [
+    "node_modules",
+    "references"
+  ]
+}

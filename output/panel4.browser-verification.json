@@ -1,0 +1,17 @@
+{
+  "panel4Sheets": [
+    "limit_sheet",
+    "button_sheet",
+    "toggle_sheet",
+    "dial_sheet",
+    "position_sheet",
+    "distance_sheet",
+    "hub_sheet",
+    "display_sheet",
+    "resetter_sheet",
+    "buzzer_sheet"
+  ],
+  "browserErrors": [],
+  "pcbRenderer": "canvas",
+  "verified": true
+}

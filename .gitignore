@@ -17,3 +17,6 @@ output/hub.dsn.json
 output/*.dsn
 output/*.ses
 output/hub.net-map.json
+
+output/display.unrouted.json
+output/display.net-map.json
