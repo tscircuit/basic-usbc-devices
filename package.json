@@ -27,7 +27,7 @@
     "polygon-clipping": "0.15.7",
     "@resvg/resvg-js": "2.6.2",
     "easyeda": "0.0.388",
-    "circuit-json-to-3d-png": "0.0.7",
+    "circuit-json-to-3d-png": "0.0.6",
     "poppygl": "0.0.37",
     "dsn-converter": "0.0.90"
   },
