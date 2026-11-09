@@ -1,89 +1,89 @@
 {
   "panelSize": {
-    "width": 112,
-    "height": 140
+    "width": 111,
+    "height": 183
   },
   "modules": [
     {
-      "name": "hub",
-      "x": -27.0,
-      "y": -40.0,
-      "w": 42,
-      "h": 44,
-      "rotation": 90
-    },
-    {
-      "name": "display",
-      "x": -27.0,
-      "y": 1.0,
-      "w": 42,
-      "h": 32,
-      "rotation": 90
-    },
-    {
-      "name": "resetter",
-      "x": -27.0,
-      "y": 41.0,
-      "w": 42,
-      "h": 42,
-      "rotation": 90
-    },
-    {
-      "name": "toggle",
-      "x": 9.0,
-      "y": -47.0,
-      "w": 24,
-      "h": 30,
-      "rotation": 0
-    },
-    {
       "name": "dial",
-      "x": 9.0,
-      "y": -14.0,
-      "w": 24,
-      "h": 30,
-      "rotation": 0
-    },
-    {
-      "name": "button",
-      "x": 36.0,
-      "y": -47.0,
+      "x": -35.5,
+      "y": -68.5,
       "w": 24,
       "h": 30,
       "rotation": 0
     },
     {
       "name": "position",
-      "x": 36.0,
-      "y": -14.0,
-      "w": 24,
-      "h": 30,
-      "rotation": 0
-    },
-    {
-      "name": "limit",
-      "x": 9.0,
-      "y": 19.0,
+      "x": -0.5,
+      "y": -68.5,
       "w": 24,
       "h": 30,
       "rotation": 0
     },
     {
       "name": "distance",
-      "x": 36.0,
-      "y": 19.0,
+      "x": 34.5,
+      "y": -68.5,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "toggle",
+      "x": -32.5,
+      "y": -30.5,
+      "w": 30,
+      "h": 24,
+      "rotation": 90
+    },
+    {
+      "name": "hub",
+      "x": -26.5,
+      "y": 14.5,
+      "w": 42,
+      "h": 44,
+      "rotation": 90
+    },
+    {
+      "name": "display",
+      "x": 26.5,
+      "y": -26.5,
+      "w": 42,
+      "h": 32,
+      "rotation": 90
+    },
+    {
+      "name": "resetter",
+      "x": 26.5,
+      "y": 21.5,
+      "w": 42,
+      "h": 42,
+      "rotation": 90
+    },
+    {
+      "name": "limit",
+      "x": -35.5,
+      "y": 68.5,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
+    },
+    {
+      "name": "button",
+      "x": -0.5,
+      "y": 68.5,
       "w": 24,
       "h": 30,
       "rotation": 0
     },
     {
       "name": "buzzer",
-      "x": 12.0,
-      "y": 49.0,
-      "w": 30,
-      "h": 24,
-      "rotation": 90
+      "x": 34.5,
+      "y": 68.5,
+      "w": 24,
+      "h": 30,
+      "rotation": 0
     }
   ],
-  "method": "Exhaustive Pareto-pruned guillotine packing with 90-degree rotations, 3 mm channels, 8 mm outer margins; minimal area in this search class."
+  "method": "Exhaustive Pareto-pruned guillotine packing with 90-degree rotations, 11 mm board gaps (two 3 mm routes and a 5 mm solid carrier), 8 mm outer margins; minimal area in this search class."
 }
