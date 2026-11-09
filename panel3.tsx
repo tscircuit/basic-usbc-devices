@@ -23,7 +23,7 @@ export function PanelFrame(){return <board {...panelSize} layers={2} thickness={
   return [
    ...[-1,1].map(s=><cutout name={`horizontal_${i}_${s}`} shape="rect" pcbX={b.x} pcbY={b.y+s*(b.h/2+1.5)} width={b.w+6} height={3}/>),
    ...[-1,1].flatMap(s=>[[-b.h/2,-tab-2],[-tab+2,tab-2],[tab+2,b.h/2]].map(([a,z])=><cutout name={`slot_${i}_${s}_${a}`} shape="rect" pcbX={b.x+s*(b.w/2+1.5)} pcbY={b.y+(a+z)/2} width={3} height={z-a}/>)),
-   ...[-1,1].flatMap(s=>[-tab,tab].flatMap(y=>[-1.5,-.75,0,.75,1.5].map(d=><hole name={`bite_${i}_${s}_${y}_${d}`} diameter={.5} pcbX={b.x+s*b.w/2} pcbY={b.y+y+d}/>))),
+   ...[-1,1].flatMap(s=>[-tab,tab].flatMap(y=>[-1.5,-.75,0,.75,1.5].map(d=><hole name={`bite_${i}_${s}_${y}_${d}`} diameter={.5} pcbX={b.x+s*(b.w/2+.15)} pcbY={b.y+y+d}/>))),
   ]
  })}
  <hole name="TOOL1" diameter={3} pcbX={-30.5} pcbY={75.5}/><hole name="TOOL2" diameter={3} pcbX={30.5} pcbY={75.5}/><hole name="TOOL3" diameter={3} pcbX={-30.5} pcbY={-75.5}/>

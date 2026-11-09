@@ -20,7 +20,7 @@ export function PanelFrame(){const {width:w,height:h}=panelSize;return <board {.
   return [
    ...[-1,1].map(sign=>rect(0,sign*(oh/2+1.5),ow+6,3)),
    ...[-1,1].flatMap(sign=>intervals.filter(([a,z])=>z>a).map(([a,z])=>rect(sign*(ow/2+1.5),(a+z)/2,3,z-a))),
-   ...[-1,1].flatMap(sign=>tabs.flatMap(y=>[-1.5,-.75,0,.75,1.5].map(d=><hole diameter={.5} {...p(sign*ow/2,y+d)}/>))),
+   ...[-1,1].flatMap(sign=>tabs.flatMap(y=>[-1.5,-.75,0,.75,1.5].map(d=><hole diameter={.5} {...p(sign*(ow/2+.15),y+d)}/>))),
   ]
  })}
  <hole name="TOOL1" diameter={3} pcbX={-w/2+3} pcbY={h/2-3}/><hole name="TOOL2" diameter={3} pcbX={w/2-3} pcbY={h/2-3}/><hole name="TOOL3" diameter={3} pcbX={-w/2+3} pcbY={-h/2+3}/>

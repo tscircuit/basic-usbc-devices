@@ -27,14 +27,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('kind', choices=['limit', 'button', 'toggle'])
     parser.add_argument('port', help='/dev/serial/by-path/... or COM3')
+    parser.add_argument('--led',choices=['off','on','follow'],default='off',help='DTR-controlled status LED; follow mirrors the debounced input')
     args = parser.parse_args()
     previous = None
     try:
         with serial.Serial(args.port, 9600, timeout=0.1, rtscts=False,
                            dsrdtr=False, xonxoff=False) as port:
+            port.dtr=args.led=='on'
             debounce = Debouncer()
             while True:
                 active = debounce.update(active_from_cts(port.cts, args.kind), time.monotonic())
+                if args.led=='follow':port.dtr=active is True
                 state = ('unknown' if active is None else
                          ('triggered' if active else 'not_triggered') if args.kind == 'limit' else
                          ('on' if active else 'off') if args.kind == 'toggle' else

@@ -27,9 +27,9 @@ def audit(name):
  shapes=[];bridges=[];pads=[]
  def shape(p):
   if p['shape']=='polygon':return Polygon([(q['x'],q['y']) for q in p['points']])
-  x,y=p['x'],p['y'];w=p.get('width',p.get('outer_width',p.get('radius',0)*2));h=p.get('height',p.get('outer_height',p.get('radius',0)*2))
+  x,y=p['x'],p['y'];w=p.get('width',p.get('outer_width',p.get('outer_diameter',p.get('radius',0)*2)));h=p.get('height',p.get('outer_height',p.get('outer_diameter',p.get('radius',0)*2)))
   if p['shape']=='circle':return Point(x,y).buffer(p.get('radius',w/2))
-  if p['shape']=='pill':
+  if p['shape'] in ['pill','rotated_pill']:
    g=LineString([(-max(0,w-h)/2,-max(0,h-w)/2),(max(0,w-h)/2,max(0,h-w)/2)]).buffer(min(w,h)/2)
    from shapely.affinity import translate
    return translate(rotate(g,p.get('ccw_rotation',0),origin=(0,0)),x,y)

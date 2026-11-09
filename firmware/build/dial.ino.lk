@@ -1,5 +1,5 @@
 -muwx
--i /workspace/arduino-tools/build/dial.ino.elf
+-i /workspace/arduino-tools/build-status-dial/dial.ino.elf
 -M
 -X 0x036c
 -C 0x3800
@@ -8,15 +8,15 @@
 -b PSEG = 0x0094
 -b ISEG = 0x0000
 -b BSEG = 0x0000
--k /workspace/arduino-tools/build
+-k /workspace/arduino-tools/build-status-dial
 -k /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto
--l /workspace/arduino-tools/build/core/core.lib
+-l /workspace/arduino-tools/build-status-dial/core/core.lib
 -l mcs51
 -l libsdcc
 -l liblong
 -l liblonglong
 -l libint
 -l libfloat
-/workspace/arduino-tools/build/sketch/dial.ino.cpp.rel
+/workspace/arduino-tools/build-status-dial/sketch/dial.ino.cpp.rel
 
 -e

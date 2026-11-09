@@ -26,11 +26,13 @@ def main():
     parser.add_argument('--minimum',type=int,default=0)
     parser.add_argument('--maximum',type=int,default=255)
     parser.add_argument('--reverse',action='store_true')
+    parser.add_argument('--led',choices=['on','off'],default='off')
     args=parser.parse_args()
     try: normalize(0,args.minimum,args.maximum)
     except ValueError as error: parser.error(str(error))
     try:
         with serial.Serial(args.port,115200,timeout=1) as port:
+            port.write(b'1' if args.led=='on' else b'0')
             while True:
                 line=port.readline(512)
                 if not line:

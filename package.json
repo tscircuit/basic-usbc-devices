@@ -4,13 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "bun build.tsx && bun export.tsx && bun make-viewer.ts && bun verify.ts && bun render.ts panel limit button toggle dial position distance",
-    "check": "tsc --noEmit && bun verify.ts && bun verify.ts panel2 && bun verify-hub.ts && bun verify-hub-transform.tsx && bun verify-panel3.ts && bun verify-output-modules.ts && bun verify-panel4.ts",
+    "check": "tsc --noEmit && bun verify.ts && bun verify.ts panel2 && bun verify-hub.ts && bun verify-hub-transform.tsx && bun verify-panel3.ts && bun verify-output-modules.ts && bun verify-panel4.ts && bun verify-status-leds.ts",
     "test": "python3 -m unittest discover -s host -v",
     "build:panel2": "bun export.tsx panel2 && bun make-viewer.ts panel2 && bun verify.ts panel2 && bun render.ts panel2",
     "build:hub": "bun build.tsx hub && bun export-hub.ts && bun verify-hub.ts && bun render.ts hub",
     "build:all": "bun run build && bun run build:panel2 && bun run build:hub && bun run build:panel3 && bun run build:display && bun run build:buzzer && bun run build:resetter && bun run build:panel4",
     "build:panel3": "bun export.tsx panel3 && bun make-viewer.ts panel3 && bun verify-panel3.ts && bun render.ts panel3",
-    "check:physical": "bun route-hub.ts && python3 verify-hub-copper.py && python3 verify-module-copper.py display buzzer resetter && python3 verify-panel4-mechanics.py",
+    "check:physical": "bun route-hub.ts && python3 verify-hub-copper.py && python3 verify-module-copper.py limit button toggle dial position distance hub display buzzer resetter && python3 verify-panel4-mechanics.py",
     "build:display": "bun build.tsx display && bun export-module.ts display && bun render.ts display",
     "build:buzzer": "bun build.tsx buzzer && bun export-module.ts buzzer && bun render.ts buzzer",
     "build:resetter": "bun build-resetter.ts && bun export-module.ts resetter && bun render.ts resetter",
@@ -33,7 +33,7 @@
     "typescript": "5.9.3",
     "@types/bun": "1.3.14"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Ten compact USB-C devices and a packed ten-board manufacturing panel",
   "repository": {
     "type": "git",

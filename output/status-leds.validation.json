@@ -1,0 +1,92 @@
+[
+  {
+    "board": "limit",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "button",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "toggle",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "dial",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "position",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "distance",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "display",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "buzzer",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -9.5,
+      "y": -9
+    },
+    "commonMountingDatum": true
+  },
+  {
+    "board": "hub",
+    "led": "LED_STATUS",
+    "center": {
+      "x": -19,
+      "y": -8
+    },
+    "commonMountingDatum": false
+  },
+  {
+    "board": "resetter",
+    "led": "LED1",
+    "center": {
+      "x": 14,
+      "y": 15.5
+    },
+    "existingRgb": true
+  }
+]

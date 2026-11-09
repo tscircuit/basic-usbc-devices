@@ -20,10 +20,12 @@ def main():
     import serial
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('port')
+    parser.add_argument('--led',choices=['on','off'],default='off')
     args = parser.parse_args()
     previous = None
     try:
         with serial.Serial(args.port, 115200, timeout=1) as port:
+            port.write(b'1' if args.led=='on' else b'0')
             while True:
                 line = port.readline(512)
                 if not line:

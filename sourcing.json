@@ -437,6 +437,30 @@
       "assembly_evidence": "PCBA Type Economic and Standard Assembly Difficulty High MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Sp",
       "assembly": "Economic and Standard",
       "note": "Catalog checked 2026-11-08; stock not reserved."
+    },
+    {
+      "lcsc": "C2286",
+      "mpn": "KT-0603R",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C2286",
+      "assembly": "Economic and Standard",
+      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
+    },
+    {
+      "lcsc": "C14674",
+      "mpn": "PCA9536DP,118",
+      "package": "TSSOP-8",
+      "url": "https://jlcpcb.com/partdetail/C14674",
+      "assembly": "Economic and Standard",
+      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
+    },
+    {
+      "lcsc": "C79996",
+      "mpn": "AT24C02D-STUM-T",
+      "package": "SOT-23-5",
+      "url": "https://jlcpcb.com/partdetail/C79996",
+      "assembly": "Economic and Standard",
+      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
     }
   ],
   "external_items": [

@@ -1,3 +1,4 @@
+import {StatusLed} from './status-led'
 import {createDisplayRouter} from './display-router'
 import {CH552T} from './imports/C111367'
 import {AFC07_S50ECC_00} from './imports/C11098'
@@ -26,7 +27,7 @@ export function DisplayBoard({pcbX=0,pcbY=0,pcbRotation=0,routingDisabled=false}
  <XC6206P332MR_G name="U2" pcbX={-9} pcbY={-4.5} schX={-10} schY={-1}/>
  <C name="C2" value="1uF" x={-13} y={-4.5} schX={-12} schY={-4} a="net.VBUS"/>
  <C name="C3" value="1uF" x={-9} y={-1} schX={-8} schY={-4} a="net.V3V3"/>
- <CH552T name="U1" pcbX={0} pcbY={2} pcbRotation={180} schX={0} schY={5} noConnect={['pin6','pin10','pin13']}/>
+ <CH552T name="U1" pcbX={0} pcbY={2} pcbRotation={180} schX={0} schY={5} noConnect={['pin6','pin10']}/>
  <C name="C4" value="100nF" x={2.6} y={-3} schX={-2} schY={0} a="net.V3V3"/>
  <C name="C5" value="100nF" x={6} y={-3} schX={2} schY={0} a="net.V3V3"/>
  <R name="R3" value="10k" x={7} y={0} schX={-2} schY={-3} a="net.V3V3" b="net.BOOT"/>
@@ -52,5 +53,5 @@ export function DisplayBoard({pcbX=0,pcbY=0,pcbRotation=0,routingDisabled=false}
  }}/>
  <silkscreentext text="USB DISPLAY / ILI9488" pcbX={0} pcbY={8.4} fontSize={.65}/>
  <silkscreentext text="BOOT" pcbX={11} pcbY={1.5} fontSize={.6}/>
- </schematicsheet></board>}
+ <StatusLed rx={-13} ry={-8.5} sink=".U1 > .pin13" anodeSupply="net.V3V3" schX={-10} schY={-8.4}/></schematicsheet></board>}
 export default DisplayBoard

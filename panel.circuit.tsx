@@ -13,7 +13,7 @@ export function PanelFrame(){return <board {...panelSize} layers={2}><schematics
  {modules.flatMap((b,i)=>[
  ...[-1,1].map(s=><cutout name={`horizontal_${i}_${s}`} shape="rect" pcbX={b.x} pcbY={s*16.5} width={30} height={3}/>),
  ...[-1,1].flatMap(s=>[[-15,-9],[-5,5],[9,15]].map(([a,z])=><cutout name={`slot_${i}_${s}_${a}`} shape="rect" pcbX={b.x+s*13.5} pcbY={(a+z)/2} width={3} height={z-a}/>)),
- ...[-1,1].flatMap(s=>[-7,7].flatMap(y=>[-1.5,-0.75,0,0.75,1.5].map(d=><hole name={`bite_${i}_${s}_${y}_${d}`} diameter={0.5} pcbX={b.x+s*12} pcbY={y+d}/>)))
+ ...[-1,1].flatMap(s=>[-7,7].flatMap(y=>[-1.5,-0.75,0,0.75,1.5].map(d=><hole name={`bite_${i}_${s}_${y}_${d}`} diameter={0.5} pcbX={b.x+s*12.15} pcbY={y+d}/>)))
  ])}
  <hole name="TOOL1" diameter={3} pcbX={-84.5} pcbY={20}/><hole name="TOOL2" diameter={3} pcbX={84.5} pcbY={20}/><hole name="TOOL3" diameter={3} pcbX={-84.5} pcbY={-20}/>
  <fiducial padDiameter={1} name="FID1" pcbX={-77.5} pcbY={20}/><fiducial padDiameter={1} name="FID2" pcbX={77.5} pcbY={20}/><fiducial padDiameter={1} name="FID3" pcbX={77.5} pcbY={-20}/>

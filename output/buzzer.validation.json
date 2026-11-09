@@ -7,8 +7,8 @@
   "viaPadMm": 0.6,
   "schematicSheets": 1,
   "mountingHoles": 4,
-  "traces": 41,
-  "vias": 26,
+  "traces": 44,
+  "vias": 28,
   "errors": 0,
   "warnings": 0,
   "hardwareTested": false

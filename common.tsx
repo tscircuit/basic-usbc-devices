@@ -34,7 +34,7 @@ export function Wiring({nets}:{nets:Record<string,string[]>}){
 }
 export function UsbInput({distance=false,button=false,dial=false,compactDistance=false}:{distance?:boolean,button?:boolean,dial?:boolean,compactDistance?:boolean}={}){
  return <>
- <copperpour name="GROUND" layer="bottom" connectsTo="net.GND" clearance={0.2} boardEdgeMargin={0.6}/><net name="VBUS"/><net name="GND"/>
+ <copperpour name="GROUND" layer="bottom" connectsTo="net.GND" clearance={dial?0.201:0.2} boardEdgeMargin={0.6}/><net name="VBUS"/><net name="GND"/>
  <TYPE_C_31_M_12 name="J1" pcbX={0} pcbY={distance?-11.8:-9.2} pcbRotation={0} noConnect={["pin5","pin11"]} pinAttributes={{pin13:{requiresGround:true},pin14:{requiresGround:true},pin15:{providesPower:true,providesVoltage:5},pin16:{providesPower:true,providesVoltage:5}}}/>
  <USBLC6_2SC6 name="D1" pcbX={8} pcbY={distance?-11.5:compactDistance?-6:-5} pinAttributes={{pin1:{},pin2:{requiresGround:true},pin3:{},pin4:{},pin5:{requiresPower:true},pin6:{}}} internallyConnectedPins={[["pin1","pin6"],["pin3","pin4"]]}/>
  <R name="R1" value="5.1k" x={-8} y={distance?-13:(button||compactDistance)?-7.3:-7} a="net.CC1" b="net.GND" />

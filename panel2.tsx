@@ -29,7 +29,7 @@ export function PanelFrame() {
       ...[-1, 1].flatMap(s => [[-15, -9], [-5, 5], [9, 15]].map(([a, z]) =>
         <cutout name={`slot_${i}_${s}_${a}`} shape="rect" pcbX={b.x + s * 13.5} pcbY={b.y + (a + z) / 2} width={3} height={z - a}/>)),
       ...[-1, 1].flatMap(s => [-7, 7].flatMap(y => [-1.5, -0.75, 0, 0.75, 1.5].map(d =>
-        <hole name={`bite_${i}_${s}_${y}_${d}`} diameter={0.5} pcbX={b.x + s * 12} pcbY={b.y + y + d}/>))),
+        <hole name={`bite_${i}_${s}_${y}_${d}`} diameter={0.5} pcbX={b.x + s * 12.15} pcbY={b.y + y + d}/>))),
     ])}
     <hole name="TOOL1" diameter={3} pcbX={-44} pcbY={36.5}/>
     <hole name="TOOL2" diameter={3} pcbX={44} pcbY={36.5}/>

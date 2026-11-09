@@ -40,7 +40,7 @@ IABS3                               00000000    00000001 =           1. bytes (A
      00000003  l_GSINIT0                       
      00000004  l_GSFINAL                       
      00000004  l_IABS2                         
-     00000006  l_BSEG                          
+     00000007  l_BSEG                          
      00000008  l_REG_BANK_0                    
      00000008  l_REG_BANK_1                    
      00000008  s_REG_BANK_1                    
@@ -52,8 +52,8 @@ IABS3                               00000000    00000001 =           1. bytes (A
      00000020  s__CODE                         
      00000021  s_BIT_BANK                      
      00000022  l_GSINIT3                       
-     00000023  l_XINIT                         
-     00000023  l_XISEG                         
+     00000024  l_XINIT                         
+     00000024  l_XISEG                         
      0000002A  l_GSINIT4                       
      00000034  l_GSINIT                        
      00000041  s_OSEG                          
@@ -84,10 +84,10 @@ IABS3                               00000000    00000001 =           1. bytes (A
      000000FC  s_CSEG                          
      00000100  l_IRAM                          
      0000012B  s_XISEG                         
-     00000194  l_CONST                         
-     000018A3  l_CSEG                          
-     0000199F  s_CONST                         
-     00001B33  s_XINIT                         
+     0000019C  l_CONST                         
+     00001913  l_CSEG                          
+     00001A0F  s_CONST                         
+     00001BAB  s_XINIT                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -521,30 +521,30 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-XISEG                               0000012B    00000023 =          35. bytes (REL,CON,XDATA)
+XISEG                               0000012B    00000024 =          36. bytes (REL,CON,XDATA)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
 D:   0000012B  _dummy_variable                    dial_ino
-D:   0000012D  _position                          dial_ino
-D:   00000131  _invalidTransitions                dial_ino
-D:   00000133  _pressed                           dial_ino
-D:   00000134  _partial                           dial_ino
-D:   00000135  _touchKeyHandler                   main
-D:   00000137  _LineCoding                        USBCDC
-D:   0000013E  _USBByteCountEP2                   USBCDC
-D:   0000013F  _USBBufOutPointEP2                 USBCDC
-D:   00000140  _controlLineState                  USBCDC
-D:   00000141  _usbWritePointer                   USBCDC
-D:   00000142  _intFunc                           WInterrupts
-D:   00000146  _uart0_rx_buffer_head              HardwareSerial0ISR
-D:   00000147  _uart0_rx_buffer_tail              HardwareSerial0ISR
-D:   00000148  _uart0_tx_buffer_head              HardwareSerial0ISR
-D:   00000149  _uart0_tx_buffer_tail              HardwareSerial0ISR
-D:   0000014A  _uart1_rx_buffer_head              HardwareSerial1ISR
-D:   0000014B  _uart1_rx_buffer_tail              HardwareSerial1ISR
-D:   0000014C  _uart1_tx_buffer_head              HardwareSerial1ISR
-D:   0000014D  _uart1_tx_buffer_tail              HardwareSerial1ISR
+D:   0000012E  _position                          dial_ino
+D:   00000132  _invalidTransitions                dial_ino
+D:   00000134  _pressed                           dial_ino
+D:   00000135  _partial                           dial_ino
+D:   00000136  _touchKeyHandler                   main
+D:   00000138  _LineCoding                        USBCDC
+D:   0000013F  _USBByteCountEP2                   USBCDC
+D:   00000140  _USBBufOutPointEP2                 USBCDC
+D:   00000141  _controlLineState                  USBCDC
+D:   00000142  _usbWritePointer                   USBCDC
+D:   00000143  _intFunc                           WInterrupts
+D:   00000147  _uart0_rx_buffer_head              HardwareSerial0ISR
+D:   00000148  _uart0_rx_buffer_tail              HardwareSerial0ISR
+D:   00000149  _uart0_tx_buffer_head              HardwareSerial0ISR
+D:   0000014A  _uart0_tx_buffer_tail              HardwareSerial0ISR
+D:   0000014B  _uart1_rx_buffer_head              HardwareSerial1ISR
+D:   0000014C  _uart1_rx_buffer_tail              HardwareSerial1ISR
+D:   0000014D  _uart1_tx_buffer_head              HardwareSerial1ISR
+D:   0000014E  _uart1_tx_buffer_tail              HardwareSerial1ISR
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 Hexadecimal  [32-Bits]
@@ -624,117 +624,117 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                000000FC    000018A3 =        6307. bytes (REL,CON,CODE)
+CSEG                                000000FC    00001913 =        6419. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   000000FC  _readAB                            dial_ino
-C:   00000116  _Timer2Interrupt                   dial_ino
-C:   00000240  _setup                             dial_ino
-C:   0000029C  _loop                              dial_ino
-C:   0000043A  _DeviceUSBInterrupt                main
-C:   00000479  _Uart0_ISR                         main
-C:   000004C5  _Uart1_ISR                         main
-C:   00000511  _INT0_ISR                          main
-C:   00000564  _INT1_ISR                          main
-C:   000005B7  _TOUCHKEY_ISR                      main
-C:   0000060B  _main                              main
-C:   00000619  ___sdcc_external_startup           main
-C:   0000061E  _pinMode                           wiring_digital
-C:   000006D5  _digitalRead                       wiring_digital
-C:   00000725  _digitalWrite                      wiring_digital
-C:   0000079A  _printNothing                      genericPrintUSBSerial
-C:   0000079B  _USBSerial_print_i_func            genericPrintUSBSerial
-C:   000007B6  _USBSerial_print_ib_func           genericPrintUSBSerial
-C:   000007DB  _USBSerial_print_u_func            genericPrintUSBSerial
-C:   000007F6  _USBSerial_print_ub_func           genericPrintUSBSerial
-C:   0000081B  _USBSerial_print_s_func            genericPrintUSBSerial
-C:   00000832  _USBSerial_print_sn_func           genericPrintUSBSerial
-C:   00000854  _Print_print_sn                    Print
-C:   000008B2  _Print_print_s                     Print
-C:   00000914  _Print_print_u                     Print
-C:   00000941  _Print_print_i                     Print
-C:   0000096E  _Print_println                     Print
-C:   000009A5  _Print_print_ub                    Print
-C:   00000A8E  _Print_print_ib                    Print
-C:   00000B86  _Timer0Interrupt                   wiring
-C:   00000B9F  _micros                            wiring
-C:   00000C06  _millis                            wiring
-C:   00000C43  _delay                             wiring
-C:   00000CF4  _delayMicroseconds                 wiring
-C:   00000D2F  _init                              wiring
-C:   00000D76  _USB_EP0_SETUP                     USBhandler
-C:   00001154  _USB_EP0_IN                        USBhandler
-C:   000011CD  _USB_EP0_OUT                       USBhandler
-C:   000011E6  _USB_EP1_IN                        USBhandler
-C:   000011F2  _USBInterrupt                      USBhandler
-C:   000012C7  _USBDeviceCfg                      USBhandler
-C:   000012E0  _USBDeviceIntCfg                   USBhandler
-C:   000012F1  _USBDeviceEndPointCfg              USBhandler
-C:   0000131A  _GPIOInterrupt                     weakOverrideGPIO
-C:   0000131C  _resetCDCParameters                USBCDC
-C:   00001324  _setLineCodingHandler              USBCDC
-C:   00001369  _getLineCodingHandler              USBCDC
-C:   00001398  _setControlLineStateHandler        USBCDC
-C:   000013D9  _USBSerial_wait_UpPoint2BusyFlag   USBCDC
-C:   00001404  _USBSerial                         USBCDC
+C:   0000013C  _readAB                            dial_ino
+C:   00000156  _Timer2Interrupt                   dial_ino
+C:   00000280  _setup                             dial_ino
+C:   000002EA  _loop                              dial_ino
+C:   000004AA  _DeviceUSBInterrupt                main
+C:   000004E9  _Uart0_ISR                         main
+C:   00000535  _Uart1_ISR                         main
+C:   00000581  _INT0_ISR                          main
+C:   000005D4  _INT1_ISR                          main
+C:   00000627  _TOUCHKEY_ISR                      main
+C:   0000067B  _main                              main
+C:   00000689  ___sdcc_external_startup           main
+C:   0000068E  _pinMode                           wiring_digital
+C:   00000745  _digitalRead                       wiring_digital
+C:   00000795  _digitalWrite                      wiring_digital
+C:   0000080A  _printNothing                      genericPrintUSBSerial
+C:   0000080B  _USBSerial_print_i_func            genericPrintUSBSerial
+C:   00000826  _USBSerial_print_ib_func           genericPrintUSBSerial
+C:   0000084B  _USBSerial_print_u_func            genericPrintUSBSerial
+C:   00000866  _USBSerial_print_ub_func           genericPrintUSBSerial
+C:   0000088B  _USBSerial_print_s_func            genericPrintUSBSerial
+C:   000008A2  _USBSerial_print_sn_func           genericPrintUSBSerial
+C:   000008C4  _Print_print_sn                    Print
+C:   00000922  _Print_print_s                     Print
+C:   00000984  _Print_print_u                     Print
+C:   000009B1  _Print_print_i                     Print
+C:   000009DE  _Print_println                     Print
+C:   00000A15  _Print_print_ub                    Print
+C:   00000AFE  _Print_print_ib                    Print
+C:   00000BF6  _Timer0Interrupt                   wiring
+C:   00000C0F  _micros                            wiring
+C:   00000C76  _millis                            wiring
+C:   00000CB3  _delay                             wiring
+C:   00000D64  _delayMicroseconds                 wiring
+C:   00000D9F  _init                              wiring
+C:   00000DE6  _USB_EP0_SETUP                     USBhandler
+C:   000011C4  _USB_EP0_IN                        USBhandler
+C:   0000123D  _USB_EP0_OUT                       USBhandler
+C:   00001256  _USB_EP1_IN                        USBhandler
+C:   00001262  _USBInterrupt                      USBhandler
+C:   00001337  _USBDeviceCfg                      USBhandler
+C:   00001350  _USBDeviceIntCfg                   USBhandler
+C:   00001361  _USBDeviceEndPointCfg              USBhandler
+C:   0000138A  _GPIOInterrupt                     weakOverrideGPIO
+C:   0000138C  _resetCDCParameters                USBCDC
+C:   00001394  _setLineCodingHandler              USBCDC
+C:   000013D9  _getLineCodingHandler              USBCDC
+C:   00001408  _setControlLineStateHandler        USBCDC
+C:   00001449  _USBSerial_wait_UpPoint2BusyFlag   USBCDC
+C:   00001474  _USBSerial                         USBCDC
 ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CSEG                                000000FC    000018A3 =        6307. bytes (REL,CON,CODE)
+CSEG                                000000FC    00001913 =        6419. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00001414  _USBSerial_flush                   USBCDC
-C:   0000144B  _USBSerial_write                   USBCDC
-C:   00001498  _USBSerial_print_n                 USBCDC
-C:   00001552  _USBSerial_available               USBCDC
-C:   00001559  _USBSerial_read                    USBCDC
-C:   00001586  _USB_EP2_IN                        USBCDC
-C:   00001594  _USB_EP2_OUT                       USBCDC
-C:   000015B2  __modulong                         _modulong
-C:   00001674  __divulong                         _divulong
-C:   000016FE  _nothing                           WInterrupts
-C:   000016FF  _attachInterrupt                   WInterrupts
-C:   00001745  _detachInterrupt                   WInterrupts
-C:   00001776  __gptrget                          _gptrget
-C:   00001792  _uart0IntRxHandler                 HardwareSerial0ISR
-C:   000017D2  _uart0IntTxHandler                 HardwareSerial0ISR
-C:   00001820  _uart1IntRxHandler                 HardwareSerial1ISR
-C:   00001860  _uart1IntTxHandler                 HardwareSerial1ISR
-C:   000018AE  __sdcc_external_startup            _startup
-C:   000018B2  __modsint                          _modsint
-C:   00001920  __moduint                          _moduint
+C:   00001484  _USBSerial_flush                   USBCDC
+C:   000014BB  _USBSerial_write                   USBCDC
+C:   00001508  _USBSerial_print_n                 USBCDC
+C:   000015C2  _USBSerial_available               USBCDC
+C:   000015C9  _USBSerial_read                    USBCDC
+C:   000015F6  _USB_EP2_IN                        USBCDC
+C:   00001604  _USB_EP2_OUT                       USBCDC
+C:   00001622  __modulong                         _modulong
+C:   000016E4  __divulong                         _divulong
+C:   0000176E  _nothing                           WInterrupts
+C:   0000176F  _attachInterrupt                   WInterrupts
+C:   000017B5  _detachInterrupt                   WInterrupts
+C:   000017E6  __gptrget                          _gptrget
+C:   00001802  _uart0IntRxHandler                 HardwareSerial0ISR
+C:   00001842  _uart0IntTxHandler                 HardwareSerial0ISR
+C:   00001890  _uart1IntRxHandler                 HardwareSerial1ISR
+C:   000018D0  _uart1IntTxHandler                 HardwareSerial1ISR
+C:   0000191E  __sdcc_external_startup            _startup
+C:   00001922  __modsint                          _modsint
+C:   00001990  __moduint                          _moduint
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CONST                               0000199F    00000194 =         404. bytes (REL,CON,CODE)
+CONST                               00001A0F    0000019C =         412. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   0000199F  _transitions                       dial_ino
-C:   000019F1  _digital_pin_to_pwm_PGM            wiring_digital
-C:   00001A19  _digital_pin_to_port_PGM           wiring_digital
-C:   00001A41  _digital_pin_to_bit_mask_PGM       wiring_digital
-C:   00001A69  _digital_pin_to_channel_PGM        wiring_digital
-C:   00001A91  _DeviceDescriptor                  USBconstant
-C:   00001AA3  _ConfigurationDescriptor           USBconstant
-C:   00001AE9  _LanguageDescriptor                USBconstant
-C:   00001AED  _SerialDescriptor                  USBconstant
-C:   00001AF9  _ProductDescriptor                 USBconstant
-C:   00001B0F  _CDCDescriptor                     USBconstant
-C:   00001B25  _ManufacturerDescriptor            USBconstant
+C:   00001A0F  _transitions                       dial_ino
+C:   00001A69  _digital_pin_to_pwm_PGM            wiring_digital
+C:   00001A91  _digital_pin_to_port_PGM           wiring_digital
+C:   00001AB9  _digital_pin_to_bit_mask_PGM       wiring_digital
+C:   00001AE1  _digital_pin_to_channel_PGM        wiring_digital
+C:   00001B09  _DeviceDescriptor                  USBconstant
+C:   00001B1B  _ConfigurationDescriptor           USBconstant
+C:   00001B61  _LanguageDescriptor                USBconstant
+C:   00001B65  _SerialDescriptor                  USBconstant
+C:   00001B71  _ProductDescriptor                 USBconstant
+C:   00001B87  _CDCDescriptor                     USBconstant
+C:   00001B9D  _ManufacturerDescriptor            USBconstant
 ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-XINIT                               00001B33    00000023 =          35. bytes (REL,CON,CODE)
+XINIT                               00001BAB    00000024 =          36. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -742,35 +742,35 @@ XINIT                               00001B33    00000023 =          35. bytes (R
 
 Files Linked                              [ module(s) ]
 
-/workspace/arduino-tools/build/sketch/dial.ino.cpp.rel
+/workspace/arduino-tools/build-status-dial/sketch/dial.ino.cpp.rel
                                           [  ]
 
 
 Libraries Linked                          [ object file ]
 
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ main.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/mcs51.lib
                                           [ crtclear.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ wiring_digital.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/mcs51.lib
                                           [ crtxinit.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ genericPrintUSBSerial.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ Print.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ wiring.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ USBhandler.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ USBconstant.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ weakOverrideGPIO.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/mcs51.lib
                                           [ crtxclear.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ USBCDC.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/liblong.lib
                                           [ _modulong.rel ]
@@ -782,15 +782,15 @@ Libraries Linked                          [ object file ]
                                           [ _bp.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/mcs51.lib
                                           [ crtpagesfr.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ WInterrupts.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/mcs51.lib
                                           [ crtstart.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/libsdcc.lib
                                           [ _gptrget.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ HardwareSerial0ISR.c.rel ]
-/workspace/arduino-tools/build/core/core.lib
+/workspace/arduino-tools/build-status-dial/core/core.lib
                                           [ HardwareSerial1ISR.c.rel ]
 /workspace/arduino-tools/data/packages/CH55xDuino/tools/sdcc/build.13407_4/share/sdcc/lib/large_int_calc_stack_auto/libsdcc.lib
                                           [ _startup.rel ]
