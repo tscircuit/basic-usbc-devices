@@ -7,10 +7,15 @@ import io
 import json
 from pathlib import Path
 import sys
+import subprocess
 import zipfile
 
 root = Path(__file__).resolve().parent
 out = root / 'output'
+# Recheck current geometry at packaging time; stale reports cannot approve it.
+subprocess.run([sys.executable, str(root / 'verify-panel4-mechanics.py')], cwd=root, check=True)
+layout = json.loads((root / 'panel4-layout.json').read_text())
+size = layout['panelSize']
 destination = Path(sys.argv[1])
 destination.mkdir(parents=True, exist_ok=True)
 for name in ['limit', 'button', 'toggle', 'dial', 'position', 'distance',
@@ -33,7 +38,7 @@ files = {'panel4-gerbers.zip': gerber.getvalue()}
 for name in ['panel4-bom.csv', 'panel4-cpl.csv', 'panel4.validation.json',
              'status-leds.validation.json', 'branding.validation.json', 'panel4-sourcing.validation.json',
              'panel4-stock-cost-audit.csv', 'panel4.pcb.png', 'panel4.pcb.svg',
-             'branding-front.png', 'branding-back.png', 'panel4.back-silkscreen.png']:
+             'branding-front.png', 'branding-back.png', 'panel4.3d.png']:
     files[name] = (out / name).read_bytes()
 for name in ['STATUS-LEDS.md', 'SOURCING-AUDIT.md', 'branding/README.md', 'firmware/USB-OUTPUTS.md',
              'firmware/hub/ch334f-status.bin', 'firmware/hub/build-eeprom.py',
@@ -42,8 +47,8 @@ for name in ['STATUS-LEDS.md', 'SOURCING-AUDIT.md', 'branding/README.md', 'firmw
              'firmware/build-display/display.ino.hex',
              'firmware/build-buzzer/buzzer.ino.hex']:
     files[name] = (root / name).read_bytes()
-files['README.txt'] = b'''Panel4, version 0.0.7: ten USB-C devices with status LEDs and tscircuit silkscreen
-112 x 140 mm, 2 layers, 1.6 mm FR-4, 1 oz copper, 0.30/0.60 mm vias.
+files['README.txt'] = f'''Panel4, corrected carrier rails: ten USB-C devices with status LEDs and tscircuit silkscreen
+{size['width']} x {size['height']} mm, 2 layers, 1.6 mm FR-4, 1 oz copper, 0.30/0.60 mm vias.
 Upload panel4-gerbers.zip for fabrication; use the BOM and CPL for assembly.
 Use this BOM/CPL only with these revised Gerbers. Map JLCPCB Part # explicitly.
 BOM quantities are per panel; select five assembled panels in the order.
@@ -64,7 +69,7 @@ Through-hole controls need the corresponding soldering service.
 
 CAD, connectivity and software checks pass. Hardware and USB high-speed
 compliance have not been tested. No order-specific JLCPCB DFM has been run.
-'''
+'''.encode()
 files['SHA256SUMS.txt'] = ''.join(
     f'{hashlib.sha256(data).hexdigest()}  {name}\n'
     for name, data in sorted(files.items())

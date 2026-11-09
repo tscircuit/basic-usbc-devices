@@ -147,7 +147,7 @@ Run `bun run build:panel3` after building the individual boards. The exported pa
 
 ## Panel4: ten boards
 
-`panel4.tsx` packs all ten boards into **112 × 140 mm**, with 3 mm routed channels, breakaway mouse-bite tabs and 5 mm solid handling rails. `pack-panel4.py` exhaustively searches guillotine arrangements with quarter-turn rotations; this is the minimum area within that search class. It is a fabrication panel: depanelize and connect modules separately. The four-port hub connects up to four devices at once, not all nine peripherals.
+`panel4.tsx` packs all ten boards into **111 × 183 mm**, with independent 3 mm routed slots, breakaway mouse-bite tabs, and 5 mm solid carrier rails between boards and around the outside. `pack-panel4.py` exhaustively searches guillotine arrangements with quarter-turn rotations; this is the minimum area within that search class. It is a fabrication panel: depanelize and connect modules separately. The four-port hub connects up to four devices at once, not all nine peripherals.
 
 The display adapter uses the 8-bit ILI9488 interface from [abse/gameboy-advance@0.0.45](https://tscircuit.com/abse/gameboy-advance). Its **32 × 42 mm** PCB retains the common four-hole M2 pattern. The actual 3.5-inch LCD is larger and mounts separately. Order the **BuyDisplay ER-TFT035IPS-6 non-touch LCD** separately; it is not a JLCPCB component. The adapter supports host-controlled images through USB CDC, not an operating-system monitor interface. The 100 Ω backlight resistor intentionally limits brightness to fit the low-power budget. See [display provenance](references/display/README.md) and [firmware and host instructions](firmware/USB-OUTPUTS.md).
 
@@ -167,6 +167,8 @@ tsci check output/display.circuit.json
 tsci check output/buzzer.circuit.json
 tsci check output/resetter.circuit.json
 ```
+
+The former 3 mm board-to-board gap allowed independently generated slots to consume neighboring tabs and left board chains without an independent carrier. The packer now reserves 11 mm between boards (3 mm slot + 5 mm rail + 3 mm slot). All 40 tabs must reach the carrier even after every module is removed; this check runs during build, validation, and fabrication packaging. Mouse-bite drills are 0.5 mm on 0.8 mm centers, leaving 0.3 mm webs. Regenerate Gerbers and CPL together after any packing change. The updated panel previews are `output/panel4.pcb.png` and `output/panel4.3d.png`; obsolete panel screenshots and panel silkscreen previews were removed.
 
 Panel4 validation checks all ten populated schematic sheets, 40 mounting holes, routing continuity, exact copper transformations including pad/slot rotation, and 0.30/0.60 mm vias. The display and buzzer firmware compile with CH55xDuino 0.0.26; host/parser regression tests exercise the actual C frame parser. Firmware has not been tested on hardware. JLCPCB eligibility is recorded in `references/new-parts-jlcpcb.json`: every newly added PCB part is Economic-compatible, but the existing distance sensor still requires Standard assembly. The display glass is an external purchase.
 
