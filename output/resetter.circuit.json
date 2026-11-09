@@ -52,7 +52,8 @@
       ]
     },
     "standard": "usb_c",
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "TYPE-C-31-M-12"
   },
   {
     "type": "source_port",
@@ -99,7 +100,8 @@
     "resistance": 5100,
     "display_resistance": "5.1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF5101TCE"
   },
   {
     "type": "source_port",
@@ -146,7 +148,8 @@
     "resistance": 5100,
     "display_resistance": "5.1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF5101TCE"
   },
   {
     "type": "source_port",
@@ -193,7 +196,8 @@
     "resistance": 27,
     "display_resistance": "27Ω",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGJ0270TCE"
   },
   {
     "type": "source_port",
@@ -240,7 +244,8 @@
     "resistance": 27,
     "display_resistance": "27Ω",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGJ0270TCE"
   },
   {
     "type": "source_port",
@@ -356,7 +361,8 @@
     "max_decoupling_trace_length": 8,
     "display_capacitance": "10uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL10A106KP8NNNC"
   },
   {
     "type": "source_port",
@@ -404,7 +410,8 @@
     "max_decoupling_trace_length": 8,
     "display_capacitance": "10uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL10A106KP8NNNC"
   },
   {
     "type": "source_port",
@@ -1656,7 +1663,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1704,7 +1712,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1752,7 +1761,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1800,7 +1810,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1848,7 +1859,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1896,7 +1908,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -1944,7 +1957,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "1uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05A105KA5NQNC"
   },
   {
     "type": "source_port",
@@ -1992,7 +2006,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "1uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05A105KA5NQNC"
   },
   {
     "type": "source_port",
@@ -2040,7 +2055,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -2220,7 +2236,8 @@
     "max_decoupling_trace_length": 6,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_port",
@@ -2354,7 +2371,8 @@
     "capacitance": 2.7e-11,
     "display_capacitance": "27pF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CC0402JRNPO9BN270"
   },
   {
     "type": "source_port",
@@ -2401,7 +2419,8 @@
     "capacitance": 2.7e-11,
     "display_capacitance": "27pF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CC0402JRNPO9BN270"
   },
   {
     "type": "source_port",
@@ -2448,7 +2467,8 @@
     "resistance": 1000,
     "display_resistance": "1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1001TCE"
   },
   {
     "type": "source_port",
@@ -2563,7 +2583,8 @@
     "resistance": 1000,
     "display_resistance": "1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1001TCE"
   },
   {
     "type": "source_component",
@@ -2576,7 +2597,8 @@
       ]
     },
     "standard": "usb_c",
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "TYPE-C-31-M-12"
   },
   {
     "type": "source_port",
@@ -2623,7 +2645,8 @@
     "resistance": 5100,
     "display_resistance": "5.1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF5101TCE"
   },
   {
     "type": "source_port",
@@ -2670,7 +2693,8 @@
     "resistance": 5100,
     "display_resistance": "5.1kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF5101TCE"
   },
   {
     "type": "source_component",
@@ -2683,7 +2707,8 @@
       ]
     },
     "standard": "usb_c",
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "TYPE-C-31-M-12"
   },
   {
     "type": "source_port",
@@ -2730,7 +2755,8 @@
     "resistance": 56000,
     "display_resistance": "56kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "RC0402FR-0756KL"
   },
   {
     "type": "source_port",
@@ -2777,7 +2803,8 @@
     "resistance": 56000,
     "display_resistance": "56kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "RC0402FR-0756KL"
   },
   {
     "type": "source_port",
@@ -3166,7 +3193,8 @@
     "max_decoupling_trace_length": 20,
     "display_capacitance": "10uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL10A106KP8NNNC"
   },
   {
     "type": "source_port",
@@ -3214,7 +3242,8 @@
     "max_decoupling_trace_length": 20,
     "display_capacitance": "1uF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05A105KA5NQNC"
   },
   {
     "type": "source_port",
@@ -3261,7 +3290,8 @@
     "capacitance": 1e-9,
     "display_capacitance": "1nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402B102K500NT"
   },
   {
     "type": "source_port",
@@ -3308,7 +3338,8 @@
     "resistance": 100000,
     "display_resistance": "100kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1003TCE"
   },
   {
     "type": "source_port",
@@ -3415,7 +3446,8 @@
     "resistance": 100000,
     "display_resistance": "100kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1003TCE"
   },
   {
     "type": "source_port",
@@ -3462,7 +3494,8 @@
     "resistance": 100000,
     "display_resistance": "100kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1003TCE"
   },
   {
     "type": "source_port",
@@ -3509,7 +3542,8 @@
     "resistance": 150000,
     "display_resistance": "150kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "RC0402FR-07150KL"
   },
   {
     "type": "source_port",
@@ -3556,7 +3590,8 @@
     "resistance": 100000,
     "display_resistance": "100kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "0402WGF1003TCE"
   },
   {
     "type": "source_port",
@@ -3603,7 +3638,8 @@
     "resistance": 150000,
     "display_resistance": "150kΩ",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "RC0402FR-07150KL"
   },
   {
     "type": "source_port",
@@ -3767,7 +3803,8 @@
     "max_decoupling_trace_length": 8,
     "display_capacitance": "100nF",
     "are_pins_interchangeable": true,
-    "source_group_id": "source_group_0"
+    "source_group_id": "source_group_0",
+    "manufacturer_part_number": "CL05B104KO5NNNC"
   },
   {
     "type": "source_net",

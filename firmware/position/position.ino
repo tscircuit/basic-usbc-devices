@@ -6,7 +6,7 @@ static void statusPoll(void){
  while(USBSerial_available()){uint8_t b=USBSerial_read();if(b=='0'||b=='1'){statusLed=b=='1';P1_5=!statusLed;}}
 }
 
-// RK09K1130A5R 10k linear potentiometer: ends at GND/VCC, wiper to P1.4.
+// RK09K1130D62 10k linear potentiometer: ends at GND/VCC, wiper to P1.4.
 // CH552E ADC is 8-bit and referenced to VCC. Averaging reduces noise, not quantization.
 void setup() { P1_5=1;pinMode(15,OUTPUT); pinMode(14, INPUT); }
 void loop() {

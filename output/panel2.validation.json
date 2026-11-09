@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T00:21:57.787Z",
+  "generatedAt": "2026-11-09T01:22:35.053Z",
   "boards": [
     {
       "name": "limit",
@@ -57,7 +57,7 @@
       "name": "position",
       "components": 16,
       "traces": 42,
-      "vias": 30,
+      "vias": 32,
       "errors": 0,
       "warnings": 0,
       "layers": 2,
@@ -70,7 +70,7 @@
       "name": "distance",
       "components": 25,
       "traces": 75,
-      "vias": 46,
+      "vias": 42,
       "errors": 0,
       "warnings": 0,
       "layers": 2,
@@ -83,7 +83,7 @@
       "name": "panel2",
       "components": 100,
       "traces": 280,
-      "vias": 172,
+      "vias": 170,
       "errors": 0,
       "warnings": 0,
       "layers": 2,

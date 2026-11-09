@@ -29,18 +29,22 @@ with zipfile.ZipFile(gerber, 'w', zipfile.ZIP_DEFLATED) as archive:
 (destination / 'panel4-gerbers.zip').write_bytes(gerber.getvalue())
 files = {'panel4-gerbers.zip': gerber.getvalue()}
 for name in ['panel4-bom.csv', 'panel4-cpl.csv', 'panel4.validation.json',
-             'status-leds.validation.json', 'panel4.pcb.png', 'panel4.pcb.svg']:
+             'status-leds.validation.json', 'panel4-sourcing.validation.json',
+             'panel4-stock-cost-audit.csv', 'panel4.pcb.png', 'panel4.pcb.svg']:
     files[name] = (out / name).read_bytes()
-for name in ['STATUS-LEDS.md', 'firmware/USB-OUTPUTS.md',
+for name in ['STATUS-LEDS.md', 'SOURCING-AUDIT.md', 'firmware/USB-OUTPUTS.md',
              'firmware/hub/ch334f-status.bin', 'firmware/hub/build-eeprom.py',
              'firmware/resetter/main.py', 'firmware/build/dial.ino.hex',
              'firmware/build-position/position.ino.hex',
              'firmware/build-display/display.ino.hex',
              'firmware/build-buzzer/buzzer.ino.hex']:
     files[name] = (root / name).read_bytes()
-files['README.txt'] = b'''Panel4, version 0.0.4: ten USB-C devices with computer-controlled LEDs
+files['README.txt'] = b'''Panel4, version 0.0.5: ten USB-C devices with computer-controlled LEDs
 112 x 140 mm, 2 layers, 1.6 mm FR-4, 1 oz copper, 0.30/0.60 mm vias.
 Upload panel4-gerbers.zip for fabrication; use the BOM and CPL for assembly.
+Use this BOM/CPL only with these revised Gerbers. Map JLCPCB Part # explicitly.
+BOM quantities are per panel; select five assembled panels in the order.
+See SOURCING-AUDIT.md for stock, cost and component substitution details.
 All coordinates in CPL are millimetres. Review the assembler's orientation preview.
 Four mounting holes per module. Depanelize and deburr before connecting modules.
 

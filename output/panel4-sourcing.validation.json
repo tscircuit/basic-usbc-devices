@@ -1,0 +1,26 @@
+{
+  "checkedOn": "2026-11-09",
+  "panels": 5,
+  "assemblyPositionsPerPanel": 252,
+  "uniqueSupplierParts": 55,
+  "allPartsHaveSupplierIds": true,
+  "allPartsHaveSufficientAvailableQuantity": true,
+  "stockReserved": false,
+  "estimatedComponentsUSD": "165.7012",
+  "estimatedComponentsPerPanelUSD": "33.14024",
+  "highestUnitPriceUSD": "2.5481",
+  "standardOnlyParts": [
+    "C91199"
+  ],
+  "excludedCosts": [
+    "PCB fabrication",
+    "assembly/setup/extended-part fees",
+    "X-ray",
+    "through-hole soldering",
+    "programming",
+    "shipping",
+    "tax",
+    "external LCD"
+  ],
+  "procurementAllowance": "Uploaded order quantities where available; otherwise catalog loss/minimum-patch estimate. Final allowance is set by JLCPCB."
+}

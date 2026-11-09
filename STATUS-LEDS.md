@@ -53,7 +53,7 @@ existing CRC and acknowledgement. These firmware LEDs start off and turn off
 on USB deconfiguration or suspend. `firmware/build-status-firmware.sh` rebuilds
 all four with CH55xDuino 0.0.26.
 
-The distance board uses a PCA9536 (C14674) at I²C address `0x41`, on the existing
+The distance board uses a TCA9536 (C3194610) at I²C address `0x41`, on the existing
 CH341T bus. IO0 sinks the LED from 3.3 V through 2 kΩ. The host tool preloads its
 output latch before changing direction and preserves the other IO bits. It
 requires the same Linux CH341 I²C driver as the distance reader. Its power-on

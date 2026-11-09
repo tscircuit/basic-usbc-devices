@@ -1,0 +1,449 @@
+{
+  "assembled_panels": 5,
+  "exported_total_usd": 564.2176000000001,
+  "distinct_matched_parts": 55,
+  "matched_partial_parts_total_usd": 149.1334,
+  "missing_input_supplier_ids": 252,
+  "matched_groups": [
+    {
+      "jlcpcb": "C530415",
+      "mpn": "GSD9605YB-5V2800",
+      "quantity": 5,
+      "group_total_usd": 3.59,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C15849",
+      "mpn": "CL10A105KB8NNNC",
+      "quantity": 95,
+      "group_total_usd": 1.0355,
+      "status": "Select by System",
+      "supply": "95 JLCPCB"
+    },
+    {
+      "jlcpcb": "C14663",
+      "mpn": "CC0603KRX7R9BB104",
+      "quantity": 200,
+      "group_total_usd": 3.1,
+      "status": "Select by System",
+      "supply": "200 JLCPCB"
+    },
+    {
+      "jlcpcb": "C1663",
+      "mpn": "CL10C330JB8NNNC",
+      "quantity": 30,
+      "group_total_usd": 0.273,
+      "status": "Select by System",
+      "supply": "30 JLCPCB"
+    },
+    {
+      "jlcpcb": "C19666",
+      "mpn": "CL10A475KO8NNNC",
+      "quantity": 20,
+      "group_total_usd": 0.3,
+      "status": "Select by System",
+      "supply": "20 JLCPCB"
+    },
+    {
+      "jlcpcb": "C19702",
+      "mpn": "CL10A106KP8NNNC",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C1525",
+      "mpn": "CL05B104KO5NNNC",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C52923",
+      "mpn": "CL05A105KA5NQNC",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C107002",
+      "mpn": "CC0402JRNPO9BN270",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C1523",
+      "mpn": "0402B102K500NT",
+      "quantity": 20,
+      "group_total_usd": 0.076,
+      "status": "Select by System",
+      "supply": "20 JLCPCB"
+    },
+    {
+      "jlcpcb": "C7519",
+      "mpn": "USBLC6-2SC6",
+      "quantity": 67,
+      "group_total_usd": 8.3214,
+      "status": "Select by System",
+      "supply": "67 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2128",
+      "mpn": "1N4148WS",
+      "quantity": 22,
+      "group_total_usd": 0.242,
+      "status": "Select by System",
+      "supply": "22 JLCPCB"
+    },
+    {
+      "jlcpcb": "C470754",
+      "mpn": "EC11E15244B2",
+      "quantity": 5,
+      "group_total_usd": 11.939,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C165948",
+      "mpn": "TYPE-C-31-M-12",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C11098",
+      "mpn": "AFC07-S50ECC-00",
+      "quantity": 5,
+      "group_total_usd": 1.3485,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2286",
+      "mpn": "KT-0603R",
+      "quantity": 55,
+      "group_total_usd": 0.4235,
+      "status": "Select by System",
+      "supply": "55 JLCPCB"
+    },
+    {
+      "jlcpcb": "C5380881",
+      "mpn": "SK6812-B",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Select by System",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C8545",
+      "mpn": "2N7002",
+      "quantity": 33,
+      "group_total_usd": 0.5511,
+      "status": "Select by System",
+      "supply": "33 JLCPCB"
+    },
+    {
+      "jlcpcb": "C20917",
+      "mpn": "AO3400A",
+      "quantity": 14,
+      "group_total_usd": 1.2446,
+      "status": "Select by System",
+      "supply": "14 JLCPCB"
+    },
+    {
+      "jlcpcb": "C209779",
+      "mpn": "RK09K1130A5R",
+      "quantity": 5,
+      "group_total_usd": 4.228,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C23186",
+      "mpn": "0603WAF5101T5E",
+      "quantity": 100,
+      "group_total_usd": 0.15,
+      "status": "Select by System",
+      "supply": "100 JLCPCB"
+    },
+    {
+      "jlcpcb": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "quantity": 105,
+      "group_total_usd": 0.231,
+      "status": "Select by System",
+      "supply": "105 JLCPCB"
+    },
+    {
+      "jlcpcb": "C22962",
+      "mpn": "0603WAF2200T5E",
+      "quantity": 30,
+      "group_total_usd": 0.057,
+      "status": "Select by System",
+      "supply": "30 JLCPCB"
+    },
+    {
+      "jlcpcb": "C22975",
+      "mpn": "0603WAF2001T5E",
+      "quantity": 65,
+      "group_total_usd": 0.156,
+      "status": "Select by System",
+      "supply": "65 JLCPCB"
+    },
+    {
+      "jlcpcb": "C23263",
+      "mpn": "0603WAF9103T5E",
+      "quantity": 30,
+      "group_total_usd": 0.054,
+      "status": "Select by System",
+      "supply": "30 JLCPCB"
+    },
+    {
+      "jlcpcb": "C22961",
+      "mpn": "0603WAF2203T5E",
+      "quantity": 30,
+      "group_total_usd": 0.045,
+      "status": "Select by System",
+      "supply": "30 JLCPCB"
+    },
+    {
+      "jlcpcb": "C21190",
+      "mpn": "0603WAF1001T5E",
+      "quantity": 35,
+      "group_total_usd": 0.0595,
+      "status": "Select by System",
+      "supply": "35 JLCPCB"
+    },
+    {
+      "jlcpcb": "C17901",
+      "mpn": "1206W4F1000T5E",
+      "quantity": 15,
+      "group_total_usd": 0.0885,
+      "status": "Select by System",
+      "supply": "15 JLCPCB"
+    },
+    {
+      "jlcpcb": "C25905",
+      "mpn": "0402WGF5101TCE",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C25156",
+      "mpn": "0402WGJ0270TCE",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C11702",
+      "mpn": "0402WGF1001TCE",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C114756",
+      "mpn": "RC0402FR-0756KL",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C25741",
+      "mpn": "0402WGF1003TCE",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C93947",
+      "mpn": "RC0402FR-07150KL",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Unconfirmed",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2681582",
+      "mpn": "JL010",
+      "quantity": 6,
+      "group_total_usd": 0.7698,
+      "status": "Select by System",
+      "supply": "6 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2930544",
+      "mpn": "K2-1102SP-Q4SC-04",
+      "quantity": 6,
+      "group_total_usd": 0.2742,
+      "status": "Select by System",
+      "supply": "6 JLCPCB"
+    },
+    {
+      "jlcpcb": "C496154",
+      "mpn": "1MS1T1B1M1QES-5",
+      "quantity": 5,
+      "group_total_usd": 5.7815,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C318884",
+      "mpn": "TS-1187A-B-A-B",
+      "quantity": 13,
+      "group_total_usd": 0.2691,
+      "status": "Select by System",
+      "supply": "13 JLCPCB"
+    },
+    {
+      "jlcpcb": "C7464026",
+      "mpn": "CH340C",
+      "quantity": 15,
+      "group_total_usd": 7.188,
+      "status": "Select by Customer",
+      "supply": "15 JLCPCB"
+    },
+    {
+      "jlcpcb": "C967938",
+      "mpn": "CH552E",
+      "quantity": 15,
+      "group_total_usd": 6.6495,
+      "status": "Select by System",
+      "supply": "15 JLCPCB"
+    },
+    {
+      "jlcpcb": "C23971",
+      "mpn": "CH341T",
+      "quantity": 5,
+      "group_total_usd": 8.104,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C5446",
+      "mpn": "XC6206P332MR-G",
+      "quantity": 17,
+      "group_total_usd": 2.5109,
+      "status": "Select by System",
+      "supply": "17 JLCPCB"
+    },
+    {
+      "jlcpcb": "C91199",
+      "mpn": "VL53L0CXV0DH/1",
+      "quantity": 0,
+      "group_total_usd": 0.0,
+      "status": "Select by System",
+      "supply": "0 JLCPCB"
+    },
+    {
+      "jlcpcb": "C14674",
+      "mpn": "PCA9536DP,118",
+      "quantity": 5,
+      "group_total_usd": 11.1375,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C5187527",
+      "mpn": "CH334F",
+      "quantity": 5,
+      "group_total_usd": 3.124,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C91874",
+      "mpn": "SN74LVC2G32DCUR",
+      "quantity": 10,
+      "group_total_usd": 3.713,
+      "status": "Select by System",
+      "supply": "10 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2674046",
+      "mpn": "TUSB321AIRWBR",
+      "quantity": 20,
+      "group_total_usd": 28.328,
+      "status": "Select by System",
+      "supply": "20 JLCPCB"
+    },
+    {
+      "jlcpcb": "C46506",
+      "mpn": "TPS2552DBVR",
+      "quantity": 20,
+      "group_total_usd": 8.93,
+      "status": "Select by System",
+      "supply": "20 JLCPCB"
+    },
+    {
+      "jlcpcb": "C79996",
+      "mpn": "AT24C02D-STUM-T",
+      "quantity": 5,
+      "group_total_usd": 2.012,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C111367",
+      "mpn": "CH552T",
+      "quantity": 5,
+      "group_total_usd": 3.116,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2040",
+      "mpn": "RP2040",
+      "quantity": 5,
+      "group_total_usd": 5.43,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C2456211",
+      "mpn": "W25Q16JVSNIQ",
+      "quantity": 5,
+      "group_total_usd": 5.8305,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C131941",
+      "mpn": "TPS22918DBVR",
+      "quantity": 5,
+      "group_total_usd": 1.71,
+      "status": "Select by System",
+      "supply": "5 JLCPCB"
+    },
+    {
+      "jlcpcb": "C9002",
+      "mpn": "X322512MSB4SI",
+      "quantity": 17,
+      "group_total_usd": 1.6218,
+      "status": "Select by System",
+      "supply": "17 JLCPCB"
+    },
+    {
+      "jlcpcb": "C1972424",
+      "mpn": "865060243005",
+      "quantity": 20,
+      "group_total_usd": 5.12,
+      "status": "Select by System",
+      "supply": "0 JLCPCB"
+    }
+  ]
+}

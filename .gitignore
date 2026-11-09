@@ -25,3 +25,6 @@ output/limit.unrouted.json
 output/limit.net-map.json
 output/dial.unrouted.json
 output/dial.net-map.json
+
+output/position.unrouted.json
+output/position.net-map.json

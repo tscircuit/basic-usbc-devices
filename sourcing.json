@@ -1,196 +1,550 @@
 {
-  "checked_on": "2026-11-08",
+  "checked_on": "2026-11-09",
   "stock_reserved": false,
   "parts": [
     {
-      "lcsc": "C14663",
-      "mpn": "CC0603KRX7R9BB104",
-      "value": "100nF",
-      "package": "C0603",
+      "lcsc": "C1523",
+      "url": "https://jlcpcb.com/partdetail/C1523",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "0402B102K500NT",
+      "package": "0402",
       "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C14663",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "available_order_quantity": 1557865,
+      "stock_checked_at": "2026-11-09T01:07:12.253092+00:00"
     },
     {
-      "lcsc": "C23186",
-      "mpn": "0603WAF5101T5E",
-      "value": "5.1k\u03a9",
-      "package": "R0603",
+      "lcsc": "C1525",
+      "url": "https://jlcpcb.com/partdetail/C1525",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "CL05B104KO5NNNC",
+      "package": "0402",
       "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C23186",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
-    },
-    {
-      "lcsc": "C15849",
-      "mpn": "CL10A105KB8NNNC",
-      "value": "1uF",
-      "package": "C0603",
-      "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C15849",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
-    },
-    {
-      "lcsc": "C165948",
-      "mpn": "TYPE-C-31-M-12",
-      "value": null,
-      "package": "USB-C_SMD-TYPE-C-31-M-12_1",
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C165948",
-      "assembly": "Economic and Standard",
-      "note": "Economic eligibility verified on JLCPCB product page"
-    },
-    {
-      "lcsc": "C7519",
-      "mpn": "USBLC6-2SC6",
-      "value": null,
-      "package": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL",
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C7519",
-      "assembly": "Economic and Standard",
-      "note": "Economic eligibility verified on JLCPCB product page"
-    },
-    {
-      "lcsc": "C25804",
-      "mpn": "0603WAF1002T5E",
-      "value": "10k\u03a9",
-      "package": "R0603",
-      "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C25804",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
-    },
-    {
-      "lcsc": "C22975",
-      "mpn": "0603WAF2001T5E",
-      "value": "2k\u03a9",
-      "package": "R0603",
-      "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C22975",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
-    },
-    {
-      "lcsc": "C84681",
-      "mpn": "CH340C",
-      "value": null,
-      "package": "SOP-16_L10.0-W3.9-P1.27-LS6.0-BL",
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C84681",
-      "assembly": "Economic and Standard",
-      "note": "Economic eligibility verified on JLCPCB product page"
-    },
-    {
-      "lcsc": "C22962",
-      "mpn": "0603WAF2200T5E",
-      "value": "220\u03a9",
-      "package": "R0603",
-      "class": "Basic Part",
-      "url": "https://jlcpcb.com/partdetail/C22962",
-      "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "available_order_quantity": 26098065,
+      "stock_checked_at": "2026-11-09T01:07:13.065316+00:00"
     },
     {
       "lcsc": "C1663",
       "mpn": "CL10C330JB8NNNC",
       "value": "33pF",
-      "package": "C0603",
+      "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C1663",
       "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "note": "Basic part",
+      "available_order_quantity": 1202799,
+      "stock_checked_at": "2026-11-09T01:07:12.760475+00:00"
     },
     {
-      "lcsc": "C2681582",
-      "mpn": "JL010",
-      "value": null,
-      "package": "SW-TH_JL010",
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C2681582",
+      "lcsc": "C2040",
+      "url": "https://jlcpcb.com/partdetail/C2040",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
       "assembly": "Economic and Standard",
-      "note": "Economic eligibility verified on JLCPCB product page"
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "RP2040",
+      "package": "LQFN-56(7x7)",
+      "class": "Extended Part",
+      "available_order_quantity": 85999,
+      "stock_checked_at": "2026-11-09T01:07:13.657267+00:00"
+    },
+    {
+      "lcsc": "C2128",
+      "url": "https://jlcpcb.com/partdetail/C2128",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "1N4148WS",
+      "package": "SOD-323",
+      "class": "Basic Part",
+      "available_order_quantity": 2278141,
+      "stock_checked_at": "2026-11-09T01:07:14.406853+00:00"
+    },
+    {
+      "lcsc": "C2286",
+      "mpn": "KT-0603R",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C2286",
+      "assembly": "Economic and Standard",
+      "note": "Computer-controlled status LED; see STATUS-LEDS.md",
+      "class": "Basic Part",
+      "available_order_quantity": 5904345,
+      "stock_checked_at": "2026-11-09T01:07:14.774598+00:00"
     },
     {
       "lcsc": "C5446",
       "mpn": "XC6206P332MR-G",
       "value": null,
-      "package": "SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR",
+      "package": "SOT-23-3L",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C5446",
       "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "note": "Basic part",
+      "available_order_quantity": 406716,
+      "stock_checked_at": "2026-11-09T01:07:17.045721+00:00"
     },
     {
-      "lcsc": "C91199",
-      "mpn": "VL53L0CXV0DH/1",
+      "lcsc": "C7519",
+      "mpn": "USBLC6-2SC6",
       "value": null,
-      "package": "OPTO-SMD_12P_VL53L0CXV0DH-1",
+      "package": "SOT-23-6L",
       "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C91199",
-      "assembly": "Standard only",
-      "note": "Standard-only classification verified on JLCPCB product page"
+      "url": "https://jlcpcb.com/partdetail/C7519",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page",
+      "available_order_quantity": 35729,
+      "stock_checked_at": "2026-11-09T01:07:17.216490+00:00"
+    },
+    {
+      "lcsc": "C8545",
+      "mpn": "2N7002",
+      "package": "SOT-23",
+      "url": "https://jlcpcb.com/partdetail/C8545",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Basic Part",
+      "available_order_quantity": 5792736,
+      "stock_checked_at": "2026-11-09T01:07:17.727741+00:00"
     },
     {
       "lcsc": "C9002",
       "mpn": "X322512MSB4SI",
       "value": "12MHz",
-      "package": "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+      "package": "SMD3225-4P",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C9002",
       "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "note": "Basic part",
+      "available_order_quantity": 203886,
+      "stock_checked_at": "2026-11-09T01:07:17.735143+00:00"
+    },
+    {
+      "lcsc": "C11098",
+      "url": "https://jlcpcb.com/partdetail/C11098",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Co",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "AFC07-S50ECC-00",
+      "package": "SMD,P=0.5mm,Surface Mount\uff0cRight Angle",
+      "class": "Extended Part",
+      "available_order_quantity": 9977,
+      "stock_checked_at": "2026-11-09T01:07:11.217662+00:00"
+    },
+    {
+      "lcsc": "C11702",
+      "url": "https://jlcpcb.com/partdetail/C11702",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "0402WGF1001TCE",
+      "package": "0402",
+      "class": "Basic Part",
+      "available_order_quantity": 30512812,
+      "stock_checked_at": "2026-11-09T01:07:11.208969+00:00"
+    },
+    {
+      "lcsc": "C14663",
+      "mpn": "CC0603KRX7R9BB104",
+      "value": "100nF",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C14663",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 23513446,
+      "stock_checked_at": "2026-11-09T01:07:12.527775+00:00"
+    },
+    {
+      "lcsc": "C15849",
+      "mpn": "CL10A105KB8NNNC",
+      "value": "1uF",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C15849",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 9599537,
+      "stock_checked_at": "2026-11-09T01:07:12.564527+00:00"
+    },
+    {
+      "lcsc": "C17901",
+      "url": "https://jlcpcb.com/partdetail/C17901",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "1206W4F1000T5E",
+      "package": "1206",
+      "class": "Basic Part",
+      "available_order_quantity": 1953224,
+      "stock_checked_at": "2026-11-09T01:07:13.097198+00:00"
     },
     {
       "lcsc": "C19666",
       "mpn": "CL10A475KO8NNNC",
       "value": "4.7uF",
-      "package": "C0603",
+      "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C19666",
       "assembly": "Economic and Standard",
-      "note": "Basic part"
+      "note": "Basic part",
+      "available_order_quantity": 3011433,
+      "stock_checked_at": "2026-11-09T01:10:43.050720+00:00"
+    },
+    {
+      "lcsc": "C19702",
+      "url": "https://jlcpcb.com/partdetail/C19702",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "CL10A106KP8NNNC",
+      "package": "0603",
+      "class": "Basic Part",
+      "available_order_quantity": 7815692,
+      "stock_checked_at": "2026-11-09T01:07:13.879257+00:00"
+    },
+    {
+      "lcsc": "C20917",
+      "url": "https://jlcpcb.com/partdetail/C20917",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "AO3400A",
+      "package": "SOT-23",
+      "class": "Basic Part",
+      "available_order_quantity": 904946,
+      "stock_checked_at": "2026-11-09T01:07:13.712248+00:00"
+    },
+    {
+      "lcsc": "C21190",
+      "mpn": "0603WAF1001T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C21190",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Basic Part",
+      "available_order_quantity": 20331395,
+      "stock_checked_at": "2026-11-09T01:07:14.363385+00:00"
+    },
+    {
+      "lcsc": "C22961",
+      "mpn": "0603WAF2203T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22961",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Basic Part",
+      "available_order_quantity": 942216,
+      "stock_checked_at": "2026-11-09T01:07:14.390701+00:00"
+    },
+    {
+      "lcsc": "C22962",
+      "mpn": "0603WAF2200T5E",
+      "value": "220\u03a9",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C22962",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 2372795,
+      "stock_checked_at": "2026-11-09T01:07:15.024205+00:00"
+    },
+    {
+      "lcsc": "C22975",
+      "mpn": "0603WAF2001T5E",
+      "value": "2k\u03a9",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C22975",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 7442099,
+      "stock_checked_at": "2026-11-09T01:07:14.823733+00:00"
+    },
+    {
+      "lcsc": "C23186",
+      "mpn": "0603WAF5101T5E",
+      "value": "5.1k\u03a9",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C23186",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 18927054,
+      "stock_checked_at": "2026-11-09T01:07:15.080955+00:00"
+    },
+    {
+      "lcsc": "C23263",
+      "mpn": "0603WAF9103T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C23263",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Extended Part",
+      "available_order_quantity": 164518,
+      "stock_checked_at": "2026-11-09T01:07:14.919198+00:00"
     },
     {
       "lcsc": "C23971",
       "mpn": "CH341T",
-      "package": "SSOP-20",
+      "package": "SSOP-20-208mil",
       "value": null,
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C23971",
       "assembly": "Economic and Standard",
-      "note": "Fixed-function USB to I2C; replaces CH341A."
+      "note": "Fixed-function USB to I2C; replaces CH341A.",
+      "available_order_quantity": 854,
+      "stock_checked_at": "2026-11-09T01:07:15.947181+00:00"
     },
     {
-      "lcsc": "C2930544",
-      "mpn": "K2-1102SP-Q4SC-04",
-      "package": "SMD 6x6mm, H12mm",
-      "value": null,
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C2930544",
+      "lcsc": "C25156",
+      "url": "https://jlcpcb.com/partdetail/C25156",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
       "assembly": "Economic and Standard",
-      "note": "12 mm total actuator height; catalog mesh corrected for preview."
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "0402WGJ0270TCE",
+      "package": "0402",
+      "class": "Extended Part",
+      "available_order_quantity": 89128,
+      "stock_checked_at": "2026-11-09T01:07:15.523651+00:00"
     },
     {
-      "lcsc": "C496154",
-      "mpn": "1MS1T1B1M1QES-5",
-      "package": "Through-hole SPDT",
-      "value": null,
-      "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/C496154",
+      "lcsc": "C25741",
+      "url": "https://jlcpcb.com/partdetail/C25741",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
       "assembly": "Economic and Standard",
-      "note": "Maintained toggle; Economic/Standard wave soldering service."
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "0402WGF1003TCE",
+      "package": "0402",
+      "class": "Basic Part",
+      "available_order_quantity": 6902962,
+      "stock_checked_at": "2026-11-09T01:10:43.349343+00:00"
+    },
+    {
+      "lcsc": "C25804",
+      "mpn": "0603WAF1002T5E",
+      "value": "10k\u03a9",
+      "package": "0603",
+      "class": "Basic Part",
+      "url": "https://jlcpcb.com/partdetail/C25804",
+      "assembly": "Economic and Standard",
+      "note": "Basic part",
+      "available_order_quantity": 37269382,
+      "stock_checked_at": "2026-11-09T01:10:42.938508+00:00"
+    },
+    {
+      "lcsc": "C25905",
+      "url": "https://jlcpcb.com/partdetail/C25905",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "0402WGF5101TCE",
+      "package": "0402",
+      "class": "Basic Part",
+      "available_order_quantity": 3719378,
+      "stock_checked_at": "2026-11-09T01:07:15.817274+00:00"
+    },
+    {
+      "lcsc": "C46506",
+      "mpn": "TPS2552DBVR",
+      "package": "SOT-23-6",
+      "url": "https://jlcpcb.com/partdetail/C46506",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Extended Part",
+      "available_order_quantity": 9956,
+      "stock_checked_at": "2026-11-09T01:07:16.449857+00:00"
+    },
+    {
+      "lcsc": "C52923",
+      "url": "https://jlcpcb.com/partdetail/C52923",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "CL05A105KA5NQNC",
+      "package": "0402",
+      "class": "Basic Part",
+      "available_order_quantity": 9259349,
+      "stock_checked_at": "2026-11-09T01:07:16.687460+00:00"
+    },
+    {
+      "lcsc": "C79996",
+      "mpn": "AT24C02D-STUM-T",
+      "package": "SOT-23-5",
+      "url": "https://jlcpcb.com/partdetail/C79996",
+      "assembly": "Economic and Standard",
+      "note": "Computer-controlled status LED; see STATUS-LEDS.md",
+      "class": "Extended Part",
+      "available_order_quantity": 6270,
+      "stock_checked_at": "2026-11-09T01:07:17.953563+00:00"
+    },
+    {
+      "lcsc": "C84681",
+      "mpn": "CH340C",
+      "value": null,
+      "package": "SOP-16",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C84681",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page",
+      "available_order_quantity": 99047,
+      "stock_checked_at": "2026-11-09T01:10:43.907697+00:00"
+    },
+    {
+      "lcsc": "C91199",
+      "mpn": "VL53L0CXV0DH/1",
+      "value": null,
+      "package": "SMD-12P,4.4x2.4mm",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C91199",
+      "assembly": "Standard Only",
+      "note": "Standard-only classification verified on JLCPCB product page",
+      "available_order_quantity": 20257,
+      "stock_checked_at": "2026-11-09T01:07:17.765563+00:00"
+    },
+    {
+      "lcsc": "C91874",
+      "mpn": "SN74LVC2G32DCUR",
+      "package": "VSSOP-8",
+      "url": "https://jlcpcb.com/partdetail/C91874",
+      "assembly": "Economic and Standard",
+      "note": "Hub; stock not reserved",
+      "class": "Extended Part",
+      "available_order_quantity": 14584,
+      "stock_checked_at": "2026-11-09T01:07:17.885870+00:00"
+    },
+    {
+      "lcsc": "C93947",
+      "url": "https://jlcpcb.com/partdetail/C93947",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "RC0402FR-07150KL",
+      "package": "0402",
+      "class": "Extended Part",
+      "available_order_quantity": 4183169,
+      "stock_checked_at": "2026-11-09T01:07:18.266339+00:00"
+    },
+    {
+      "lcsc": "C107002",
+      "url": "https://jlcpcb.com/partdetail/C107002",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "CC0402JRNPO9BN270",
+      "package": "0402",
+      "class": "Extended Part",
+      "available_order_quantity": 17897,
+      "stock_checked_at": "2026-11-09T01:07:11.622172+00:00"
+    },
+    {
+      "lcsc": "C111367",
+      "url": "https://jlcpcb.com/partdetail/C111367",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "CH552T",
+      "package": "TSSOP-20",
+      "class": "Extended Part",
+      "available_order_quantity": 1530,
+      "stock_checked_at": "2026-11-09T01:07:11.008470+00:00"
+    },
+    {
+      "lcsc": "C114756",
+      "url": "https://jlcpcb.com/partdetail/C114756",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "RC0402FR-0756KL",
+      "package": "0402",
+      "class": "Extended Part",
+      "available_order_quantity": 1163909,
+      "stock_checked_at": "2026-11-09T01:07:11.122740+00:00"
+    },
+    {
+      "lcsc": "C131941",
+      "url": "https://jlcpcb.com/partdetail/C131941",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Po",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "TPS22918DBVR",
+      "package": "SOT-23-6",
+      "class": "Extended Part",
+      "available_order_quantity": 69238,
+      "stock_checked_at": "2026-11-09T01:07:12.001412+00:00"
+    },
+    {
+      "lcsc": "C165948",
+      "mpn": "TYPE-C-31-M-12",
+      "value": null,
+      "package": "SMD",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C165948",
+      "assembly": "Economic and Standard",
+      "note": "Economic eligibility verified on JLCPCB product page",
+      "available_order_quantity": 304236,
+      "stock_checked_at": "2026-11-09T01:07:13.297008+00:00"
+    },
+    {
+      "lcsc": "C318884",
+      "url": "https://jlcpcb.com/partdetail/C318884",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Sw",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "TS-1187A-B-A-B",
+      "package": "SMD-4P,5.1x5.1mm",
+      "class": "Basic Part",
+      "available_order_quantity": 790812,
+      "stock_checked_at": "2026-11-09T01:07:16.223008+00:00"
+    },
+    {
+      "lcsc": "C470399",
+      "mpn": "RK09K1130D62",
+      "package": "Plugin",
+      "value": "10k\u03a9",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C470399",
+      "assembly": "Economic and Standard",
+      "note": "10k linear, 300 degree travel, 20 mm clear knurled shaft, updated 10 mm mounting-lug pitch.",
+      "available_order_quantity": 1497,
+      "stock_checked_at": "2026-11-09T01:11:07.598622+00:00"
     },
     {
       "lcsc": "C470754",
       "mpn": "EC11E15244B2",
-      "package": "Through-hole encoder",
+      "package": "Plugin",
       "value": null,
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C470754",
       "assembly": "Economic and Standard",
-      "note": "20 mm D-shaft; Economic/Standard wave soldering service; footprint corrected against ALPS drawing."
+      "note": "20 mm D-shaft; Economic/Standard wave soldering service; footprint corrected against ALPS drawing.",
+      "available_order_quantity": 3884,
+      "stock_checked_at": "2026-11-09T01:07:16.526631+00:00"
+    },
+    {
+      "lcsc": "C496154",
+      "mpn": "1MS1T1B1M1QES-5",
+      "package": "\u63d2\u4ef6,12.7x6.9mm",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C496154",
+      "assembly": "Economic and Standard",
+      "note": "Maintained toggle; Economic/Standard wave soldering service.",
+      "available_order_quantity": 432,
+      "stock_checked_at": "2026-11-09T01:07:16.543841+00:00"
+    },
+    {
+      "lcsc": "C530415",
+      "url": "https://jlcpcb.com/partdetail/C530415",
+      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Au",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "GSD9605YB-5V2800",
+      "package": "SMD,9.6x9.6mm",
+      "class": "Extended Part",
+      "available_order_quantity": 736,
+      "stock_checked_at": "2026-11-09T01:07:16.731831+00:00"
     },
     {
       "lcsc": "C967938",
@@ -200,267 +554,101 @@
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C967938",
       "assembly": "Economic and Standard",
-      "note": "Requires supplied USB dial firmware."
+      "note": "Requires supplied USB dial firmware.",
+      "available_order_quantity": 9244,
+      "stock_checked_at": "2026-11-09T01:07:18.310008+00:00"
     },
     {
-      "lcsc": "C209779",
-      "mpn": "RK09K1130A5R",
-      "package": "Through-hole potentiometer",
-      "value": "10k\u03a9",
+      "lcsc": "C2456211",
+      "url": "https://jlcpcb.com/partdetail/C2456211",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
+      "assembly": "Economic and Standard",
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "W25Q16JVSNIQ",
+      "package": "SOIC-8",
       "class": "Extended Part",
-      "url": "https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130A5R/C209779",
-      "assembly": "Economic and Standard",
-      "note": "Wave soldering; 10k linear, 280 degree travel, 20 mm knurled plastic shaft."
-    },
-    {
-      "lcsc": "C5187527",
-      "mpn": "CH334F",
-      "package": "QFN24 4x4",
-      "url": "https://jlcpcb.com/partdetail/C5187527",
-      "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
+      "available_order_quantity": 35402,
+      "stock_checked_at": "2026-11-09T01:07:15.404223+00:00"
     },
     {
       "lcsc": "C2674046",
       "mpn": "TUSB321AIRWBR",
-      "package": "X2QFN12 1.6x1.6",
+      "package": "X2-QFN-12(1.6x1.6)",
       "url": "https://jlcpcb.com/partdetail/C2674046",
       "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
+      "note": "Hub; stock not reserved",
+      "class": "Extended Part",
+      "available_order_quantity": 3277,
+      "stock_checked_at": "2026-11-09T01:07:15.852116+00:00"
     },
     {
-      "lcsc": "C46506",
-      "mpn": "TPS2552DBVR",
-      "package": "SOT23-6",
-      "url": "https://jlcpcb.com/partdetail/C46506",
+      "lcsc": "C2681582",
+      "mpn": "JL010",
+      "value": null,
+      "package": "\u63d2\u4ef6,12.8x5.7mm",
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C2681582",
       "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
+      "note": "Economic eligibility verified on JLCPCB product page",
+      "available_order_quantity": 4181,
+      "stock_checked_at": "2026-11-09T01:07:15.968824+00:00"
     },
     {
-      "lcsc": "C91874",
-      "mpn": "SN74LVC2G32DCUR",
-      "package": "VSSOP8",
-      "url": "https://jlcpcb.com/partdetail/C91874",
+      "lcsc": "C2930544",
+      "mpn": "K2-1102SP-Q4SC-04",
+      "package": "SMD-4P,6x6mm",
+      "value": null,
+      "class": "Extended Part",
+      "url": "https://jlcpcb.com/partdetail/C2930544",
       "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
+      "note": "12 mm total actuator height; catalog mesh corrected for preview.",
+      "available_order_quantity": 483,
+      "stock_checked_at": "2026-11-09T01:10:43.019793+00:00"
     },
     {
-      "lcsc": "C1972424",
-      "mpn": "865060243005",
-      "package": "SMD D6.3x5.5",
-      "url": "https://jlcpcb.com/partdetail/C1972424",
+      "lcsc": "C3194610",
+      "mpn": "TCA9536DGKR",
+      "package": "MSOP-8",
+      "url": "https://jlcpcb.com/partdetail/C3194610",
       "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
+      "note": "TCA9536 at 0x41; same output/configuration registers, pin-compatible DGK package.",
+      "class": "Extended Part",
+      "available_order_quantity": 777,
+      "stock_checked_at": "2026-11-09T01:10:56.287396+00:00"
     },
     {
-      "lcsc": "C22961",
-      "mpn": "0603WAF2203T5E",
-      "package": "0603",
-      "url": "https://jlcpcb.com/partdetail/C22961",
+      "lcsc": "C5187527",
+      "mpn": "CH334F",
+      "package": "QFN-24(4x4)",
+      "url": "https://jlcpcb.com/partdetail/C5187527",
       "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
-    },
-    {
-      "lcsc": "C23263",
-      "mpn": "0603WAF9103T5E",
-      "package": "0603",
-      "url": "https://jlcpcb.com/partdetail/C23263",
-      "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
-    },
-    {
-      "lcsc": "C8545",
-      "mpn": "2N7002",
-      "package": "SOT23",
-      "url": "https://jlcpcb.com/partdetail/C8545",
-      "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
-    },
-    {
-      "lcsc": "C21190",
-      "mpn": "0603WAF1001T5E",
-      "package": "0603",
-      "url": "https://jlcpcb.com/partdetail/C21190",
-      "assembly": "Economic and Standard",
-      "note": "Hub; stock not reserved"
-    },
-    {
-      "lcsc": "C111367",
-      "url": "https://jlcpcb.com/partdetail/CH552T/C111367",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C11098",
-      "url": "https://jlcpcb.com/partdetail/AFC07-S50ECC-00/C11098",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Co",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C20917",
-      "url": "https://jlcpcb.com/partdetail/AO3400A/C20917",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C17901",
-      "url": "https://jlcpcb.com/partdetail/1206W4F1000T5E/C17901",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C530415",
-      "url": "https://jlcpcb.com/partdetail/GSD9605YB-5V2800/C530415",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Au",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C2128",
-      "url": "https://jlcpcb.com/partdetail/1N4148WS/C2128",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C25905",
-      "url": "https://jlcpcb.com/partdetail/C25905",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C25156",
-      "url": "https://jlcpcb.com/partdetail/C25156",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C19702",
-      "url": "https://jlcpcb.com/partdetail/C19702",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C2040",
-      "url": "https://jlcpcb.com/partdetail/RP2040/C2040",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C1525",
-      "url": "https://jlcpcb.com/partdetail/C1525",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C52923",
-      "url": "https://jlcpcb.com/partdetail/C52923",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C2456211",
-      "url": "https://jlcpcb.com/partdetail/W25Q16JVSNIQ/C2456211",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C107002",
-      "url": "https://jlcpcb.com/partdetail/C107002",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C11702",
-      "url": "https://jlcpcb.com/partdetail/C11702",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C318884",
-      "url": "https://jlcpcb.com/partdetail/TS-1187A-B-A-B/C318884",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Sw",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C114756",
-      "url": "https://jlcpcb.com/partdetail/C114756",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C131941",
-      "url": "https://jlcpcb.com/partdetail/TPS22918DBVR/C131941",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Po",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C1523",
-      "url": "https://jlcpcb.com/partdetail/C1523",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C25741",
-      "url": "https://jlcpcb.com/partdetail/C25741",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Re",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
-    },
-    {
-      "lcsc": "C93947",
-      "url": "https://jlcpcb.com/partdetail/C93947",
-      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes V",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
+      "note": "Hub; stock not reserved",
+      "class": "Extended Part",
+      "available_order_quantity": 1108,
+      "stock_checked_at": "2026-11-09T01:10:42.911092+00:00"
     },
     {
       "lcsc": "C5380881",
-      "url": "https://jlcpcb.com/partdetail/SK6812-B/C5380881",
+      "url": "https://jlcpcb.com/partdetail/C5380881",
       "assembly_evidence": "PCBA Type Economic and Standard Assembly Difficulty High MSL Level MSL 3 Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Sp",
       "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved."
+      "note": "Catalog checked 2026-11-08; stock not reserved.",
+      "mpn": "SK6812-B",
+      "package": "SMD5050-4P",
+      "class": "Extended Part",
+      "available_order_quantity": 4808,
+      "stock_checked_at": "2026-11-09T01:07:17.004666+00:00"
     },
     {
-      "lcsc": "C2286",
-      "mpn": "KT-0603R",
-      "package": "0603",
-      "url": "https://jlcpcb.com/partdetail/C2286",
+      "lcsc": "C7469982",
+      "mpn": "FVH010ADA221M0654",
+      "package": "6.3x5.4",
+      "url": "https://jlcpcb.com/partdetail/C7469982",
       "assembly": "Economic and Standard",
-      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
-    },
-    {
-      "lcsc": "C14674",
-      "mpn": "PCA9536DP,118",
-      "package": "TSSOP-8",
-      "url": "https://jlcpcb.com/partdetail/C14674",
-      "assembly": "Economic and Standard",
-      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
-    },
-    {
-      "lcsc": "C79996",
-      "mpn": "AT24C02D-STUM-T",
-      "package": "SOT-23-5",
-      "url": "https://jlcpcb.com/partdetail/C79996",
-      "assembly": "Economic and Standard",
-      "note": "Computer-controlled status LED; see STATUS-LEDS.md"
+      "note": "220 uF / 10 V, 6.3 x 5.4 mm. FOSAN datasheet p46 land pattern; hub CPL rotation offset 180 degrees.",
+      "class": "Extended Part",
+      "available_order_quantity": 5744,
+      "stock_checked_at": "2026-11-09T01:10:57.010333+00:00"
     }
   ],
   "external_items": [

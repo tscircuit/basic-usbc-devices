@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "bun build.tsx && bun export.tsx && bun make-viewer.ts && bun verify.ts && bun render.ts panel limit button toggle dial position distance",
-    "check": "tsc --noEmit && bun verify.ts && bun verify.ts panel2 && bun verify-hub.ts && bun verify-hub-transform.tsx && bun verify-panel3.ts && bun verify-output-modules.ts && bun verify-panel4.ts && bun verify-status-leds.ts",
+    "check": "tsc --noEmit && bun verify.ts && bun verify.ts panel2 && bun verify-hub.ts && bun verify-hub-transform.tsx && bun verify-panel3.ts && bun verify-output-modules.ts && bun verify-panel4.ts && bun verify-status-leds.ts && python3 audit-bom.py",
     "test": "python3 -m unittest discover -s host -v",
     "build:panel2": "bun export.tsx panel2 && bun make-viewer.ts panel2 && bun verify.ts panel2 && bun render.ts panel2",
     "build:hub": "bun build.tsx hub && bun export-hub.ts && bun verify-hub.ts && bun render.ts hub",
@@ -14,7 +14,8 @@
     "build:display": "bun build.tsx display && bun export-module.ts display && bun render.ts display",
     "build:buzzer": "bun build.tsx buzzer && bun export-module.ts buzzer && bun render.ts buzzer",
     "build:resetter": "bun build-resetter.ts && bun export-module.ts resetter && bun render.ts resetter",
-    "build:panel4": "bun export.tsx panel4 && bun make-viewer.ts panel4 && bun verify-panel4.ts && bun render.ts panel4"
+    "build:panel4": "bun export.tsx panel4 && bun make-viewer.ts panel4 && bun verify-panel4.ts && bun render.ts panel4",
+    "check:sourcing": "python3 audit-bom.py"
   },
   "dependencies": {
     "tscircuit": "0.0.3069",
@@ -33,7 +34,7 @@
     "typescript": "5.9.3",
     "@types/bun": "1.3.14"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ten compact USB-C devices and a packed ten-board manufacturing panel",
   "repository": {
     "type": "git",

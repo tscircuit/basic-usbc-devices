@@ -1,5 +1,5 @@
 import {StatusLed} from './status-led'
-import {PCA9536DP_118} from './imports/C14674'
+import {TCA9536DGKR} from './imports/C3194610'
 import { CH341T } from './imports/C23971'
 import { VL53L0CXV0DH_1 } from './imports/C91199'
 import { XC6206P332MR_G } from './imports/C5446'
@@ -33,7 +33,7 @@ export function DistanceBoard({pcbX=0,pcbY=0,pcbRotation=0}:{pcbX?:number,pcbY?:
  <trace name="CRYSTAL_2" from=".C6 > .pin1" to=".Y1 > .pin3" pcbPathRelativeTo=".C6 > .pin1" pcbPath={[{x:-0.825,y:-1.9}]}/>
  <trace name="CRYSTAL_3" from=".C7 > .pin1" to=".Y1 > .pin1" pcbPathRelativeTo=".C7 > .pin1" pcbPath={[{x:-1.95,y:0}]}/>
  <silkscreentext text="USB DISTANCE / 30-300mm" pcbY={13.7} fontSize={0.7}/>
- <PCA9536DP_118 name="U4" pcbX={-8} pcbY={8} pcbRotation={90} noConnect={['pin2','pin3','pin5']} connections={{pin1:'net.STATUS_SINK',pin4:'net.GND',pin8:'net.V3V3',pin6:'net.SCL',pin7:'net.SDA'}}/>
+ <TCA9536DGKR name="U4" pcbX={-8} pcbY={8} pcbRotation={90} noConnect={['pin2','pin3','pin5']} connections={{pin1:'net.STATUS_SINK',pin4:'net.GND',pin8:'net.V3V3',pin6:'net.SCL',pin7:'net.SDA'}}/>
  <C name="C_STATUS" value="100nF" x={-11} y={4.7} rotation={90} a="net.V3V3"/>
  <StatusLed sink="net.STATUS_SINK" anodeSupply="net.V3V3"/>
  </schematicsheet></board>}

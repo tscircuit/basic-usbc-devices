@@ -9,7 +9,7 @@ import argparse,json,time
 from module_transport import Module
 
 def distance_led(bus,on):
-    # PCA9536 address 0x41: preload output before enabling IO0 to avoid a flash.
+    # TCA9536 address 0x41: preload output before enabling IO0 to avoid a flash.
     value=bus.read_byte_data(0x41,1)
     bus.write_byte_data(0x41,1,(value & ~1) if on else (value | 1))
     config=bus.read_byte_data(0x41,3)

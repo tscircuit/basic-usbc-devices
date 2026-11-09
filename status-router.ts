@@ -2,10 +2,12 @@ import limitRoutes from './limit-routes.json'
 import limitPorts from './limit-route-ports.json'
 import dialRoutes from './dial-routes.json'
 import dialPorts from './dial-route-ports.json'
-const caches={limit:{routes:limitRoutes,ports:limitPorts},dial:{routes:dialRoutes,ports:dialPorts}}
+import positionRoutes from './position-routes.json'
+import positionPorts from './position-route-ports.json'
+const caches={position:{routes:positionRoutes,ports:positionPorts},limit:{routes:limitRoutes,ports:limitPorts},dial:{routes:dialRoutes,ports:dialPorts}}
 // Replay checked copper through the normal pour/DRC pipeline. Regenerate both
 // cache files with route-display.ts and import-display-routes.ts after circuit edits.
-export function createStatusRouter(module:"limit"|"dial",x=0,y=0,rotation=0){return async(input:any):Promise<any>=>{
+export function createStatusRouter(module:"limit"|"dial"|"position",x=0,y=0,rotation=0){return async(input:any):Promise<any>=>{
  const {routes,ports}=caches[module]
  const angle=rotation*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle)
  const transform=(p:{x:number,y:number})=>({x:c*p.x-s*p.y+x,y:s*p.x+c*p.y+y})

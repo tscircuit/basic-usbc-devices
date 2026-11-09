@@ -3145,15 +3145,15 @@
     "source_component_id": "source_component_27",
     "ftype": "simple_capacitor",
     "name": "C12",
-    "manufacturer_part_number": "865060243005",
+    "manufacturer_part_number": "FVH010ADA221M0654",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C1972424"
+        "C7469982"
       ]
     },
-    "capacitance": 0.00015,
+    "capacitance": 0.00022,
     "max_voltage_rating": 10,
-    "display_capacitance": "150uF",
+    "display_capacitance": "220uF",
     "are_pins_interchangeable": false,
     "source_group_id": "source_group_0"
   },
@@ -4225,15 +4225,15 @@
     "source_component_id": "source_component_40",
     "ftype": "simple_capacitor",
     "name": "C22",
-    "manufacturer_part_number": "865060243005",
+    "manufacturer_part_number": "FVH010ADA221M0654",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C1972424"
+        "C7469982"
       ]
     },
-    "capacitance": 0.00015,
+    "capacitance": 0.00022,
     "max_voltage_rating": 10,
-    "display_capacitance": "150uF",
+    "display_capacitance": "220uF",
     "are_pins_interchangeable": false,
     "source_group_id": "source_group_0"
   },
@@ -5305,15 +5305,15 @@
     "source_component_id": "source_component_53",
     "ftype": "simple_capacitor",
     "name": "C32",
-    "manufacturer_part_number": "865060243005",
+    "manufacturer_part_number": "FVH010ADA221M0654",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C1972424"
+        "C7469982"
       ]
     },
-    "capacitance": 0.00015,
+    "capacitance": 0.00022,
     "max_voltage_rating": 10,
-    "display_capacitance": "150uF",
+    "display_capacitance": "220uF",
     "are_pins_interchangeable": false,
     "source_group_id": "source_group_0"
   },
@@ -6385,15 +6385,15 @@
     "source_component_id": "source_component_66",
     "ftype": "simple_capacitor",
     "name": "C42",
-    "manufacturer_part_number": "865060243005",
+    "manufacturer_part_number": "FVH010ADA221M0654",
     "supplier_part_numbers": {
       "jlcpcb": [
-        "C1972424"
+        "C7469982"
       ]
     },
-    "capacitance": 0.00015,
+    "capacitance": 0.00022,
     "max_voltage_rating": 10,
-    "display_capacitance": "150uF",
+    "display_capacitance": "220uF",
     "are_pins_interchangeable": false,
     "source_group_id": "source_group_0"
   },
@@ -11940,7 +11940,7 @@
     "is_box_with_pins": true,
     "symbol_name": "capacitor_polarized_right",
     "schematic_sheet_id": "schematic_sheet_0",
-    "symbol_display_value": "150uF",
+    "symbol_display_value": "220uF",
     "schematic_group_id": "schematic_group_0"
   },
   {
@@ -12297,7 +12297,7 @@
     "is_box_with_pins": true,
     "symbol_name": "capacitor_polarized_right",
     "schematic_sheet_id": "schematic_sheet_0",
-    "symbol_display_value": "150uF",
+    "symbol_display_value": "220uF",
     "schematic_group_id": "schematic_group_0"
   },
   {
@@ -12654,7 +12654,7 @@
     "is_box_with_pins": true,
     "symbol_name": "capacitor_polarized_right",
     "schematic_sheet_id": "schematic_sheet_0",
-    "symbol_display_value": "150uF",
+    "symbol_display_value": "220uF",
     "schematic_group_id": "schematic_group_0"
   },
   {
@@ -13011,7 +13011,7 @@
     "is_box_with_pins": true,
     "symbol_name": "capacitor_polarized_right",
     "schematic_sheet_id": "schematic_sheet_0",
-    "symbol_display_value": "150uF",
+    "symbol_display_value": "220uF",
     "schematic_group_id": "schematic_group_0"
   },
   {
@@ -36122,7 +36122,7 @@
       "x": -15,
       "y": -12.426
     },
-    "width": 9.100000000000001,
+    "width": 8.899999999999999,
     "height": 1.6000000000000014,
     "layer": "top",
     "rotation": 0,
@@ -36464,7 +36464,7 @@
       "x": -6.58,
       "y": -4.753
     },
-    "width": 9.099999999999998,
+    "width": 8.900000000000002,
     "height": 1.5999999999999996,
     "layer": "top",
     "rotation": 0,
@@ -36806,7 +36806,7 @@
       "x": 6.58,
       "y": -4.91
     },
-    "width": 9.099999999999998,
+    "width": 8.900000000000002,
     "height": 1.5999999999999996,
     "layer": "top",
     "rotation": 0,
@@ -37148,7 +37148,7 @@
       "x": 15,
       "y": -12.426
     },
-    "width": 9.100000000000001,
+    "width": 8.899999999999999,
     "height": 1.6000000000000014,
     "layer": "top",
     "rotation": 0,
@@ -44986,7 +44986,7 @@
       "pin1"
     ],
     "is_covered_with_solder_mask": false,
-    "x": -12.2,
+    "x": -12.3,
     "y": -12.426,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -44997,7 +44997,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": -12.2,
+    "x": -12.3,
     "y": -12.426,
     "pcb_component_id": "pcb_component_27",
     "pcb_smtpad_id": "pcb_smtpad_133",
@@ -45016,7 +45016,7 @@
       "pin2"
     ],
     "is_covered_with_solder_mask": false,
-    "x": -17.8,
+    "x": -17.7,
     "y": -12.426,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -45027,7 +45027,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": -17.8,
+    "x": -17.7,
     "y": -12.426,
     "pcb_component_id": "pcb_component_27",
     "pcb_smtpad_id": "pcb_smtpad_134",
@@ -48357,7 +48357,7 @@
       "pin1"
     ],
     "is_covered_with_solder_mask": false,
-    "x": -3.7800000000000002,
+    "x": -3.88,
     "y": -4.753,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -48368,7 +48368,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": -3.7800000000000002,
+    "x": -3.88,
     "y": -4.753,
     "pcb_component_id": "pcb_component_40",
     "pcb_smtpad_id": "pcb_smtpad_188",
@@ -48387,7 +48387,7 @@
       "pin2"
     ],
     "is_covered_with_solder_mask": false,
-    "x": -9.379999999999999,
+    "x": -9.280000000000001,
     "y": -4.753,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -48398,7 +48398,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": -9.379999999999999,
+    "x": -9.280000000000001,
     "y": -4.753,
     "pcb_component_id": "pcb_component_40",
     "pcb_smtpad_id": "pcb_smtpad_189",
@@ -51728,7 +51728,7 @@
       "pin1"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 9.379999999999999,
+    "x": 9.280000000000001,
     "y": -4.91,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -51739,7 +51739,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": 9.379999999999999,
+    "x": 9.280000000000001,
     "y": -4.91,
     "pcb_component_id": "pcb_component_53",
     "pcb_smtpad_id": "pcb_smtpad_243",
@@ -51758,7 +51758,7 @@
       "pin2"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 3.7800000000000002,
+    "x": 3.88,
     "y": -4.91,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -51769,7 +51769,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": 3.7800000000000002,
+    "x": 3.88,
     "y": -4.91,
     "pcb_component_id": "pcb_component_53",
     "pcb_smtpad_id": "pcb_smtpad_244",
@@ -55101,7 +55101,7 @@
       "pin1"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 17.8,
+    "x": 17.7,
     "y": -12.426,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -55112,7 +55112,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": 17.8,
+    "x": 17.7,
     "y": -12.426,
     "pcb_component_id": "pcb_component_66",
     "pcb_smtpad_id": "pcb_smtpad_298",
@@ -55131,7 +55131,7 @@
       "pin2"
     ],
     "is_covered_with_solder_mask": false,
-    "x": 12.2,
+    "x": 12.3,
     "y": -12.426,
     "subcircuit_id": "subcircuit_source_group_0"
   },
@@ -55142,7 +55142,7 @@
     "shape": "rect",
     "width": 2.4499999999999997,
     "height": 1.1199999999999999,
-    "x": 12.2,
+    "x": 12.3,
     "y": -12.426,
     "pcb_component_id": "pcb_component_66",
     "pcb_smtpad_id": "pcb_smtpad_299",
@@ -58316,7 +58316,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": -17.8,
+    "x": -17.7,
     "y": -12.426,
     "source_port_id": "source_port_141"
   },
@@ -58328,7 +58328,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": -12.2,
+    "x": -12.3,
     "y": -12.426,
     "source_port_id": "source_port_142"
   },
@@ -59028,7 +59028,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": -9.379999999999999,
+    "x": -9.280000000000001,
     "y": -4.753,
     "source_port_id": "source_port_200"
   },
@@ -59040,7 +59040,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": -3.7800000000000002,
+    "x": -3.88,
     "y": -4.753,
     "source_port_id": "source_port_201"
   },
@@ -59740,7 +59740,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 3.7800000000000002,
+    "x": 3.88,
     "y": -4.91,
     "source_port_id": "source_port_259"
   },
@@ -59752,7 +59752,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 9.379999999999999,
+    "x": 9.280000000000001,
     "y": -4.91,
     "source_port_id": "source_port_260"
   },
@@ -60452,7 +60452,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 12.2,
+    "x": 12.3,
     "y": -12.426,
     "source_port_id": "source_port_318"
   },
@@ -60464,7 +60464,7 @@
       "top"
     ],
     "subcircuit_id": "subcircuit_source_group_0",
-    "x": 17.8,
+    "x": 17.7,
     "y": -12.426,
     "source_port_id": "source_port_319"
   },
@@ -73766,13 +73766,13 @@
       {
         "route_type": "wire",
         "x": -6.312600000000001,
-        "y": -4.5704,
+        "y": -4.6904,
         "width": 0.15,
         "layer": "top"
       },
       {
         "route_type": "wire",
-        "x": -7.5319,
+        "x": -7.4119,
         "y": -5.7897,
         "width": 0.15,
         "layer": "top"

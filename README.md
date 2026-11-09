@@ -8,7 +8,7 @@ Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed i
 | Pushbutton | CH340C + K2-1102SP-Q4SC-04 normally open button, 12 mm tall actuator | `pressed` / `released` |
 | Maintained toggle | CH340C + Dailywell 1MS1T1B1M1QES-5 SPDT lever | `on` / `off` |
 | Rotary dial | CH552E + ALPS EC11E15244B2, 20 mm D-shaft, push switch | Relative detent count and push state |
-| Absolute-position dial | CH552E + ALPS RK09K1130A5R 10 kΩ linear potentiometer | Absolute 0–255 reading / calibrated 0–100% |
+| Absolute-position dial | CH552E + ALPS RK09K1130D62 10 kΩ linear potentiometer | Absolute 0–255 reading / calibrated 0–100% |
 | Distance | CH341T + VL53L0CXV0DH/1 | millimeters and threshold state; target 30–300 mm |
 | Display adapter | CH552T + ILI9488 50-pin parallel LCD interface | Host sends RGB565 pixels and commands over USB CDC |
 | USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
@@ -25,7 +25,9 @@ The maintained toggle uses [C496154](https://jlcpcb.com/partdetail/C496154), a p
 
 The dial uses [C470754](https://jlcpcb.com/partdetail/C470754), an ALPS EC11E15244B2 continuous encoder, centered at (0, 6.5) mm. It has 30 detents, 15 pulses per revolution, a push switch, and a 6 mm D-shaft with 4.5 mm flat dimension. ALPS specifies 20 mm shaft length from the case datum; shaft tip is approximately 24.5 mm above PCB top. `mechanical/dial-knob.scad` and `.stl` provide an 18 mm printed knob with an 8 mm-deep D socket and adjustable 0.25 mm clearance. Print a fit coupon first. Leave at least 1.5 mm axial travel plus tolerance if using the push function. The PCB footprint was corrected to the ALPS drawing 3 (2.5 mm contact pitch, 11 mm anchor-center spacing, A/B/C at −7.5 mm and D/E at +7 mm from the anchor centerline).
 
-The absolute-position dial uses [C209779](https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130A5R/C209779), an ALPS RK09K1130A5R 10 kΩ linear potentiometer with 280° ±5° mechanical travel and a 20 mm-high, 6 mm-diameter knurled plastic shaft. The shaft center is (0, 6.5) mm. `mechanical/position-knob.stl` has a 6 mm round friction-fit socket for its 7 mm knurled section; adjust `shaft_style="round"` and `round_diameter` in `dial-knob.scad` to suit printing tolerances. This potentiometer has no push switch. It retains physical position without power.
+The v0.0.5 stock/cost audit and revised BOM are documented in [SOURCING-AUDIT.md](SOURCING-AUDIT.md). All 55 selected PCB part numbers had sufficient available quantity for five panels on 2026-11-09. Estimated component cost is $33.14 per panel, before assembly and other services. Use the revised BOM and CPL with the revised Gerbers.
+
+The absolute-position dial uses [C470399](https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130D62/C470399), an ALPS RK09K1130D62 10 kΩ linear potentiometer with 300° ±5° mechanical travel and a 20 mm-high, 6 mm-diameter knurled plastic shaft. The shaft center is (0, 6.5) mm. `mechanical/position-knob.stl` has a 6 mm round friction-fit socket for its 7 mm knurled section; adjust `shaft_style="round"` and `round_diameter` in `dial-knob.scad` to suit printing tolerances. This potentiometer has no push switch. It retains physical position without power.
 
 The six original modules, buzzer and display adapter have mounting centers **(±9.5, ±12.5) mm**, with four 2.2 mm NPTH holes and 4.6 mm diameter screw-head keepouts. PCB thickness is 1.6 mm. Use M2 hardware without larger washers; hardware and printed parts are not assembly BOM items. USB connectors face negative Y. The identical base pattern supports a common enclosure mounting plate; lid openings differ by actuator. Keep the sensor optics and limit lever unobstructed.
 
