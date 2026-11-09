@@ -42,7 +42,7 @@ for name in ['STATUS-LEDS.md', 'SOURCING-AUDIT.md', 'branding/README.md', 'firmw
              'firmware/build-display/display.ino.hex',
              'firmware/build-buzzer/buzzer.ino.hex']:
     files[name] = (root / name).read_bytes()
-files['README.txt'] = b'''Panel4, version 0.0.6: ten USB-C devices with status LEDs and tscircuit silkscreen
+files['README.txt'] = b'''Panel4, version 0.0.7: ten USB-C devices with status LEDs and tscircuit silkscreen
 112 x 140 mm, 2 layers, 1.6 mm FR-4, 1 oz copper, 0.30/0.60 mm vias.
 Upload panel4-gerbers.zip for fabrication; use the BOM and CPL for assembly.
 Use this BOM/CPL only with these revised Gerbers. Map JLCPCB Part # explicitly.

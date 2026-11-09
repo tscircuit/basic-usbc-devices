@@ -176,4 +176,4 @@ All ten boards now support computer-controlled status indication. The eight boar
 
 ## Board silkscreen
 
-All ten devices have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.6 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.
+All ten devices have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.7 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.

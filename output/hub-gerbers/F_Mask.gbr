@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,tscircuit,circuit-json-to-gerber,0.0.119*%
-%TF.CreationDate,2026-11-09T02:08:26.439Z*%
+%TF.CreationDate,2026-11-09T03:35:16.799Z*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Soldermask,Top*%
 %TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 %MOMM*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by tscircuit (builder) date 2026-11-09T02:08:26.439Z*
+G04 Created by tscircuit (builder) date 2026-11-09T03:35:16.799Z*
 G01*
 %LPD*%
 G75*

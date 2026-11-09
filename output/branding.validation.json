@@ -1,23 +1,26 @@
 [
   {
+    "backTextAlignment": "left",
     "board": "limit",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.01,
-    "bottomClearanceBeyondExclusionMm": 0.058
+    "bottomClearanceBeyondExclusionMm": 0.1085
   },
   {
+    "backTextAlignment": "left",
     "board": "button",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.0929,
-    "bottomClearanceBeyondExclusionMm": 0.1202
+    "bottomClearanceBeyondExclusionMm": 0.041
   },
   {
+    "backTextAlignment": "left",
     "board": "toggle",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
@@ -27,6 +30,7 @@
     "bottomClearanceBeyondExclusionMm": 0.0401
   },
   {
+    "backTextAlignment": "left",
     "board": "dial",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
@@ -36,6 +40,7 @@
     "bottomClearanceBeyondExclusionMm": 0.0394
   },
   {
+    "backTextAlignment": "left",
     "board": "position",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
@@ -45,24 +50,27 @@
     "bottomClearanceBeyondExclusionMm": 0.1295
   },
   {
+    "backTextAlignment": "left",
     "board": "distance",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.0913,
-    "bottomClearanceBeyondExclusionMm": 0.199
+    "bottomClearanceBeyondExclusionMm": 0.0107
   },
   {
+    "backTextAlignment": "left",
     "board": "hub",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.04,
-    "bottomClearanceBeyondExclusionMm": 0.0534
+    "bottomClearanceBeyondExclusionMm": 0.0064
   },
   {
+    "backTextAlignment": "left",
     "board": "display",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
@@ -72,21 +80,23 @@
     "bottomClearanceBeyondExclusionMm": 0.0999
   },
   {
+    "backTextAlignment": "left",
     "board": "resetter",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.0442,
-    "bottomClearanceBeyondExclusionMm": 0.1607
+    "bottomClearanceBeyondExclusionMm": 0.0002
   },
   {
+    "backTextAlignment": "left",
     "board": "buzzer",
     "backText": "Made by AI with tscircuit",
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.15,
-    "bottomClearanceBeyondExclusionMm": 0.0555
+    "bottomClearanceBeyondExclusionMm": 0.7591
   }
 ]

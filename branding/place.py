@@ -54,6 +54,8 @@ if __name__=='__main__':
   for size in [5,4.5,4]:
    variants=[{'logo':[-8.8,0],'text':[[2.8,1.1],[2.8,-1.1]]},{'logo':[0,3],'text':[[0,-1.3],[0,-3.5]]}]
    for v in variants:
+    # Align visible left ink edges in the rear-facing view.
+    v["text"][0][0]+=text_shape("with tscircuit",1.7).bounds[0]-text_shape("Made by AI",1.7).bounds[0]
     art=translate(scale(logo,size,size,origin=(0,0)),*v['logo']);art=unary_union([art]+[translate(text_shape(t,1.7),*pos)for t,pos in zip(['Made by AI','with tscircuit'],v['text'])]);art=scale(art,-1,1,origin=(0,0))
     xy=search(art,back,board)
     if xy:

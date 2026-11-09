@@ -22539,7 +22539,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -10.1554,
+      "x": -12.55892742194978,
       "y": 51.6
     },
     "anchor_alignment": "center",
@@ -45782,7 +45782,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 16.4446,
+      "x": 14.341072578050218,
       "y": 50.8
     },
     "anchor_alignment": "center",
@@ -45798,7 +45798,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 16.4446,
+      "x": 16.7446,
       "y": 53
     },
     "anchor_alignment": "center",
@@ -69405,7 +69405,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -10.5554,
+      "x": -12.958927421949781,
       "y": 18.6
     },
     "anchor_alignment": "center",
@@ -95961,7 +95961,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 13.2446,
+      "x": 10.84107257805022,
       "y": 18.9583
     },
     "anchor_alignment": "center",
@@ -125910,7 +125910,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -13.355400000000001,
+      "x": -15.758927421949782,
       "y": -14.0417
     },
     "anchor_alignment": "center",
@@ -161500,8 +161500,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 14.4446,
-      "y": -12.8417
+      "x": 12.541072578050219,
+      "y": -12.9417
     },
     "anchor_alignment": "center",
     "ccw_rotation": 180,
@@ -161516,8 +161516,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 14.4446,
-      "y": -10.6417
+      "x": 14.9446,
+      "y": -10.7417
     },
     "anchor_alignment": "center",
     "ccw_rotation": 180,
@@ -269502,8 +269502,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -5.3446,
-      "y": -49.6
+      "x": -2.8410725780502193,
+      "y": -49.7
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,
@@ -269518,8 +269518,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -5.3446,
-      "y": -51.8
+      "x": -5.2446,
+      "y": -51.9
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,

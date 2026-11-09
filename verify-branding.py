@@ -14,7 +14,9 @@ for name in names:
  b=next(e for e in j if e['type']=='pcb_board');board=box(-b['width']/2+.5,-b['height']/2+.5,b['width']/2-.5,b['height']/2-.5)
  texts=[e for e in brand if e['type']=='pcb_silkscreen_text'];assert ' '.join(e['text']for e in texts)=='Made by AI with tscircuit'
  assert all(e['layer']=='bottom'and e.get('is_mirrored')is True and e['font_size']*.09>=.15 for e in texts)
- result={'board':name,'backText':'Made by AI with tscircuit','backTextStrokeMm':.153,'frontLogo':False,'backLogo':False}
+ left_edges=[-e['anchor_position']['x']+text_shape(e['text'],e['font_size']).bounds[0]for e in texts]
+ assert abs(left_edges[0]-left_edges[1])<1e-8,f'{name}: attribution is not left aligned'
+ result={'backTextAlignment':'left','board':name,'backText':'Made by AI with tscircuit','backTextStrokeMm':.153,'frontLogo':False,'backLogo':False}
  for layer in ['top','bottom']:
   geom=[]
   for e in brand:

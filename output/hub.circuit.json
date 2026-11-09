@@ -107942,8 +107942,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -5.3446,
-      "y": -0.09999999999999987
+      "x": -2.8410725780502193,
+      "y": -0.19999999999999987
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,
@@ -107958,8 +107958,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -5.3446,
-      "y": -2.3
+      "x": -5.2446,
+      "y": -2.4
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,

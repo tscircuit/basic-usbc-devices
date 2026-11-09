@@ -18533,7 +18533,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -70.8446,
+      "x": -68.44107257805022,
       "y": 3.9
     },
     "anchor_alignment": "center",
@@ -37793,7 +37793,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -43.4446,
+      "x": -41.341072578050216,
       "y": 4.7
     },
     "anchor_alignment": "center",
@@ -37809,7 +37809,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -43.4446,
+      "x": -43.7446,
       "y": 2.5
     },
     "anchor_alignment": "center",
@@ -57524,7 +57524,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": -16.4446,
+      "x": -14.041072578050219,
       "y": 3.9
     },
     "anchor_alignment": "center",
@@ -79174,7 +79174,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 13.7554,
+      "x": 16.15892742194978,
       "y": 3.5417000000000005
     },
     "anchor_alignment": "center",
@@ -104428,7 +104428,7 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 40.3554,
+      "x": 42.75892742194978,
       "y": 3.5417000000000005
     },
     "anchor_alignment": "center",
@@ -132733,8 +132733,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 66.5554,
-      "y": 2.3417000000000003
+      "x": 68.45892742194978,
+      "y": 2.4417000000000004
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,
@@ -132749,8 +132749,8 @@
     "font": "tscircuit2024",
     "font_size": 1.7,
     "anchor_position": {
-      "x": 66.5554,
-      "y": 0.14170000000000016
+      "x": 66.0554,
+      "y": 0.24170000000000016
     },
     "anchor_alignment": "center",
     "ccw_rotation": 0,
