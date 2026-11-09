@@ -26,7 +26,7 @@ export function composePanel(positions:{x:number,y:number,rotation?:number,name?
    if(e.type==='pcb_plated_hole')e.ccw_rotation=((e.ccw_rotation??0)+rotation)%360
    // transformPCBElement does not yet translate BREP copper pours.
    if(e.type==='cad_component')e.rotation.z=(e.rotation.z+rotation)%360
-   if(e.type==='pcb_copper_pour')shiftPoints(e.brep_shape)
+   if(e.type==='pcb_copper_pour'||e.type==='pcb_silkscreen_graphic')shiftPoints(e.brep_shape)
   }
   raw.push(...shifted)
  }

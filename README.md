@@ -173,3 +173,7 @@ Panel4 validation checks all ten populated schematic sheets, 40 mounting holes, 
 ## Computer-controlled status LEDs
 
 All ten boards now support computer-controlled status indication. The eight boards with the common 19 × 25 mm mounting pattern place their LED 3.5 mm inward from the lower-left mounting hole, at the same coordinates and orientation. The hub and resetter use documented exceptions. Board and panel dimensions are unchanged. See [LED controls, enclosure coordinates, firmware, and hub EEPROM programming](STATUS-LEDS.md). Program the supplied hub EEPROM image before assembly; a blank EEPROM does not enable its host-controlled indicator.
+
+## Board silkscreen
+
+All ten devices have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.6 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.

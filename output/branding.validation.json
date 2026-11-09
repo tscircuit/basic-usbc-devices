@@ -1,0 +1,92 @@
+[
+  {
+    "board": "limit",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.01,
+    "bottomClearanceBeyondExclusionMm": 0.058
+  },
+  {
+    "board": "button",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.0929,
+    "bottomClearanceBeyondExclusionMm": 0.1202
+  },
+  {
+    "board": "toggle",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.0929,
+    "bottomClearanceBeyondExclusionMm": 0.0401
+  },
+  {
+    "board": "dial",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.1,
+    "bottomClearanceBeyondExclusionMm": 0.0394
+  },
+  {
+    "board": "position",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.0,
+    "bottomClearanceBeyondExclusionMm": 0.1295
+  },
+  {
+    "board": "distance",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.0913,
+    "bottomClearanceBeyondExclusionMm": 0.199
+  },
+  {
+    "board": "hub",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.04,
+    "bottomClearanceBeyondExclusionMm": 0.0534
+  },
+  {
+    "board": "display",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.25,
+    "bottomClearanceBeyondExclusionMm": 0.0999
+  },
+  {
+    "board": "resetter",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.0442,
+    "bottomClearanceBeyondExclusionMm": 0.1607
+  },
+  {
+    "board": "buzzer",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 0.15,
+    "bottomClearanceBeyondExclusionMm": 0.0555
+  }
+]

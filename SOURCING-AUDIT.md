@@ -5,7 +5,7 @@ manufacturer part numbers, package names and sufficient publicly available order
 quantity for **five panels**, including the estimated assembly allowance. This is
 a dated stock check, not a reservation or purchase.
 
-Use `output/panel4-bom.csv` and `output/panel4-cpl.csv` together with the **v0.0.5
+Use `output/panel4-bom.csv` and `output/panel4-cpl.csv` together with the **v0.0.6
 Gerbers**. The potentiometer footprint and nearby routing changed. Do not use the
 new BOM with earlier Gerbers. Map **JLCPCB Part #** explicitly on import; do not
 accept a different automatically selected part number. Quantity is **per panel**;

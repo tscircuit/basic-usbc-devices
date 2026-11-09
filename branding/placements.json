@@ -1,0 +1,282 @@
+{
+  "limit": {
+    "back": {
+      "logo": {
+        "x": 8.255400000000002,
+        "y": 2.8,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -3.3446,
+          "y": 3.9,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -3.3446,
+          "y": 1.6999999999999997,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": -9.1,
+      "y": 6.7,
+      "size": 4
+    }
+  },
+  "button": {
+    "back": {
+      "logo": {
+        "x": 8.6554,
+        "y": 3.6,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -2.9446,
+          "y": 4.7,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -2.9446,
+          "y": 2.5,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 7.7,
+      "y": 6.7,
+      "size": 4
+    }
+  },
+  "toggle": {
+    "back": {
+      "logo": {
+        "x": 8.6554,
+        "y": 2.8,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -2.9446,
+          "y": 3.9,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -2.9446,
+          "y": 1.6999999999999997,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 8.9,
+      "y": 6.7,
+      "size": 4
+    }
+  },
+  "dial": {
+    "back": {
+      "logo": {
+        "x": 0.2554,
+        "y": 7.8417,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": 0.2554,
+          "y": 3.5417000000000005,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": 0.2554,
+          "y": 1.3417000000000003,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": -9.1,
+      "y": 7.5,
+      "size": 4
+    }
+  },
+  "position": {
+    "back": {
+      "logo": {
+        "x": -0.1446,
+        "y": 7.8417,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -0.1446,
+          "y": 3.5417000000000005,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -0.1446,
+          "y": 1.3417000000000003,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 8.9,
+      "y": 5.9,
+      "size": 4
+    }
+  },
+  "distance": {
+    "back": {
+      "logo": {
+        "x": -0.9446,
+        "y": 6.6417,
+        "size": 4.5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -0.9446,
+          "y": 2.3417000000000003,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -0.9446,
+          "y": 0.14170000000000016,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 9.6,
+      "y": 9.4,
+      "size": 3
+    }
+  },
+  "hub": {
+    "back": {
+      "logo": {
+        "x": 6.255400000000001,
+        "y": -1.2,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -5.3446,
+          "y": -0.09999999999999987,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -5.3446,
+          "y": -2.3,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 3.2,
+      "y": -10.2,
+      "size": 3
+    }
+  },
+  "display": {
+    "back": {
+      "logo": {
+        "x": 8.6554,
+        "y": 4.0,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -2.9446,
+          "y": 5.1,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -2.9446,
+          "y": 2.9,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": -5.9,
+      "y": 3.1,
+      "size": 4
+    }
+  },
+  "resetter": {
+    "back": {
+      "logo": {
+        "x": 6.8554,
+        "y": 3.2,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -4.7446,
+          "y": 4.300000000000001,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -4.7446,
+          "y": 2.1,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": -9.3,
+      "y": 3.1,
+      "size": 4
+    }
+  },
+  "buzzer": {
+    "back": {
+      "logo": {
+        "x": 8.6554,
+        "y": 3.2,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -2.9446,
+          "y": 4.300000000000001,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -2.9446,
+          "y": 2.1,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": 1.85,
+      "y": -0.35,
+      "size": 3.5
+    }
+  }
+}
