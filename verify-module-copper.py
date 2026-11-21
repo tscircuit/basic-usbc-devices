@@ -1,13 +1,14 @@
 """Audit physical connectivity of a finished Circuit JSON, including pours.
 Run: python3 verify-module-copper.py display buzzer resetter
 """
-import json,sys,math
+import argparse,json,math
+from pathlib import Path
 from shapely.geometry import Point,LineString,Polygon,box
 from shapely.affinity import rotate
 from shapely.ops import unary_union
 
-def audit(name):
- j=json.load(open(f'output/{name}.circuit.json'));parent={}
+def audit(name, directory):
+ j=json.load(open(directory / f'{name}.circuit.json'));parent={}
  def root(x):
   while x in parent:x=parent[x]
   return x
@@ -92,7 +93,12 @@ def audit(name):
     connected=[p for n,pl,pg,p in pads if n==net and any(rt(i)==group and pl==l and pg.intersects(g) for i,(l,g) in enumerate(chunks))]
     print('island',labels.get(net,net),[(next((e.get('name') for e in j if e['type']=='source_port' and e['source_port_id']==p),'?'), next(((e['x'],e['y']) for e in pp.values() if e['source_port_id']==p),None)) for p in set(connected)],flush=True)
  report=dict(checkedNets=len({n for n,l,g,p in pads}),disconnectedNets=disconnected,includesFinalGroundPour=True)
- json.dump(report,open(f'output/{name}.physical-connectivity.json','w'),indent=2)
+ json.dump(report,open(directory / f'{name}.physical-connectivity.json','w'),indent=2)
  print(name,report,flush=True)
  assert not disconnected,disconnected
-for name in sys.argv[1:]:audit(name)
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--directory', type=Path, default=Path('output'))
+parser.add_argument('boards', nargs='+')
+args = parser.parse_args()
+for name in args.boards:
+ audit(name, args.directory)
