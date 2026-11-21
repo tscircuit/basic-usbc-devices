@@ -1,3 +1,5 @@
+import { savedRouter } from "../saved-router";
+import copper from "./ereader-copper.json";
 import { boardRules, R, C, Wiring } from "../common";
 import { DisplayUsb } from "./display-usb";
 import { DisplayMounts } from "./mounts";
@@ -45,6 +47,8 @@ export default function Ereader() {
   return (
     <board
       {...boardRules}
+      autorouter={{ local: true, algorithmFn: savedRouter(copper) }}
+      routeRemaining
       name="ereader"
       width={36}
       height={38}

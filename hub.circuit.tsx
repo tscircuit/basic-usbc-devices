@@ -84,7 +84,7 @@ export function HubBoard({routingDisabled=false,pcbX=0,pcbY=0,pcbRotation=0}:{ro
  <trace width={0.2} name="CLOCK_C5" from=".C5 > .pin1" to=".Y1 > .pin3" pcbPath={[{x:-1.15,y:-0.7},{x:-1.15,y:-2.3999254}]}/>
  <trace width={0.2} name="CLOCK_C6" from=".C6 > .pin1" to=".Y1 > .pin1" pcbPath={[{x:-0.825,y:1.2},{x:0.55,y:1.2},{x:0.55,y:2.3999254}]}/>
  <silkscreentext text="USB 2.0 HUB / CH334F / HOST POWER" pcbX={0} pcbY={-20.2} fontSize={0.65}/>
- <StatusLed x={-19} y={-8} rx={-20.8} ry={-10.5} resistance="1k" sink="net.HUB_LED4" anodeSupply="net.HUB_LED2" schX={-4} schY={-10}/>
+ <StatusLed x={-19} y={-8} rx={-20.8} ry={-10.5} resistance="1k" sink="net.HUB_LED4" anodeSupply="net.HUB_LED2" schX={-5.9} schY={-8.2}/>
  <AT24C02D_STUM_T name="U_STATUS" pcbX={-11.5} pcbY={8.25} pcbRotation={90} schX={-9} schY={-10} connections={{pin1:'net.HUB_SCL',pin2:'net.GND',pin3:'net.HUB_LED4',pin4:'net.V3V3',pin5:'net.GND'}}/>
  <BaseC name="C_STATUS" value="100nF" x={-4} y={-10.5} a="net.V3V3" schX={-12} schY={-10}/>
  <Wiring nets={{HUB_SCL:['.U1 > .pin13'],HUB_LED4:['.U1 > .pin21'],HUB_LED2:['.U1 > .pin23']}}/>

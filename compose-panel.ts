@@ -16,6 +16,11 @@ export function composePanel(positions:{x:number,y:number,rotation?:number,name?
   const angle=rotation*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle)
   const shiftPoints=(v:any)=>{if(Array.isArray(v)){v.forEach(shiftPoints);return}if(v&&typeof v==='object'){if(typeof v.x==='number'&&typeof v.y==='number'){const x=v.x,y=v.y;v.x=c*x-s*y+dx;v.y=s*x+c*y+dy;return}Object.values(v).forEach(shiftPoints)}}
   for(const e of shifted){
+   // BREP vertices carry the complete geometry. Place each ring exactly once.
+   if((e.type==='pcb_copper_pour'||e.type==='pcb_silkscreen_graphic') && e.shape==='brep'){
+    shiftPoints(e.brep_shape)
+    continue
+   }
    transformPCBElement(e,{a:c,b:s,c:-s,d:c,e:dx,f:dy})
    // The single-element helper does not rotate axis-aligned pads/board
    // extents or plated-slot orientations (its array helper only covers pads).
@@ -24,9 +29,7 @@ export function composePanel(positions:{x:number,y:number,rotation?:number,name?
     if(['pcb_silkscreen_rect','pcb_silkscreen_pill','pcb_silkscreen_oval'].includes(e.type))[e.width,e.height]=[e.height,e.width]
    }
    if(e.type==='pcb_plated_hole')e.ccw_rotation=((e.ccw_rotation??0)+rotation)%360
-   // transformPCBElement does not yet translate BREP copper pours.
    if(e.type==='cad_component')e.rotation.z=(e.rotation.z+rotation)%360
-   if(e.type==='pcb_copper_pour'||e.type==='pcb_silkscreen_graphic')shiftPoints(e.brep_shape)
   }
   raw.push(...shifted)
  }

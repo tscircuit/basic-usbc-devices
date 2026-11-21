@@ -19,17 +19,18 @@
     "brand": "bun refresh-branding.ts"
   },
   "dependencies": {
-    "tscircuit": "0.0.3069",
-    "@tscircuit/checks": "0.0.268",
-    "circuit-to-svg": "0.0.455",
-    "circuit-json-to-gerber": "0.0.120",
-    "react": "19.2.6",
-    "polygon-clipping": "0.15.7",
     "@resvg/resvg-js": "2.6.2",
-    "easyeda": "0.0.388",
+    "@tscircuit/checks": "0.0.268",
+    "@tscircuit/circuit-json-util": "0.0.128",
     "circuit-json-to-3d-png": "0.0.6",
+    "circuit-json-to-gerber": "0.0.120",
+    "circuit-to-svg": "0.0.455",
+    "dsn-converter": "0.0.90",
+    "easyeda": "0.0.388",
+    "polygon-clipping": "0.15.7",
     "poppygl": "0.0.37",
-    "dsn-converter": "0.0.90"
+    "react": "19.2.6",
+    "tscircuit": "0.0.3271"
   },
   "devDependencies": {
     "@tscircuit/alphabet": "0.0.25",
