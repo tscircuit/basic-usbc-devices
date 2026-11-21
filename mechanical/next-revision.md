@@ -12,3 +12,5 @@ Use Ø2.2 mm unplated clearance holes for M2 screws. Start with two holes 10 mm 
 | Hub and resetter | Fit receptacles and plugs first, then use a four-hole rectangle | Adjacent USB plugs, power routing and connector insertion forces |
 
 These are mounting spans for layout studies. Determine each finished outline from the actual parts, routing, fastener clearance and printed fit test. The 0.0.8 button fix uses the existing mount for replacement compatibility.
+
+The first routed study is `compact-button.circuit.tsx`, a 20 × 26 mm version of the 24 × 30 mm button. Its two Ø2.2 mm mounting holes are at (−7.5, −6) and (−7.5, 4) mm relative to the board center. Each has a 2.3 mm keepout radius. This study has a separate entry point for enclosure and bench evaluation.

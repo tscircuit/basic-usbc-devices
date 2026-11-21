@@ -10,6 +10,7 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - run: python3 -m pip install -r requirements-routing.txt
+      - run: bun verify-compact-button.tsx
       - run: bun build.tsx hub
       - run: bun run build:display
       - run: bun run build:buzzer

@@ -32,14 +32,14 @@ export function C({name,value,x,y,a,b='net.GND',rotation=0,schX,schY}:{schX?:num
 export function Wiring({nets}:{nets:Record<string,string[]>}){
  return <>{Object.entries(nets).flatMap(([net,pins])=>pins.map(pin=><trace name={`${net}_${pin.replace(/[^a-zA-Z0-9]/g,'')}`} key={pin} from={pin} to={`net.${net}`} />))}</>
 }
-export function UsbInput({distance=false,button=false,dial=false,compactDistance=false}:{distance?:boolean,button?:boolean,dial?:boolean,compactDistance?:boolean}={}){
+export function UsbInput({distance=false,button=false,dial=false,compactDistance=false,compactButton=false}:{distance?:boolean,button?:boolean,dial?:boolean,compactDistance?:boolean,compactButton?:boolean}={}){
  return <>
  <copperpour name="GROUND" layer="bottom" connectsTo="net.GND" clearance={dial?0.201:0.2} boardEdgeMargin={0.6}/><net name="VBUS"/><net name="GND"/>
- <TYPE_C_31_M_12 name="J1" pcbX={0} pcbY={distance?-11.8:-9.2} pcbRotation={0} noConnect={["pin5","pin11"]} pinAttributes={{pin13:{requiresGround:true},pin14:{requiresGround:true},pin15:{providesPower:true,providesVoltage:5},pin16:{providesPower:true,providesVoltage:5}}}/>
+ <TYPE_C_31_M_12 name="J1" pcbX={0} pcbY={compactButton?-7.2:distance?-11.8:-9.2} pcbRotation={0} noConnect={["pin5","pin11"]} pinAttributes={{pin13:{requiresGround:true},pin14:{requiresGround:true},pin15:{providesPower:true,providesVoltage:5},pin16:{providesPower:true,providesVoltage:5}}}/>
  <USBLC6_2SC6 name="D1" pcbX={8} pcbY={distance?-11.5:compactDistance?-6:-5} pinAttributes={{pin1:{},pin2:{requiresGround:true},pin3:{},pin4:{},pin5:{requiresPower:true},pin6:{}}} internallyConnectedPins={[["pin1","pin6"],["pin3","pin4"]]}/>
- <R name="R1" value="5.1k" x={-8} y={distance?-13:(button||compactDistance)?-7.3:-7} a="net.CC1" b="net.GND" />
+ <R name="R1" value="5.1k" x={-8} y={compactButton?-10:distance?-13:(button||compactDistance)?-7.3:-7} a="net.CC1" b="net.GND" />
  <R name="R2" value="5.1k" x={distance?6.9:8} y={distance?-15:compactDistance?-8.8:-8.5} a="net.CC2" b="net.GND" />
- <C name="C1" value="1uF" x={-8} y={distance?-9.4:dial?-5:(button||compactDistance)?-5.3:-4} a="net.VBUS"/>
+ <C name="C1" value="1uF" x={-8} y={compactButton?-12:distance?-9.4:dial?-5:(button||compactDistance)?-5.3:-4} a="net.VBUS"/>
  <Wiring nets={{CC1:['.J1 > .pin6'],CC2:['.J1 > .pin12'],GND:['.J1 > .pin1','.J1 > .pin2','.J1 > .pin3','.J1 > .pin4','.J1 > .pin13','.J1 > .pin14','.D1 > .pin2'],VBUS:['.J1 > .pin15','.J1 > .pin16','.D1 > .pin5'],DP:['.J1 > .pin8','.J1 > .pin10','.D1 > .pin1','.D1 > .pin6'],DM:['.J1 > .pin7','.J1 > .pin9','.D1 > .pin3','.D1 > .pin4']}}/>
  </>
 }
