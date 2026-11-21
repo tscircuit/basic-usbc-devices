@@ -2,7 +2,12 @@
 export function DisplayMounts({
   spanX = 20,
   spanY = 20,
-}: { spanX?: number; spanY?: number } = {}) {
+  layers = ["top", "bottom"],
+}: {
+  spanX?: number;
+  spanY?: number;
+  layers?: ("top" | "bottom" | "inner1" | "inner2")[];
+} = {}) {
   if (![spanX, spanY].every((span) => span > 0 && span % 10 === 0))
     throw Error("Mount spacing must be a positive multiple of 10 mm");
   return (
@@ -21,7 +26,7 @@ export function DisplayMounts({
               pcbX={(x * spanX) / 2}
               pcbY={(y * spanY) / 2}
               radius={2.3}
-              layers={["top", "bottom"]}
+              layers={layers}
             />
           </group>
         )),

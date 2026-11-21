@@ -7,7 +7,7 @@ from shapely.geometry import Point,LineString,Polygon,box
 from shapely.affinity import rotate
 from shapely.ops import unary_union
 
-def audit(name, directory):
+def audit(name, directory, check_shorts=False):
  j=json.load(open(directory / f'{name}.circuit.json'));parent={}
  def root(x):
   while x in parent:x=parent[x]
@@ -46,7 +46,7 @@ def audit(name, directory):
    port=pp.get(e.get('pcb_port_id'))
    if not port:continue
    net=root(port['source_port_id']);g=shape(e)
-   layers=['top','bottom'] if e['type']=='pcb_plated_hole' else [e['layer']]
+   layers=e.get('layers',['top','bottom']) if e['type']=='pcb_plated_hole' else [e['layer']]
    for l in layers:shapes.append((net,l,g));pads.append((net,l,g,port['source_port_id']))
    if len(layers)>1:bridges.append((net,g.centroid.x,g.centroid.y))
   elif e['type']=='pcb_trace':
@@ -68,10 +68,22 @@ def audit(name, directory):
    g=Polygon(ring(s['outer_ring']),[ring(r) for r in s.get('inner_rings',[])])
    assert g.is_valid
    shapes.append((root(e['source_net_id']),e['layer'],g))
+ if check_shorts:
+  from shapely.strtree import STRtree
+  shorts=[]
+  for layer in {layer for _,layer,_ in shapes}:
+   layer_shapes=[(net,geom) for net,layer_name,geom in shapes if layer==layer_name and not geom.is_empty]
+   geometries=[geom for _,geom in layer_shapes]
+   tree=STRtree(geometries)
+   for a,b in zip(*tree.query(geometries,predicate="intersects")):
+    net_a,geom_a=layer_shapes[a];net_b,geom_b=layer_shapes[b]
+    if a<b and net_a!=net_b and geom_a.intersection(geom_b).area>0.000001:
+     shorts.append((layer,labels.get(net_a,net_a),labels.get(net_b,net_b)))
+  assert not shorts,shorts
  disconnected={}
  for net in {n for n,l,g,p in pads}:
   chunks=[]
-  for layer in ['top','bottom']:
+  for layer in {l for n,l,g in shapes if n==net}:
    u=unary_union([g.buffer(.00002) for n,l,g in shapes if n==net and l==layer])
    chunks += [(layer,g) for g in (list(u.geoms) if hasattr(u,'geoms') else [u]) if not g.is_empty]
   par=list(range(len(chunks)))
@@ -93,12 +105,14 @@ def audit(name, directory):
     connected=[p for n,pl,pg,p in pads if n==net and any(rt(i)==group and pl==l and pg.intersects(g) for i,(l,g) in enumerate(chunks))]
     print('island',labels.get(net,net),[(next((e.get('name') for e in j if e['type']=='source_port' and e['source_port_id']==p),'?'), next(((e['x'],e['y']) for e in pp.values() if e['source_port_id']==p),None)) for p in set(connected)],flush=True)
  report=dict(checkedNets=len({n for n,l,g,p in pads}),disconnectedNets=disconnected,includesFinalGroundPour=True)
+ if check_shorts:report['copperShorts']=shorts
  json.dump(report,open(directory / f'{name}.physical-connectivity.json','w'),indent=2)
  print(name,report,flush=True)
  assert not disconnected,disconnected
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--directory', type=Path, default=Path('output'))
+parser.add_argument('--check-shorts', action='store_true', help='Test copper from different nets for overlap on each layer')
 parser.add_argument('boards', nargs='+')
 args = parser.parse_args()
 for name in args.boards:
- audit(name, args.directory)
+ audit(name, args.directory, args.check_shorts)

@@ -12,6 +12,8 @@ jobs:
       - run: python3 -m pip install -r requirements-routing.txt
       - run: bun new-devices/check.tsx
       - run: python3 verify-module-copper.py --directory dist/new-devices temperature small-ips ereader
+      - run: bun p4-display/inspect.tsx
+      - run: python3 verify-module-copper.py --check-shorts --directory dist/p4-display video-player large-rgb
       - run: bun build.tsx hub
       - run: bun run build:display
       - run: bun run build:buzzer
