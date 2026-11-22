@@ -14,6 +14,7 @@ jobs:
       - run: python3 verify-module-copper.py --check-shorts --directory dist/motherboard motherboard
       - run: bun new-devices/check.tsx
       - run: python3 verify-module-copper.py --directory dist/new-devices temperature small-ips ereader
+      - run: python3 verify-module-copper.py --check-shorts --directory dist/new-devices speaker
       - run: bun p4-display/inspect.tsx
       - run: python3 verify-module-copper.py --check-shorts --directory dist/p4-display video-player large-rgb
       - run: bun build.tsx hub

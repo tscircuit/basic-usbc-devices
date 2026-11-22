@@ -25,3 +25,9 @@ This design targets the black-and-white JD79686 panel. Its GDR and RESE pins ope
 ## Rebuild
 
 Run `bun install --frozen-lockfile` and `bun new-devices/check.tsx` from the repository root. Pass a board name from the script to rebuild one design. Circuit JSON and PCB SVGs are written to `dist/new-devices/`. The script reports render and rule-check findings for each board. Copper continuity and bench performance are separate checks.
+
+## USB-C speaker
+
+The speaker board uses the [PCM2704C bus-powered application circuit](https://www.ti.com/lit/ds/symlink/pcm2704c.pdf) and a [PAM8302A mono amplifier](https://www.diodes.com/assets/Datasheets/PAM8302A.pdf). J2 mates with the two-pin JST-SH plug on the [Same Sky CMS-23558N-L152B](https://www.sameskydevices.com/product/resource/cms-23558n-l152.pdf). The amplifier drives both speaker terminals. R8 and R9 sum the channels and R10 limits the gain. With identical full-scale sine waves on both channels, nominal DAC swing, input impedance and amplifier gain imply about 70 mW into 8 Ω. This is a calculated value. HOST selects the 100 mA USB configuration. Measure configured and suspend current on the first article.
+
+Run `bun new-devices/check.tsx speaker` to build the routed board. Run `python3 verify-module-copper.py --check-shorts --directory dist/new-devices speaker` to verify endpoint continuity and shorts on the exported copper, including the ground pour.

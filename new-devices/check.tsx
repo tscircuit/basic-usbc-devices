@@ -5,7 +5,9 @@ import { mkdir, writeFile } from "node:fs/promises";
 import SmallIps from "./small-ips.circuit";
 import Temperature from "./temperature.circuit";
 import Ereader from "./ereader.circuit";
+import Speaker from "./speaker.circuit";
 const designs = {
+  speaker: Speaker,
   temperature: Temperature,
   "small-ips": SmallIps,
   ereader: Ereader,

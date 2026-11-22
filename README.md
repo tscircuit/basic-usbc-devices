@@ -1,6 +1,6 @@
 # Basic USB-C devices
 
-Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
+USB-C device boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
 
 | Board | Interface | Host reading |
 |---|---|---|
@@ -13,6 +13,7 @@ Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed i
 | Display adapter | CH552T + ILI9488 50-pin parallel LCD interface | Host sends RGB565 pixels and commands over USB CDC |
 | USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
 | Buzzer | USB controller + externally driven Murata piezo | Timed tones from 20 to 4000 Hz |
+| [USB-C speaker](new-devices/speaker.circuit.tsx) | USB Audio Class 1, mono bridge output on a two-pin JST-SH header | System audio, volume and mute |
 | Embedded motherboard | RP2350 Stamp + four-port hub | Runs a standalone knob-to-display program on product power |
 | Four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
 

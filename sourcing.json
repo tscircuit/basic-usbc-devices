@@ -652,6 +652,60 @@
       "package": "VSSOP-8",
       "url": "https://jlcpcb.com/partdetail/C5186957",
       "class": "Extended Part"
+    },
+    {
+      "lcsc": "C2859784",
+      "mpn": "PCM2704CDBR",
+      "package": "SSOP-28",
+      "url": "https://jlcpcb.com/partdetail/C2859784"
+    },
+    {
+      "lcsc": "C113367",
+      "mpn": "PAM8302AASCR",
+      "package": "MSOP-8",
+      "url": "https://jlcpcb.com/partdetail/C113367"
+    },
+    {
+      "lcsc": "C160388",
+      "mpn": "BM02B-SRSS-TB(LF)(SN)",
+      "package": "JST SH, 2-pin vertical SMT",
+      "url": "https://jlcpcb.com/partdetail/C160388"
+    },
+    {
+      "lcsc": "C14709",
+      "mpn": "BLM18PG121SN1D",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C14709"
+    },
+    {
+      "lcsc": "C1588",
+      "mpn": "CL10B102KB8NNNC",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C1588"
+    },
+    {
+      "lcsc": "C23345",
+      "mpn": "0603WAF220JT5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C23345"
+    },
+    {
+      "lcsc": "C22843",
+      "mpn": "0603WAF1501T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22843"
+    },
+    {
+      "lcsc": "C22935",
+      "mpn": "0603WAF1004T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22935"
+    },
+    {
+      "lcsc": "C31850",
+      "mpn": "0603WAF2202T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C31850"
     }
   ],
   "external_items": [
@@ -659,6 +713,11 @@
       "mpn": "ER-TFT035IPS-6",
       "supplier": "BuyDisplay",
       "note": "Non-touch 3.5-inch ILI9488 LCD, 50-pin FPC; separate purchase, not supplied by JLCPCB."
+    },
+    {
+      "mpn": "CMS-23558N-L152B",
+      "supplier": "Same Sky",
+      "note": "External 8 ohm, 1 W speaker with 152 mm JST-SH lead. Plugs into J2 after assembly."
     }
   ]
 }
