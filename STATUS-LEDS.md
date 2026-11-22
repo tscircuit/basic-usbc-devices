@@ -12,11 +12,12 @@ PCB viewer; +Y points toward the switch/sensor end on the common boards.
 
 | Boards | Mounting-hole datum | LED centre | Offset from datum |
 |---|---|---|---|
-| Limit, button, toggle, encoder dial, position dial, distance, display, buzzer | Lower-left M2: (-9.5, -12.5) | (-9.5, -9.0) | (0, +3.5) |
+| Passive buzzer | Lower-left M2: (-10, -12.5) | (-10, -9.0) | (0, +3.5) |
+| Limit, button, toggle, encoder dial, position dial, distance, display | Lower-left M2: (-9.5, -12.5) | (-9.5, -9.0) | (0, +3.5) |
 | Hub | Lower-left M2: (-19, -5) | (-19, -8) | (0, -3.0) |
 | Resetter | Upper-right M3: (17.5, 3.5) | Existing RGB: (14, 15.5) | (-3.5, +12.0) |
 
-All eight boards with the 19 × 25 mm mounting pattern share the exact LED centre
+The seven boards with the 19 × 25 mm mounting pattern share the exact LED centre
 and orientation. The hub and resetter retain their different mounting patterns.
 Use a light pipe or enclosure window over the LED centre; these are surface-mount
 LEDs, not protruding panel lamps. Panel rotations also rotate this datum; use the

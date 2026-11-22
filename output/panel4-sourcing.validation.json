@@ -1,13 +1,16 @@
 {
-  "checkedOn": "2026-11-09",
+  "quoteDates": [
+    "2026-11-09",
+    "2026-11-22"
+  ],
   "panels": 5,
-  "assemblyPositionsPerPanel": 252,
+  "assemblyPositionsPerPanel": 251,
   "uniqueSupplierParts": 55,
   "allPartsHaveSupplierIds": true,
   "allPartsHaveSufficientAvailableQuantity": true,
   "stockReserved": false,
-  "estimatedComponentsUSD": "165.7012",
-  "estimatedComponentsPerPanelUSD": "33.14024",
+  "estimatedComponentsUSD": "166.1782",
+  "estimatedComponentsPerPanelUSD": "33.23564",
   "highestUnitPriceUSD": "2.5481",
   "standardOnlyParts": [
     "C91199"

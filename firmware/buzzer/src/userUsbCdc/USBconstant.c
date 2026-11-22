@@ -155,18 +155,8 @@ __code uint16_t SerialDescriptor[] = {
     (((5 + 1) * 2) | (DTYPE_String << 8)), 'C', 'H', '5', '5', 'x',
 };
 __code uint16_t ProductDescriptor[] = {
-    // Produce String Descriptor
-    (((10 + 1) * 2) | (DTYPE_String << 8)),
-    'C',
-    'H',
-    '5',
-    '5',
-    'x',
-    'd',
-    'u',
-    'i',
-    'n',
-    'o',
+    (((16 + 1) * 2) | (DTYPE_String << 8)),
+    't', 's', 'c', 'i', 'r', 'c', 'u', 'i', 't', ' ', 'B', 'u', 'z', 'z', 'e', 'r',
 };
 
 __code uint16_t CDCDescriptor[] = {

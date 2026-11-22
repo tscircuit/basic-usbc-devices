@@ -1,3 +1,5 @@
+The original order audit below covers revision 1. The revised panel uses 251 placements and replaces the oscillator buzzer with C113159. Use the BOM, CPL and Gerbers from the same revision. The piezo quote is dated November 22.
+
 # Panel4 stock and cost audit — 9 November 2026
 
 All **252 assembled positions**, grouped into **55 JLCPCB part numbers**, have

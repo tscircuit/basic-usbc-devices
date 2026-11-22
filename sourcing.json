@@ -127,7 +127,7 @@
       "assembly": "Economic and Standard",
       "note": "Catalog checked 2026-11-08; stock not reserved.",
       "mpn": "AFC07-S50ECC-00",
-      "package": "SMD,P=0.5mm,Surface Mount\uff0cRight Angle",
+      "package": "SMD,P=0.5mm,Surface Mount，Right Angle",
       "class": "Extended Part",
       "available_order_quantity": 9977,
       "stock_checked_at": "2026-11-09T01:07:11.217662+00:00"
@@ -241,7 +241,7 @@
     {
       "lcsc": "C22962",
       "mpn": "0603WAF2200T5E",
-      "value": "220\u03a9",
+      "value": "220Ω",
       "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C22962",
@@ -253,7 +253,7 @@
     {
       "lcsc": "C22975",
       "mpn": "0603WAF2001T5E",
-      "value": "2k\u03a9",
+      "value": "2kΩ",
       "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C22975",
@@ -265,7 +265,7 @@
     {
       "lcsc": "C23186",
       "mpn": "0603WAF5101T5E",
-      "value": "5.1k\u03a9",
+      "value": "5.1kΩ",
       "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C23186",
@@ -324,7 +324,7 @@
     {
       "lcsc": "C25804",
       "mpn": "0603WAF1002T5E",
-      "value": "10k\u03a9",
+      "value": "10kΩ",
       "package": "0603",
       "class": "Basic Part",
       "url": "https://jlcpcb.com/partdetail/C25804",
@@ -502,7 +502,7 @@
       "lcsc": "C470399",
       "mpn": "RK09K1130D62",
       "package": "Plugin",
-      "value": "10k\u03a9",
+      "value": "10kΩ",
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C470399",
       "assembly": "Economic and Standard",
@@ -525,7 +525,7 @@
     {
       "lcsc": "C496154",
       "mpn": "1MS1T1B1M1QES-5",
-      "package": "\u63d2\u4ef6,12.7x6.9mm",
+      "package": "插件,12.7x6.9mm",
       "value": null,
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C496154",
@@ -533,18 +533,6 @@
       "note": "Maintained toggle; Economic/Standard wave soldering service.",
       "available_order_quantity": 432,
       "stock_checked_at": "2026-11-09T01:07:16.543841+00:00"
-    },
-    {
-      "lcsc": "C530415",
-      "url": "https://jlcpcb.com/partdetail/C530415",
-      "assembly_evidence": "PCBA Type Economic and Standard Note: The purchased components are stored in your JLCPCB parts library for future PCBA orders only, and cannot be shipped separately. Specifications Attributes Value Category Au",
-      "assembly": "Economic and Standard",
-      "note": "Catalog checked 2026-11-08; stock not reserved.",
-      "mpn": "GSD9605YB-5V2800",
-      "package": "SMD,9.6x9.6mm",
-      "class": "Extended Part",
-      "available_order_quantity": 736,
-      "stock_checked_at": "2026-11-09T01:07:16.731831+00:00"
     },
     {
       "lcsc": "C967938",
@@ -585,7 +573,7 @@
       "lcsc": "C2681582",
       "mpn": "JL010",
       "value": null,
-      "package": "\u63d2\u4ef6,12.8x5.7mm",
+      "package": "插件,12.8x5.7mm",
       "class": "Extended Part",
       "url": "https://jlcpcb.com/partdetail/C2681582",
       "assembly": "Economic and Standard",
@@ -649,6 +637,21 @@
       "class": "Extended Part",
       "available_order_quantity": 5744,
       "stock_checked_at": "2026-11-09T01:10:57.010333+00:00"
+    },
+    {
+      "lcsc": "C113159",
+      "url": "https://jlcpcb.com/partdetail/C113159",
+      "mpn": "PKLCS1212E4001-R1",
+      "package": "SMD,12x12mm",
+      "note": "Externally driven piezoelectric sounder",
+      "class": "Extended Part"
+    },
+    {
+      "lcsc": "C5186957",
+      "mpn": "TXU0202DCUR",
+      "package": "VSSOP-8",
+      "url": "https://jlcpcb.com/partdetail/C5186957",
+      "class": "Extended Part"
     }
   ],
   "external_items": [

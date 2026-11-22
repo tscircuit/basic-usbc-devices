@@ -1,6 +1,6 @@
 # Basic USB-C devices
 
-Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules and the buzzer are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
+Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
 
 | Board | Interface | Host reading |
 |---|---|---|
@@ -12,7 +12,8 @@ Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed i
 | Distance | CH341T + VL53L0CXV0DH/1 | millimeters and threshold state; target 30–300 mm |
 | Display adapter | CH552T + ILI9488 50-pin parallel LCD interface | Host sends RGB565 pixels and commands over USB CDC |
 | USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
-| Buzzer | CH552E + 5 V active buzzer | Host commands timed 2.8 kHz beeps |
+| Buzzer | USB controller + externally driven Murata piezo | Timed tones from 20 to 4000 Hz |
+| Embedded motherboard | RP2350 Stamp + four-port hub | Runs a standalone knob-to-display program on product power |
 | Four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
 
 The 177 × 46 mm panel has side breakaway tabs, 0.5 mm mouse-bite holes, 3 mm routing slots, tooling holes, and exposed 1 mm fiducials. Each board has four 2.2 mm non-plated M2 clearance holes, 2.5 mm in from each edge, with 4.6 mm diameter copper and placement keepouts for screw heads. All assembled parts are on the top side. The boards are independent USB devices; the panel is a manufacturing panel, not a USB hub.
@@ -31,7 +32,7 @@ The v0.0.5 stock/cost audit and revised BOM are documented in [SOURCING-AUDIT.md
 
 The absolute-position dial uses [C470399](https://jlcpcb.com/partdetail/ALPSALPINE-RK09K1130D62/C470399), an ALPS RK09K1130D62 10 kΩ linear potentiometer with 300° ±5° mechanical travel and a 20 mm-high, 6 mm-diameter knurled plastic shaft. The shaft center is (0, 6.5) mm. `mechanical/position-knob.stl` has a 6 mm round friction-fit socket for its 7 mm knurled section; adjust `shaft_style="round"` and `round_diameter` in `dial-knob.scad` to suit printing tolerances. This potentiometer has no push switch. It retains physical position without power.
 
-The six original modules, buzzer and display adapter have mounting centers **(±9.5, ±12.5) mm**, with four 2.2 mm NPTH holes and 4.6 mm diameter screw-head keepouts. PCB thickness is 1.6 mm. Use M2 hardware without larger washers; hardware and printed parts are not assembly BOM items. USB connectors face negative Y. The identical base pattern supports a common enclosure mounting plate; lid openings differ by actuator. Keep the sensor optics and limit lever unobstructed.
+The six original modules and display adapter have mounting centers **(±9.5, ±12.5) mm**, with four 2.2 mm NPTH holes and 4.6 mm diameter screw-head keepouts. PCB thickness is 1.6 mm. Use M2 hardware without larger washers; hardware and printed parts are not assembly BOM items. USB connectors face negative Y. The identical base pattern supports a common enclosure mounting plate; lid openings differ by actuator. Keep the sensor optics and limit lever unobstructed.
 
 ## Unresolved assembly constraint
 
@@ -155,7 +156,9 @@ The display adapter uses the 8-bit ILI9488 interface from [abse/gameboy-advance@
 
 The **42 × 42 mm resetter** adapts [seveibar/usb-reseter@1.1.4](https://tscircuit.com/seveibar/usb-reseter), preserving its RP2040 control circuit and three USB ports. Its four M3 holes use a **35 × 21 mm** pattern. The source's two-hole outline was extended, routing vias changed to 0.30/0.60 mm, affected copper repaired, and all components assigned to one schematic sheet. Original editable blocks and MicroPython firmware are in `references/resetter/`. The checked `resetter-layout.json` is the manufacturing source of truth; `build-resetter.ts` validates and exports it. Use the updated `firmware/resetter/main.py` with `on`, `off`, `cycle`, `status`, and `led on|off|auto` commands on the control port. Confirm the installed MicroPython USB power descriptor before connecting its control port through the 100 mA-per-port hub; a direct computer connection avoids that unverified descriptor dependency. Its separate passthrough input supplies the switched output load.
 
-The **24 × 30 mm buzzer** has the common four M2 holes and a 5 V active 2.8 kHz buzzer driven by a MOSFET with a flyback diode. Its firmware accepts bounded timed beeps and switches off on USB reset, disconnect or suspend. The speaker module was omitted as requested.
+The **24 × 30 mm buzzer, revision 2**, uses a Murata PKLCS1212E4001-R1 passive piezoelectric sounder. Its four M2 holes have 20 × 20 mm spacing. Send `tone 440 750` over USB serial to generate 440 Hz for 750 ms. The default beep drives 4 kHz, the transducer's rated frequency. Sound level varies with pitch and enclosure. [Murata sounder](https://jlcpcb.com/partdetail/C113159)
+
+The [embedded motherboard](motherboard/README.md) combines a USB host, four protected downstream ports, 16 MB of flash and a separate computer service port on one 46 × 46 mm PCB.
 
 ```sh
 bun run build:display
@@ -174,7 +177,7 @@ Panel4 validation checks all ten populated schematic sheets, 40 mounting holes, 
 
 ## Computer-controlled status LEDs
 
-All ten boards now support computer-controlled status indication. The eight boards with the common 19 × 25 mm mounting pattern place their LED 3.5 mm inward from the lower-left mounting hole, at the same coordinates and orientation. The hub and resetter use documented exceptions. Board and panel dimensions are unchanged. See [LED controls, enclosure coordinates, firmware, and hub EEPROM programming](STATUS-LEDS.md). Program the supplied hub EEPROM image before assembly; a blank EEPROM does not enable its host-controlled indicator.
+All ten boards now support computer-controlled status indication. The seven boards with the common 19 × 25 mm mounting pattern and the revised buzzer place their LED 3.5 mm inward from the lower-left mounting hole, at the same coordinates and orientation. The hub and resetter use documented exceptions. Board and panel dimensions are unchanged. See [LED controls, enclosure coordinates, firmware, and hub EEPROM programming](STATUS-LEDS.md). Program the supplied hub EEPROM image before assembly; a blank EEPROM does not enable its host-controlled indicator.
 
 ## Board silkscreen
 

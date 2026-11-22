@@ -26,7 +26,7 @@ for(const name of [...common,'hub','resetter']){
  const led=part('LED_STATUS')
  assert.equal(led.supplier_part_numbers.jlcpcb[0],'C2286')
  const pcb=j.find((e:any)=>e.type==='pcb_component'&&e.source_component_id===led.source_component_id)
- const expected=name==='hub'?{x:-19,y:-8}:{x:-9.5,y:-9}
+ const expected=name==='hub'?{x:-19,y:-8}:{x:name==='buzzer'?-10:-9.5,y:-9}
  assert.ok(Math.hypot(pcb.center.x-expected.x,pcb.center.y-expected.y)<1e-3,`${name}: LED datum`)
  eq('LED_STATUS',1,'R_STATUS',2)
  assert.notEqual(pin('LED_STATUS',1),pin('LED_STATUS',2))

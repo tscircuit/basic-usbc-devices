@@ -1,10 +1,12 @@
 // M2 clearance holes; horizontal and vertical pitches are multiples of 10 mm.
 export function DisplayMounts({
   spanX = 20,
+  centerY = 0,
   spanY = 20,
   layers = ["top", "bottom"],
 }: {
   spanX?: number;
+  centerY?: number;
   spanY?: number;
   layers?: ("top" | "bottom" | "inner1" | "inner2")[];
 } = {}) {
@@ -18,13 +20,13 @@ export function DisplayMounts({
             <hole
               name={`H${x}_${y}`}
               pcbX={(x * spanX) / 2}
-              pcbY={(y * spanY) / 2}
+              pcbY={centerY + (y * spanY) / 2}
               diameter={2.2}
             />
             <keepout
               shape="circle"
               pcbX={(x * spanX) / 2}
-              pcbY={(y * spanY) / 2}
+              pcbY={centerY + (y * spanY) / 2}
               radius={2.3}
               layers={layers}
             />

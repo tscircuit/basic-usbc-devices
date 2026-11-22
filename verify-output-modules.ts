@@ -18,7 +18,8 @@ for(const name of ['display','buzzer','resetter']){
  for(const c of of('source_component').filter(e=>!e.do_not_place&&e.ftype!=='simple_test_point'))assert.ok(c.supplier_part_numbers?.jlcpcb?.length,`${name}/${c.name} has no JLCPCB part`)
  if(name==='display'||name==='buzzer'){
   const pts=of('pcb_hole').filter(e=>e.hole_diameter===2.2).map(e=>[e.x,e.y]).sort()
-  assert.deepEqual(pts,[[-9.5,-12.5],[-9.5,12.5],[9.5,-12.5],[9.5,12.5]].sort())
+  if(name==='buzzer') assert.deepEqual(pts,[[-10,-12.5],[-10,7.5],[10,-12.5],[10,7.5]].sort())
+  else assert.deepEqual(pts,[[-9.5,-12.5],[-9.5,12.5],[9.5,-12.5],[9.5,12.5]].sort())
  }
  for(const t of of('pcb_trace'))for(const p of t.route)if(p.route_type==='wire')assert.ok(p.width>=.1-1e-6,`${name} trace below fabrication minimum`)
  const report={name,width:b.width,height:b.height,layers:2,viaDrillMm:.3,viaPadMm:.6,schematicSheets:1,mountingHoles:4,traces:of('pcb_trace').length,vias:of('pcb_via').length,errors:0,warnings:0,hardwareTested:false}

@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 const board = process.argv[2];
-if (!["video-player", "large-rgb"].includes(board))
+if (!["video-player", "large-rgb", "motherboard"].includes(board))
   throw Error("Pass video-player or large-rgb");
-const prefix = "dist/p4-display/" + board;
+const prefix = (board==="motherboard"?"dist/motherboard/":"dist/p4-display/") + board;
 // Emit physical, globally placed pads and unioned source nets. This avoids
 // footprint rotation/deduplication and multi-trace-net ambiguity in DSN export.
 const base = JSON.parse(readFileSync(prefix + ".circuit.json", "utf8"));
@@ -102,7 +102,7 @@ for (const h of of("pcb_hole").filter((e: any) => e.hole_diameter !== 2.2))
   keepouts.push({
     x: h.x ?? h.center?.x,
     y: h.y ?? h.center?.y,
-    diameter: h.hole_diameter + 0.06,
+    diameter: h.hole_diameter + (board === "motherboard" ? 0.20 : 0.06),
     rect: false,
   });
 // Circular fixed pads model mechanical copper exclusions on both layers.
@@ -123,7 +123,7 @@ for (const [i, h] of keepouts.entries()) {
   netPins[`NC_${name}`] = [`${name}-1`];
 }
 const powerNets = new Set(
-  "VBUS LOGIC HP GND BIASIN SWA SWBL SW_MAIN SW_HP LEDA LEDK".split(" "),
+  "VBUS VBUS1 VBUS2 VBUS3 VBUS4 CPU_3V3 PC_5V V3V3 LOGIC HP GND BIASIN SWA SWBL SW_MAIN SW_HP LEDA LEDK".split(" "),
 );
 const netList = (power: boolean) =>
   Object.keys(netPins)

@@ -96,7 +96,7 @@
     "backTextStrokeMm": 0.153,
     "frontLogo": true,
     "backLogo": true,
-    "topClearanceBeyondExclusionMm": 0.15,
-    "bottomClearanceBeyondExclusionMm": 0.7591
+    "topClearanceBeyondExclusionMm": 0.05,
+    "bottomClearanceBeyondExclusionMm": 0.0047
   }
 ]

@@ -14,7 +14,7 @@ Firmware starts with backlight off and LCD reset asserted. The host initializes 
 
 ## Buzzer
 
-The onboard INGHAi GSD9605YB-5V2800 is a 5 V, 30 mA active magnetic buzzer. A MOSFET and flyback diode switch it; the MCU does not supply the coil current. Run `python host/buzzer.py PORT --ms 250`. A duration of zero stops it; accepted duration is 0–10000 ms. Timing runs on the MCU, so closing the host program cannot leave a timed beep running indefinitely. USB reset/deconfiguration and suspend turn it off. Its pitch is fixed at approximately 2.8 kHz. This is the requested buzzer; the speaker module was omitted.
+Revision 2 uses the externally driven Murata PKLCS1212E4001-R1. P1.4 drives the piezo through 2 kΩ and a 1 µF DC-blocking capacitor. A 10 kΩ resistor discharges the sounder. Firmware 2.0.0 plays a 4 kHz tone for `beep` and accepts `tone <20–4000 Hz> <1–10000 ms>`. `stop`, USB suspend and disconnect clear the timer and drive output low. The framed duration command remains available. Older assembled boards use the 1.x firmware.
 
 ## Protocol
 

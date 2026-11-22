@@ -1,8 +1,8 @@
 import { parseDsnToDsnJson } from "dsn-converter";
 import { readFileSync, writeFileSync } from "node:fs";
 const board = process.argv[2],
-  prefix = "dist/p4-display/" + board;
-if (!["video-player", "large-rgb"].includes(board))
+  prefix = (board==="motherboard"?"dist/motherboard/":"dist/p4-display/") + board;
+if (!["video-player", "large-rgb", "motherboard"].includes(board))
   throw Error("Pass video-player or large-rgb");
 const base = JSON.parse(readFileSync(prefix + ".circuit.json", "utf8"));
 const sourceMap = JSON.parse(readFileSync(prefix + ".map.json", "utf8"));
@@ -46,6 +46,6 @@ for (const net of ses.routes.network_out.nets) {
   data[net.name] = { anchor: [port.x, port.y], paths, vias };
 }
 writeFileSync(
-  "p4-display/" + board + "-copper.json",
+  board==="motherboard"?"motherboard/copper.json":"p4-display/" + board + "-copper.json",
   JSON.stringify({ viadia, drill, nets: data }) + "\n",
 );

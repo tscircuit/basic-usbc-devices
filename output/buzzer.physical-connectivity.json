@@ -1,5 +1,6 @@
 {
-  "checkedNets": 17,
+  "checkedNets": 18,
   "disconnectedNets": {},
-  "includesFinalGroundPour": true
+  "includesFinalGroundPour": true,
+  "copperShorts": []
 }

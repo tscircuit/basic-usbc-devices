@@ -11,6 +11,7 @@ from pathlib import Path
 root = Path(__file__).resolve().parent
 out = root / 'output'
 snapshot = json.loads((root / 'references/stock-2026-11-09.json').read_text())
+snapshot['C113159'] = json.loads((root / 'references/passive-buzzer-quote.json').read_text())
 uploaded = json.loads((root / 'references/uploaded-order-audit.json').read_text())
 previous = {r['jlcpcb']: r for r in uploaded['matched_groups']}
 bom = list(csv.DictReader((out / 'panel4-bom.csv').open()))
@@ -19,7 +20,7 @@ design = json.loads((out / 'panel4.circuit.json').read_text())
 parts = {p['name']: p for p in design if p['type'] == 'source_component'
          and not (p.get('ftype') == 'simple_test_point' and p.get('footprint_variant') == 'pad')}
 refs = [ref for row in bom for ref in row['Designator'].split(',')]
-assert len(refs) == len(set(refs)) == len(parts) == len(cpl) == 252
+assert len(refs) == len(set(refs)) == len(parts) == len(cpl) == 251
 assert set(refs) == set(parts) == {p['Designator'] for p in cpl}
 assert len({r['JLCPCB Part #'] for r in bom}) == len(bom)
 report = []
@@ -60,7 +61,7 @@ for row in bom:
 with (out / 'panel4-stock-cost-audit.csv').open('w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=list(report[0])); writer.writeheader(); writer.writerows(report)
 total = sum(Decimal(r['Estimated line cost USD']) for r in report)
-validation = {'checkedOn': '2026-11-09', 'panels': 5, 'assemblyPositionsPerPanel': len(refs),
+validation = {'quoteDates': sorted({r['Checked UTC'][:10] for r in report}), 'panels': 5, 'assemblyPositionsPerPanel': len(refs),
               'uniqueSupplierParts': len(report), 'allPartsHaveSupplierIds': True,
               'allPartsHaveSufficientAvailableQuantity': True, 'stockReserved': False,
               'estimatedComponentsUSD': str(total), 'estimatedComponentsPerPanelUSD': str(total / 5),
