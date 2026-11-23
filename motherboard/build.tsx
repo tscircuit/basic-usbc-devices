@@ -7,14 +7,16 @@ import { HubBoard } from "../hub.circuit"
 import { checkFrontEdge } from "./check-front-edge"
 import { checkMotherboardNetlist } from "./check-netlist"
 
+const wifi = process.argv.includes("--esp32")
+const slug = wifi ? "esp32-motherboard" : "motherboard"
 const circuit = new Circuit()
-circuit.add(<HubBoard embedded routingDisabled={process.argv.includes("--placement")}/>)
+circuit.add(<HubBoard embedded wifi={wifi} routingDisabled={process.argv.includes("--placement")}/>)
 await circuit.renderUntilSettled()
 const data = circuit.getCircuitJson()
-checkMotherboardNetlist(data)
+checkMotherboardNetlist(data, wifi)
 checkFrontEdge(data)
-await mkdir("dist/motherboard",{recursive:true})
-const prefix="dist/motherboard/motherboard"
+await mkdir("dist/"+slug,{recursive:true})
+const prefix=`dist/${slug}/${slug}`
 await writeFile(prefix+".circuit.json",JSON.stringify(data))
 await writeFile(prefix+".svg",convertCircuitJsonToPcbSvg(data))
 await writeFile(prefix+".schematic.svg",convertCircuitJsonToSchematicSvg(data))

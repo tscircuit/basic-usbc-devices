@@ -13,6 +13,9 @@ jobs:
       - run: bun run build:motherboard
       - run: python3 verify-module-copper.py --check-shorts --directory dist/motherboard motherboard
       - run: python3 motherboard/verify-gerbers.py
+      - run: bun run build:esp32-motherboard
+      - run: python3 verify-module-copper.py --check-shorts --directory dist/esp32-motherboard esp32-motherboard
+      - run: python3 motherboard/verify-gerbers.py esp32-motherboard
       - run: bun new-devices/check.tsx
       - run: python3 verify-module-copper.py --directory dist/new-devices temperature small-ips ereader
       - run: python3 verify-module-copper.py --check-shorts --directory dist/new-devices speaker

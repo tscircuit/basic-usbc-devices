@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import type { AnyCircuitElement } from "circuit-json";
 
 /** Independent package-pin checks on the rendered design, including the SD socket and five-pin programmer. */
-export function checkMotherboardNetlist(data: AnyCircuitElement[]) {
+export function checkMotherboardNetlist(
+  data: AnyCircuitElement[],
+  wifi = false,
+) {
   const components = new Map(
     data
       .filter((e) => e.type === "source_component")
@@ -40,68 +43,105 @@ export function checkMotherboardNetlist(data: AnyCircuitElement[]) {
       );
     }
   }
-  assert.equal(
-    [...components.values()].find((e) => e.name === "U_CPU")
-      ?.manufacturer_part_number,
-    "RP2350A",
-  );
-  check("U_CPU", {
-    1: "CPU_3V3",
-    2: "UART_TX",
-    3: "UART_RX",
-    7: "SD_MISO",
-    8: "SD_CS",
-    9: "SD_SCK",
-    10: "SD_MOSI",
-    6: "CORE_1V1",
-    11: "CPU_3V3",
-    20: "CPU_3V3",
-    21: "CORE_XIN",
-    22: "CORE_XOUT",
-    23: "CORE_1V1",
-    24: "SWCLK",
-    25: "SWDIO",
-    26: "CPU_RUN",
-    30: "CPU_3V3",
-    38: "CPU_3V3",
-    39: "CORE_1V1",
-    44: "CPU_3V3",
-    45: "CPU_3V3",
-    46: "CORE_AVDD",
-    47: "GND",
-    48: "CORE_LX",
-    49: "CPU_3V3",
-    50: "CORE_1V1",
-    51: "PHY_DM",
-    52: "PHY_DP",
-    53: "CPU_3V3",
-    54: "CPU_3V3",
-    55: "FLASH_IO3",
-    56: "FLASH_CLK",
-    57: "FLASH_IO0",
-    58: "FLASH_IO2",
-    59: "FLASH_IO1",
-    60: "FLASH_CS",
-    61: "GND",
-  });
-  check("U_FLASH", {
-    1: "FLASH_CS",
-    2: "FLASH_IO1",
-    3: "FLASH_IO2",
-    4: "GND",
-    5: "FLASH_IO0",
-    6: "FLASH_CLK",
-    7: "FLASH_IO3",
-    8: "CPU_3V3",
-  });
-  check("L_CORE", { 1: "CORE_1V1", 2: "CORE_LX" });
-  check("U_LDO", { 1: "VBUS", 2: "GND", 3: "VBUS", 5: "CPU_3V3" });
-  check("SW_RESET", { 1: "CPU_RUN", 2: "RESET_PRESS" });
-  check("J_SWD", { 2: "PROBE_DIO", 3: "GND", 4: "PROBE_CLK", 5: "CPU_RUN" });
-  assert.equal(assigned.get("J_SWD.1")?.size ?? 0, 0);
-  check("R_SWD_DIO", { 1: "PROBE_DIO", 2: "SWDIO" });
-  check("R_SWD_CLK", { 1: "PROBE_CLK", 2: "SWCLK" });
-  check("R_RUN", { 1: "CPU_3V3", 2: "CPU_RUN" });
+  if (wifi) {
+    assert.equal(
+      [...components.values()].find((e) => e.name === "U_CPU")
+        ?.manufacturer_part_number,
+      "ESP32-S3-WROOM-1U-N16R8",
+    );
+    check("U_CPU", {
+      1: "GND",
+      2: "CPU_3V3",
+      3: "CPU_EN",
+      13: "DM0",
+      14: "DP0",
+      18: "SD_CS",
+      19: "SD_MOSI",
+      20: "SD_SCK",
+      21: "SD_MISO",
+      27: "BOOT_N",
+      36: "UART_RX",
+      37: "UART_TX",
+      40: "GND",
+    });
+    for (let land = 41; land <= 49; land++) check("U_CPU", { [land]: "GND" });
+    check("U_BUCK", {
+      1: "CPU_3V3",
+      2: "VBUS",
+      3: "VBUS",
+      4: "GND",
+      5: "REG_SW",
+      6: "REG_BST",
+    });
+    check("SW_RESET", { 1: "CPU_EN", 2: "GND" });
+    check("SW_BOOT", { 1: "BOOT_N", 2: "GND" });
+    check("U_UART", { 1: "UART_TX", 4: "PC_RX", 5: "PC_TX", 8: "UART_RX" });
+  } else {
+    assert.equal(
+      [...components.values()].find((e) => e.name === "U_CPU")
+        ?.manufacturer_part_number,
+      "RP2350A",
+    );
+    check("U_CPU", {
+      1: "CPU_3V3",
+      2: "UART_TX",
+      3: "UART_RX",
+      7: "SD_MISO",
+      8: "SD_CS",
+      9: "SD_SCK",
+      10: "SD_MOSI",
+      6: "CORE_1V1",
+      11: "CPU_3V3",
+      20: "CPU_3V3",
+      21: "CORE_XIN",
+      22: "CORE_XOUT",
+      23: "CORE_1V1",
+      24: "SWCLK",
+      25: "SWDIO",
+      26: "CPU_RUN",
+      30: "CPU_3V3",
+      38: "CPU_3V3",
+      39: "CORE_1V1",
+      44: "CPU_3V3",
+      45: "CPU_3V3",
+      46: "CORE_AVDD",
+      47: "GND",
+      48: "CORE_LX",
+      49: "CPU_3V3",
+      50: "CORE_1V1",
+      51: "PHY_DM",
+      52: "PHY_DP",
+      53: "CPU_3V3",
+      54: "CPU_3V3",
+      55: "FLASH_IO3",
+      56: "FLASH_CLK",
+      57: "FLASH_IO0",
+      58: "FLASH_IO2",
+      59: "FLASH_IO1",
+      60: "FLASH_CS",
+      61: "GND",
+    });
+    check("U_FLASH", {
+      1: "FLASH_CS",
+      2: "FLASH_IO1",
+      3: "FLASH_IO2",
+      4: "GND",
+      5: "FLASH_IO0",
+      6: "FLASH_CLK",
+      7: "FLASH_IO3",
+      8: "CPU_3V3",
+    });
+    check("L_CORE", { 1: "CORE_1V1", 2: "CORE_LX" });
+    check("U_LDO", { 1: "VBUS", 2: "GND", 3: "VBUS", 5: "CPU_3V3" });
+    check("SW_RESET", { 1: "CPU_RUN", 2: "RESET_PRESS" });
+    check("J_SWD", { 2: "PROBE_DIO", 3: "GND", 4: "PROBE_CLK", 5: "CPU_RUN" });
+    assert.equal(assigned.get("J_SWD.1")?.size ?? 0, 0);
+    check("R_SWD_DIO", { 1: "PROBE_DIO", 2: "SWDIO" });
+    check("R_SWD_CLK", { 1: "PROBE_CLK", 2: "SWCLK" });
+    check("R_RUN", { 1: "CPU_3V3", 2: "CPU_RUN" });
+    check("R_USB_DP", { 1: "PHY_DP", 2: "DP0" });
+    check("R_USB_DM", { 1: "PHY_DM", 2: "DM0" });
+  }
   check("J_SD", {
     1: "SD_D2",
     2: "SD_CS",
@@ -116,8 +156,6 @@ export function checkMotherboardNetlist(data: AnyCircuitElement[]) {
     12: "GND",
     13: "GND",
   });
-  check("R_USB_DP", { 1: "PHY_DP", 2: "DP0" });
-  check("R_USB_DM", { 1: "PHY_DM", 2: "DM0" });
   check("TP_PWR1", { 1: "INPUT_5V" });
   check("SW_POWER", { 1: "GND", 2: "POWER_EN", 3: "INPUT_5V" });
   check("U_POWER", {

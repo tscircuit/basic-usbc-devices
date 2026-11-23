@@ -790,6 +790,24 @@
       "mpn": "0603WAF1000T5E",
       "package": "0603",
       "url": "https://jlcpcb.com/partdetail/C22775"
+    },
+    {
+      "lcsc": "C3013946",
+      "mpn": "ESP32-S3-WROOM-1U-N16R8",
+      "package": "SMD,19.2x18mm",
+      "url": "https://www.lcsc.com/product-detail/C3013946.html"
+    },
+    {
+      "lcsc": "C780769",
+      "mpn": "AP63203WU-7",
+      "package": "TSOT-26",
+      "url": "https://www.lcsc.com/product-detail/C780769.html"
+    },
+    {
+      "lcsc": "C45783",
+      "mpn": "CL21A226MAQNNNE",
+      "package": "0805",
+      "url": "https://www.lcsc.com/product-detail/C45783.html"
     }
   ],
   "external_items": [

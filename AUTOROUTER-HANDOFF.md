@@ -25,6 +25,12 @@ The 76 × 46 mm board has J1, the power lever and the card slot on its front edg
 - [Exact routing input](https://api.tscircuit.com/autorouting/bug_reports/view?autorouting_bug_report_id=350521c5-f57e-40dd-8a5b-33fa28ea56bf) and [motherboard reproduction PR #4144](https://github.com/tscircuit/tscircuit-autorouter/pull/4144).
 - Run `bun fixtures/bug-reports/bugreport134-350521/reproduce.ts` in the router PR. To exercise a new solver on this board, replace the embedded board’s saved router with `"auto-local"`, then run `bun motherboard/build.tsx` and `python3 verify-module-copper.py --directory dist/motherboard --check-shorts motherboard`. Check the ground pour after routing, require zero disconnected nets and shorts, and retain the front-edge mechanical checks.
 
+## ESP32-S3 Wi-Fi motherboard
+
+[Autorouter PR #4160](https://github.com/tscircuit/tscircuit-autorouter/pull/4160) contains the [captured four-layer routing input](https://api.tscircuit.com/autorouting/bug_reports/view?autorouting_bug_report_id=a609d58a-d122-4931-96aa-1439594c15bf). Run `bun fixtures/bug-reports/bugreport112-a609d5/reproduce.ts` in that PR. In the original board build the default pipeline leaves a 0.101 mm gap between U4’s DET1 and VBUS traces against the 0.135 mm rule. Inspect those routes near (−27.423, 10.647) mm and run the trace-clearance check on the resulting copper.
+
+To verify an upstream fix, select `"auto-local"` for the Wi-Fi board in `hub.circuit.tsx` and rerun the board, copper and Gerber checks in [the board README](esp32-motherboard/README.md). The published PCB replays its independently checked routes.
+
 ## Reproduce one board
 
 Choose a PR number from the table. In a checkout of `tscircuit/tscircuit-autorouter`, run:

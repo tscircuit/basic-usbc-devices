@@ -5,6 +5,7 @@ from itertools import groupby
 import json
 from pathlib import Path
 import warnings
+import argparse
 
 from gerbonara import ExcellonFile, GerberFile
 from gerbonara.graphic_primitives import ArcPoly, Circle, Line, Rectangle
@@ -14,7 +15,7 @@ from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 from shapely.strtree import STRtree
 
-OUTPUT = Path(__file__).resolve().parents[1] / "dist/motherboard"
+DIST = Path(__file__).resolve().parents[1] / "dist"
 FILMS = {"top": "F_Cu", "inner1": "In1_Cu", "inner2": "In2_Cu", "bottom": "B_Cu"}
 
 
@@ -71,9 +72,10 @@ def read_film(path, drills):
     return STRtree(polygons(film.difference(drills)))
 
 
-def verify():
-    gerbers = OUTPUT / "gerbers"
-    board = json.loads((OUTPUT / "motherboard.circuit.json").read_text())
+def verify(board_name):
+    output = DIST / board_name
+    gerbers = output / "gerbers"
+    board = json.loads((output / f"{board_name}.circuit.json").read_text())
     # A routed slot can consist of overlapping drill strokes.
     barrels = polygons(unary_union(drill_shapes(gerbers / "drill-L1-L4.drl")))
     nonplated = drill_shapes(gerbers / "drill_npth.drl")
@@ -168,7 +170,7 @@ def verify():
         "opens": opens,
         "shorts": shorts,
     }
-    (OUTPUT / "motherboard.gerber-check.json").write_text(
+    (output / f"{board_name}.gerber-check.json").write_text(
         json.dumps(report, indent=2) + "\n"
     )
     print(json.dumps(report))
@@ -176,4 +178,11 @@ def verify():
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore", message=".*G90 header statement.*")
-    verify()
+    args = argparse.ArgumentParser()
+    args.add_argument(
+        "board",
+        nargs="?",
+        default="motherboard",
+        choices=["motherboard", "esp32-motherboard"],
+    )
+    verify(args.parse_args().board)

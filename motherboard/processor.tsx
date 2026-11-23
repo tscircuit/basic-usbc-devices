@@ -4,13 +4,14 @@ import { DebugAndStorage } from "./debug-and-storage";
 import { C } from "../common";
 
 import { ProductPower } from "./power";
+import { WifiCore } from "../esp32-motherboard/core";
 import { ProcessorCore } from "./core";
 
-export function HostProcessor() {
+export function HostProcessor({ wifi = false } = {}) {
   return (
     <>
-      <ProcessorCore />
-      <DebugAndStorage />
+      {wifi ? <WifiCore /> : <ProcessorCore />}
+      <DebugAndStorage wifi={wifi} />
       <ProductPower />
       <schematicsheet
         name="processor_sheet"
@@ -97,8 +98,8 @@ export function HostProcessor() {
         <C
           layer="top"
           name="C_IOB"
-          x={22.75}
-          y={15}
+          x={wifi ? 28.75 : 22.75}
+          y={wifi ? 21.25 : 15}
           value="100nF"
           a="net.CPU_3V3"
           schX={9}

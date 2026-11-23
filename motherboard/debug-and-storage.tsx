@@ -2,7 +2,7 @@ import { StandardJstSwdResetUpward } from "@tsci/tscircuit.standard-jst-programm
 import { TF_01A } from "../imports/C91145";
 import { C, R } from "../common";
 
-export function DebugAndStorage() {
+export function DebugAndStorage({ wifi = false } = {}) {
   return (
     <schematicsheet
       name="debug_storage"
@@ -10,52 +10,56 @@ export function DebugAndStorage() {
       sheetSize="A4"
     >
       {/* Product power supplies the target. A straight-through cable can safely carry either probe voltage on contact 1. */}
-      <StandardJstSwdResetUpward
-        name="J_SWD"
-        pcbX={33}
-        pcbY={-2}
-        pcbRotation={90}
-        schX={-7}
-        schY={6}
-        noConnect={["VOUT"]}
-        connections={{
-          SWDIO: "net.PROBE_DIO",
-          GND: "net.GND",
-          SWCLK: "net.PROBE_CLK",
-          NRST: "net.CPU_RUN",
-        }}
-      />
-      <R
-        name="R_SWD_DIO"
-        value="100"
-        x={18.75}
-        y={-0.75}
-        a="net.PROBE_DIO"
-        b="net.SWDIO"
-        schX={-2}
-        schY={7}
-      />
-      <R
-        name="R_SWD_CLK"
-        value="100"
-        x={18.75}
-        y={-2.5}
-        a="net.PROBE_CLK"
-        b="net.SWCLK"
-        schX={-2}
-        schY={5}
-      />
-      <R
-        name="R_RUN"
-        value="10k"
-        x={34}
-        y={3.25}
-        a="net.CPU_3V3"
-        b="net.CPU_RUN"
-        schX={-2}
-        schY={3}
-      />
-      <silkscreentext text="SWD" pcbX={33} pcbY={-7} fontSize={0.8} />
+      {!wifi && (
+        <>
+          <StandardJstSwdResetUpward
+            name="J_SWD"
+            pcbX={33}
+            pcbY={-2}
+            pcbRotation={90}
+            schX={-7}
+            schY={6}
+            noConnect={["VOUT"]}
+            connections={{
+              SWDIO: "net.PROBE_DIO",
+              GND: "net.GND",
+              SWCLK: "net.PROBE_CLK",
+              NRST: "net.CPU_RUN",
+            }}
+          />
+          <R
+            name="R_SWD_DIO"
+            value="100"
+            x={18.75}
+            y={-0.75}
+            a="net.PROBE_DIO"
+            b="net.SWDIO"
+            schX={-2}
+            schY={7}
+          />
+          <R
+            name="R_SWD_CLK"
+            value="100"
+            x={18.75}
+            y={-2.5}
+            a="net.PROBE_CLK"
+            b="net.SWCLK"
+            schX={-2}
+            schY={5}
+          />
+          <R
+            name="R_RUN"
+            value="10k"
+            x={34}
+            y={3.25}
+            a="net.CPU_3V3"
+            b="net.CPU_RUN"
+            schX={-2}
+            schY={3}
+          />
+          <silkscreentext text="SWD" pcbX={33} pcbY={-7} fontSize={0.8} />
+        </>
+      )}
       <TF_01A
         name="J_SD"
         pcbX={23.4}
@@ -81,7 +85,7 @@ export function DebugAndStorage() {
       />
       {(
         [
-          ["SD_CS", 18.75, 1],
+          ["SD_CS", wifi ? 33.75 : 18.75, wifi ? -14.7 : 1],
           ["SD_MOSI", 34, -7.75],
           ["SD_MISO", 33.75, -9.5],
           ["SD_D1", 33.75, -11.25],

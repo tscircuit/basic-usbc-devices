@@ -3,6 +3,7 @@
   "siteDefaultComponentPath": "output/panel4.viewer.circuit.json",
   "includeBoardFiles": [
     "motherboard.circuit.tsx",
+    "esp32-motherboard.circuit.tsx",
     "new-devices/speaker.circuit.tsx",
     "output/limit.circuit.json",
     "output/button.circuit.json",

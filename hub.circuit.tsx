@@ -1,3 +1,4 @@
+import wifiCopper from "./esp32-motherboard/copper.json"
 import motherboardCopper from "./motherboard/copper.json"
 import { savedRouter } from "./saved-router"
 import { HostProcessor } from "./motherboard/processor"
@@ -48,8 +49,8 @@ function USB({i,computer=false,embedded=false}:{i:number,computer?:boolean,embed
  </>
 }
 function ESD({i,computer=false}:{i:number,computer?:boolean}) {return <USBLC6_2SC6 name={`D${i+1}`} {...pcb(`D${i+1}`)} {...sch(`D${i+1}`)} pinAttributes={{pin1:{},pin2:{requiresGround:true},pin3:{},pin4:{},pin5:{requiresPower:true},pin6:{}}} internallyConnectedPins={[["pin1","pin6"],["pin3","pin4"]]} connections={{pin1:computer?"net.PC_DP":`net.DP${i}`,pin6:computer?"net.PC_DP":`net.DP${i}`,pin3:computer?"net.PC_DM":`net.DM${i}`,pin4:computer?"net.PC_DM":`net.DM${i}`,pin2:'net.GND',pin5:`net.${computer?'PC_5V':i===0?'VBUS':`VBUS${i}`}`}}/>}
-export function HubBoard({embedded=false,routingDisabled=false,pcbX=0,pcbY=0,pcbRotation=0}:{embedded?:boolean,routingDisabled?:boolean,pcbX?:number,pcbY?:number,pcbRotation?:number}={}){return <board pcbX={pcbX} pcbY={pcbY} pcbRotation={pcbRotation} routingDisabled={routingDisabled} {...boardRules} name={embedded?"motherboard":"hub"} routeRemaining {...(embedded ? {...displayRules,width:76,height:46,autorouter:{local:true,algorithmFn:savedRouter(motherboardCopper,pcbX,pcbY,pcbRotation)}} : {...hubSize,minTraceWidth:0.11,autorouter:{local:true,algorithmFn:createHubRouter(pcbX,pcbY,pcbRotation)}})} thickness={1.6} schMaxTraceDistance={1.2} schStyle={{defaultPassiveSize:"xs"}} schLayout={{layoutMode:"none"}}>
- <schematicsheet name="hub_sheet" displayName={embedded?"RP2350 USB Motherboard":"USB-C 4-port USB 2.0 hub / bus powered"} sheetSize="A4"><HubPlacement embedded={embedded}>
+export function HubBoard({wifi=false,embedded=false,routingDisabled=false,pcbX=0,pcbY=0,pcbRotation=0}:{wifi?:boolean,embedded?:boolean,routingDisabled?:boolean,pcbX?:number,pcbY?:number,pcbRotation?:number}={}){return <board pcbX={pcbX} pcbY={pcbY} pcbRotation={pcbRotation} routingDisabled={routingDisabled} {...boardRules} name={wifi?"esp32-motherboard":embedded?"motherboard":"hub"} routeRemaining {...(embedded ? {...displayRules,width:76,height:46,autorouter:{local:true,algorithmFn:savedRouter(wifi ? wifiCopper : motherboardCopper,pcbX,pcbY,pcbRotation)}} : {...hubSize,minTraceWidth:0.11,autorouter:{local:true,algorithmFn:createHubRouter(pcbX,pcbY,pcbRotation)}})} thickness={1.6} schMaxTraceDistance={1.2} schStyle={{defaultPassiveSize:"xs"}} schLayout={{layoutMode:"none"}}>
+ <schematicsheet name="hub_sheet" displayName={wifi?"ESP32-S3 Wi-Fi USB Motherboard":embedded?"RP2350 USB Motherboard":"USB-C 4-port USB 2.0 hub / bus powered"} sheetSize="A4"><HubPlacement embedded={embedded}>
  <schematictext text={embedded?"COMPUTER CONSOLE":"HOST / USB-C INPUT"} schX={-10.5} schY={10} fontSize={0.35}/><schematictext text={embedded?"HUB / INTERNAL HOST":"CH334F / 12 MHz / BUS POWERED"} schX={-.8} schY={10} fontSize={0.35}/><schematictext text="PORT POWER ENABLE" schX={10.5} schY={10} fontSize={0.35}/>
  {[-11.4,-3.8,3.8,11.4].map((x,i)=><schematictext text={`PORT ${i+1} / USB-C / 100 mA`} schX={x} schY={2.1} fontSize={0.32}/>)}
  <net name="GND"/><net name="VBUS" nominalTraceWidth={embedded ? 0.4 : undefined}/>
@@ -100,5 +101,5 @@ export function HubBoard({embedded=false,routingDisabled=false,pcbX=0,pcbY=0,pcb
  <AT24C02D_STUM_T name="U_STATUS" pcbX={-11.5} pcbY={8.25} pcbRotation={90} schX={-9} schY={-10} connections={{pin1:'net.HUB_SCL',pin2:'net.GND',pin3:'net.HUB_LED4',pin4:'net.V3V3',pin5:'net.GND'}}/>
  <BaseC name="C_STATUS" value="100nF" x={-4} y={-10.5} a="net.V3V3" schX={-12} schY={-10}/>
  <Wiring nets={{HUB_SCL:['.U1 > .pin13'],HUB_LED4:['.U1 > .pin21'],HUB_LED2:['.U1 > .pin23']}}/>
- </HubPlacement></schematicsheet>{embedded && <HostProcessor/>}</board>}
+ </HubPlacement></schematicsheet>{embedded && <HostProcessor wifi={wifi}/>}</board>}
 export default HubBoard

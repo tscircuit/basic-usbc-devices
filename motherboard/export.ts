@@ -2,22 +2,24 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { topSideGerbers } from "../top-side-gerbers";
 import { assemblyFiles } from "../assembly-bom";
 
-const dir = "dist/motherboard";
+const wifi = process.argv.includes("--esp32");
+const slug = wifi ? "esp32-motherboard" : "motherboard";
+const dir = "dist/" + slug;
 const board = JSON.parse(
-  readFileSync(dir + "/motherboard.circuit.json", "utf8"),
+  readFileSync(`${dir}/${slug}.circuit.json`, "utf8"),
 );
 if (
   !board.some(
     (e: any) =>
       e.type === "source_component" &&
       e.name === "U_CPU" &&
-      e.manufacturer_part_number === "RP2350A",
+      e.manufacturer_part_number === (wifi ? "ESP32-S3-WROOM-1U-N16R8" : "RP2350A"),
   )
 )
-  throw Error("Expected the direct-mounted RP2350A");
+  throw Error("Unexpected host processor for " + slug);
 const { bom, cpl } = assemblyFiles(board);
-writeFileSync(dir + "/motherboard-bom.csv", bom);
-writeFileSync(dir + "/motherboard-cpl.csv", cpl);
+writeFileSync(`${dir}/${slug}-bom.csv`, bom);
+writeFileSync(`${dir}/${slug}-cpl.csv`, cpl);
 if (
   !board.some((e: any) => e.type === "pcb_trace") ||
   board.some(

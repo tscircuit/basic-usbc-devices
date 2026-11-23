@@ -8,7 +8,7 @@
     "test": "python3 -m unittest discover -s host -v",
     "build:panel2": "bun export.tsx panel2 && bun make-viewer.ts panel2 && bun verify.ts panel2 && bun render.ts panel2",
     "build:hub": "bun build.tsx hub && bun export-hub.ts && bun verify-hub.ts && bun render.ts hub",
-    "build:all": "bun run build && bun run build:panel2 && bun run build:hub && bun run build:panel3 && bun run build:display && bun run build:buzzer && bun run build:resetter && bun run build:panel4 && bun run build:motherboard",
+    "build:all": "bun run build && bun run build:panel2 && bun run build:hub && bun run build:panel3 && bun run build:display && bun run build:buzzer && bun run build:resetter && bun run build:panel4 && bun run build:motherboard && bun run build:esp32-motherboard",
     "build:panel3": "bun export.tsx panel3 && bun make-viewer.ts panel3 && bun verify-panel3.ts && bun render.ts panel3",
     "check:physical": "bun route-hub.ts && python3 verify-hub-copper.py && python3 verify-module-copper.py limit button toggle dial position distance hub display buzzer resetter && python3 verify-panel4-mechanics.py",
     "build:display": "bun build.tsx display && bun export-module.ts display && bun render.ts display",
@@ -17,6 +17,7 @@
     "build:panel4": "bun export.tsx panel4 && bun make-viewer.ts panel4 && bun verify-panel4.ts && bun render.ts panel4",
     "check:sourcing": "python3 audit-bom.py",
     "brand": "bun refresh-branding.ts",
+    "build:esp32-motherboard": "bun motherboard/build.tsx --esp32 && bun motherboard/export.ts --esp32",
     "build:motherboard": "bun motherboard/build.tsx && bun motherboard/export.ts"
   },
   "dependencies": {
