@@ -2,6 +2,10 @@
 
 The November 22 audit covered 18 layouts. Pipeline 9 could not complete the four-port hub. Four more boards routed with electrical or copper-clearance violations. Six others passed physical continuity and short checks but failed the project's trace-angle check. Each row below has an independent PR, the original public bug report and the pinned hardware source.
 
+## Compact USB resetter
+
+The initial two-layer routing input drops the crystal net's zero-via constraint. Pipeline 9 uses two vias on XTAL_OUT. In the autorouter PR, run `bun fixtures/bug-reports/bugreport112-28cf0a/reproduce.ts`. Trace the missing constraint through core's SimpleRouteJson export and the solver. Verify all three XTAL_OUT pins connect on top, then check the plotted Gerbers for opens and shorts. [Reproduction PR #4165](https://github.com/tscircuit/tscircuit-autorouter/pull/4165) · [Original routing input](https://api.tscircuit.com/autorouting/bug_reports/view?autorouting_bug_report_id=28cf0a7c-24eb-441d-84ff-7b90d96bd0a3)
+
 ## Direct-mounted RP2350A revision
 
 The RP2350A revision adds a separate 12 MHz crystal for the processor. Pipeline 9 routed CORE_XIN and XTAL_OUT through two vias each. CORE_XIN also exceeded 10 mm in the board build. The original Stamp motherboard repro below exercises the hub oscillator.

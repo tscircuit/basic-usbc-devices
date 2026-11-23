@@ -790,6 +790,33 @@
       "mpn": "0603WAF1000T5E",
       "package": "0603",
       "url": "https://jlcpcb.com/partdetail/C22775"
+    },
+    {
+      "lcsc": "C17291105",
+      "mpn": "LXZ1-PA01",
+      "package": "LUXEON Z 1.3x1.7mm",
+      "url": "https://jlcpcb.com/partdetail/C17291105",
+      "assembly": "Economic and Standard",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1",
+      "note": "Compact resetter. JLCPCB catalogue checked 2026-11-23. Stock not reserved."
+    },
+    {
+      "lcsc": "C17201313",
+      "mpn": "LXZ1-PM01",
+      "package": "LUXEON Z 1.3x1.7mm",
+      "url": "https://jlcpcb.com/partdetail/C17201313",
+      "assembly": "Economic and Standard",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1",
+      "note": "Compact resetter. JLCPCB catalogue checked 2026-11-23. Stock not reserved."
+    },
+    {
+      "lcsc": "C7436942",
+      "mpn": "LXZ1-PB01",
+      "package": "LUXEON Z 1.3x1.7mm",
+      "url": "https://jlcpcb.com/partdetail/C7436942",
+      "assembly": "Economic and Standard",
+      "assembly_evidence": "PCBA Type Economic and Standard MSL Level MSL 1",
+      "note": "Compact resetter. JLCPCB catalogue checked 2026-11-23. Stock not reserved."
     }
   ],
   "external_items": [

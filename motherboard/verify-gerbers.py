@@ -1,10 +1,11 @@
-"""Compare the four plotted copper films and through drills with the source netlist."""
+"""Compare the plotted copper films and through drills with the source netlist."""
 
 from collections import defaultdict
 from itertools import groupby
 import json
 from pathlib import Path
 import warnings
+import argparse
 
 from gerbonara import ExcellonFile, GerberFile
 from gerbonara.graphic_primitives import ArcPoly, Circle, Line, Rectangle
@@ -71,18 +72,22 @@ def read_film(path, drills):
     return STRtree(polygons(film.difference(drills)))
 
 
-def verify():
-    gerbers = OUTPUT / "gerbers"
-    board = json.loads((OUTPUT / "motherboard.circuit.json").read_text())
+def verify(compact_resetter=False):
+    output = OUTPUT.parent / "new-devices/compact-resetter" if compact_resetter else OUTPUT
+    name = "compact-resetter" if compact_resetter else "motherboard"
+    films_to_read = {"top": "F_Cu", "bottom": "B_Cu"} if compact_resetter else FILMS
+    gerbers = output / "gerbers"
+    board_path = output.with_suffix(".circuit.json") if compact_resetter else output / "motherboard.circuit.json"
+    board = json.loads(board_path.read_text())
     # A routed slot can consist of overlapping drill strokes.
-    barrels = polygons(unary_union(drill_shapes(gerbers / "drill-L1-L4.drl")))
+    barrels = polygons(unary_union(drill_shapes(gerbers / ("drill-L1-L2.drl" if compact_resetter else "drill-L1-L4.drl"))))
     nonplated = drill_shapes(gerbers / "drill_npth.drl")
     drills = unary_union(barrels + nonplated)
     barrel_tree = STRtree(barrels)
     copper = Connectivity()
     films = {}
     rings = defaultdict(list)
-    for layer, filename in FILMS.items():
+    for layer, filename in films_to_read.items():
         islands = read_film(gerbers / (filename + ".gbr"), drills)
         films[layer] = islands
         for index, barrel in enumerate(barrels):
@@ -160,7 +165,7 @@ def verify():
         "Unexpected bottom paste"
     )
     report = {
-        "copperLayers": list(FILMS.values()),
+        "copperLayers": list(films_to_read.values()),
         "platedBarrels": len(barrels),
         "vias": len(vias),
         "nonplatedDrillFeatures": len(nonplated),
@@ -168,7 +173,7 @@ def verify():
         "opens": opens,
         "shorts": shorts,
     }
-    (OUTPUT / "motherboard.gerber-check.json").write_text(
+    (output / (name + ".gerber-check.json")).write_text(
         json.dumps(report, indent=2) + "\n"
     )
     print(json.dumps(report))
@@ -176,4 +181,6 @@ def verify():
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore", message=".*G90 header statement.*")
-    verify()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--compact-resetter", action="store_true")
+    verify(parser.parse_args().compact_resetter)

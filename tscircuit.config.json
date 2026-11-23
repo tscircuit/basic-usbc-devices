@@ -4,6 +4,7 @@
   "includeBoardFiles": [
     "motherboard.circuit.tsx",
     "new-devices/speaker.circuit.tsx",
+    "new-devices/compact-resetter.circuit.tsx",
     "output/limit.circuit.json",
     "output/button.circuit.json",
     "output/toggle.circuit.json",

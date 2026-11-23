@@ -13,6 +13,7 @@
     "check:physical": "bun route-hub.ts && python3 verify-hub-copper.py && python3 verify-module-copper.py limit button toggle dial position distance hub display buzzer resetter && python3 verify-panel4-mechanics.py",
     "build:display": "bun build.tsx display && bun export-module.ts display && bun render.ts display",
     "build:buzzer": "bun build.tsx buzzer && bun export-module.ts buzzer && bun render.ts buzzer",
+    "build:compact-resetter": "bun new-devices/check.tsx compact-resetter && bun new-devices/export-compact-resetter.ts",
     "build:resetter": "bun build-resetter.ts && bun export-module.ts resetter && bun render.ts resetter",
     "build:panel4": "bun export.tsx panel4 && bun make-viewer.ts panel4 && bun verify-panel4.ts && bun render.ts panel4",
     "check:sourcing": "python3 audit-bom.py",
@@ -32,7 +33,7 @@
     "polygon-clipping": "0.15.7",
     "poppygl": "0.0.37",
     "react": "19.2.6",
-    "tscircuit": "0.0.3271"
+    "tscircuit": "0.0.3288"
   },
   "devDependencies": {
     "@tscircuit/alphabet": "0.0.25",

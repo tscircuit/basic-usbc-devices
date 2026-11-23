@@ -6,7 +6,7 @@ from pathlib import Path
 families = {
     2: {
         "output": ["button", "buzzer", "dial", "display", "distance", "hub", "limit", "position", "resetter", "toggle"],
-        "dist/new-devices": ["ereader", "small-ips", "speaker", "temperature"],
+        "dist/new-devices": ["compact-resetter", "ereader", "small-ips", "speaker", "temperature"],
     },
     4: {
         "dist/motherboard": ["motherboard"],
