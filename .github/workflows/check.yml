@@ -10,12 +10,14 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - run: python3 -m pip install -r requirements-routing.txt
-      - run: bun motherboard/build.tsx
+      - run: bun run build:motherboard
       - run: python3 verify-module-copper.py --check-shorts --directory dist/motherboard motherboard
+      - run: python3 motherboard/verify-gerbers.py
       - run: bun new-devices/check.tsx
       - run: python3 verify-module-copper.py --directory dist/new-devices temperature small-ips ereader
       - run: python3 verify-module-copper.py --check-shorts --directory dist/new-devices speaker
       - run: bun p4-display/inspect.tsx
+      - run: bun p4-display/export-gerbers.ts
       - run: python3 verify-module-copper.py --check-shorts --directory dist/p4-display video-player large-rgb
       - run: bun build.tsx hub
       - run: bun run build:display
@@ -24,5 +26,6 @@ jobs:
       - run: bun run check:physical
       - run: bun run build:panel3
       - run: bun run build:panel4
+      - run: python3 verify-assembly-sides.py
       - run: bun run check
       - run: bun run test

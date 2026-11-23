@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "pico/stdlib.h"
+#include "storage.h"
 #include "pico/stdio_uart.h"
 #include "tusb.h"
 
@@ -133,8 +134,9 @@ static void console_task(void) {
     }
     cmd[used]=0;
     if (overflow) puts("ERR command too long");
-    else if (!strcmp(cmd,"id")) puts("DEVICE tscircuit motherboard 1.0.0");
-    else if (!strcmp(cmd,"help")) puts("id | help | devices | status");
+    else if (!strcmp(cmd,"id")) puts("DEVICE tscircuit motherboard 1.2.0");
+    else if (!strcmp(cmd,"help")) puts("id | help | devices | status | sd");
+    else if (!strcmp(cmd,"sd")) storage_request();
     else if (!strcmp(cmd,"devices")) {
         for (unsigned i=0;i<CFG_TUH_CDC;i++) if (tuh_cdc_mounted(i))
             printf("PORT %u %s%s\n",i+1,ports[i].name[0]?ports[i].name:"identifying",
@@ -147,8 +149,10 @@ static void console_task(void) {
 
 int main(void) {
     stdio_uart_init_full(uart0,115200,0,1);
+    storage_init();
     tuh_init(0);
     while (true) {
+        storage_poll();
         tuh_task();
         for (uint8_t i=0;i<CFG_TUH_CDC;i++) if (tuh_cdc_mounted(i)) service_port(i);
         console_task();

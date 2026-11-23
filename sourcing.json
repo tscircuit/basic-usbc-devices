@@ -706,6 +706,90 @@
       "mpn": "0603WAF2202T5E",
       "package": "0603",
       "url": "https://jlcpcb.com/partdetail/C31850"
+    },
+    {
+      "lcsc": "C42411118",
+      "mpn": "RP2350A",
+      "package": "QFN-60-EP (7x7)",
+      "url": "https://jlcpcb.com/partdetail/C42411118"
+    },
+    {
+      "lcsc": "C113767",
+      "mpn": "W25Q128JVSIQ",
+      "package": "SOIC-8-208mil",
+      "url": "https://jlcpcb.com/partdetail/C113767"
+    },
+    {
+      "lcsc": "C20625731",
+      "mpn": "ABM8-272-T3",
+      "package": "SMD3225-4P",
+      "url": "https://jlcpcb.com/partdetail/C20625731"
+    },
+    {
+      "lcsc": "C51118",
+      "mpn": "AP2112K-3.3TRG1",
+      "package": "SOT-25-5",
+      "url": "https://jlcpcb.com/partdetail/C51118"
+    },
+    {
+      "lcsc": "C408336",
+      "mpn": "MWSA0402S-3R3MT",
+      "package": "SMD,4.4x4.2mm",
+      "url": "https://jlcpcb.com/partdetail/C408336"
+    },
+    {
+      "lcsc": "C26085540",
+      "mpn": "TC0225B330JTCC",
+      "package": "0402",
+      "url": "https://jlcpcb.com/partdetail/C26085540"
+    },
+    {
+      "lcsc": "C1548",
+      "mpn": "0402CG150J500NT",
+      "package": "0402",
+      "url": "https://jlcpcb.com/partdetail/C1548"
+    },
+    {
+      "lcsc": "C128396",
+      "mpn": "TS3USB221ARSER",
+      "package": "UQFN-10",
+      "url": "https://jlcpcb.com/partdetail/C128396"
+    },
+    {
+      "lcsc": "C231329",
+      "mpn": "B3U-1000P",
+      "package": "SMD,3x2.5mm",
+      "url": "https://jlcpcb.com/partdetail/C231329"
+    },
+    {
+      "lcsc": "C221841",
+      "mpn": "PCM12SMTR",
+      "package": "SMD SPDT, side-actuated",
+      "url": "https://jlcpcb.com/partdetail/C221841"
+    },
+    {
+      "lcsc": "C3020419",
+      "mpn": "SK12D07VG5",
+      "package": "Right-angle through-hole SPDT",
+      "url": "https://jlcpcb.com/partdetail/C3020419"
+    },
+    {
+      "lcsc": "C160391",
+      "mpn": "BM05B-SRSS-TB(LF)(SN)",
+      "package": "JST SH 5-pin vertical 1 mm",
+      "url": "https://jlcpcb.com/partdetail/C160391"
+    },
+    {
+      "lcsc": "C91145",
+      "mpn": "TF-01A",
+      "package": "SMD microSD",
+      "url": "https://jlcpcb.com/partdetail/C91145"
+    },
+    {
+      "lcsc": "C22775",
+      "mpn": "0603WAF1000T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22775"
     }
   ],
   "external_items": [

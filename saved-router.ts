@@ -17,12 +17,18 @@ export function savedRouter(geometry: {
   viadia: number;
   drill: number;
   nets: Record<string, NetGeometry>;
-}) {
+}, x = 0, y = 0, rotation = 0) {
+  const radians = rotation * Math.PI / 180;
+  const cos = Math.cos(radians), sin = Math.sin(radians);
+  const place = (px: number, py: number) => ({
+    x: x + cos * px - sin * py,
+    y: y + sin * px + cos * py,
+  });
   return async (input: RoutingInput) => {
     const traces = Object.entries(geometry.nets).flatMap(([name, net]) => {
-      const [ax, ay] = net.anchor;
+      const anchor = place(net.anchor[0], net.anchor[1]);
       const connection = input.connections.find((c) =>
-        c.pointsToConnect.some((p) => Math.hypot(p.x - ax, p.y - ay) < 0.0001),
+        c.pointsToConnect.some((p) => Math.hypot(p.x - anchor.x, p.y - anchor.y) < 0.0001),
       );
       if (!connection)
         throw Error("No router connection at the saved pad for " + name);
@@ -34,8 +40,7 @@ export function savedRouter(geometry: {
             route_type: "wire",
             layer,
             width,
-            x: coordinates[j],
-            y: coordinates[j + 1],
+            ...place(Number(coordinates[j]), Number(coordinates[j + 1])),
           });
         return {
           type: "pcb_trace",
@@ -53,8 +58,7 @@ export function savedRouter(geometry: {
         route: [
           {
             route_type: "via",
-            x,
-            y,
+            ...place(x, y),
             from_layer: "top",
             to_layer: "bottom",
             via_diameter: geometry.viadia,

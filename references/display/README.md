@@ -8,4 +8,4 @@ LCD D0..D7 are FPC pins 32..25, WR 36, DC 37, reset 10, CS 38 grounded, RD 35 he
 
 The 100 Ω 1206 backlight resistor and low-side MOSFET provide deliberately reduced brightness for the bus-powered hub. Hardware current, backlight brightness, LCD timing and USB operation remain unmeasured.
 
-Routing is replayed from `display-routes.json`. For a placement revision: build with `DISPLAY_PLACEMENT_ONLY=1`, run `bun route-display.ts`, route the resulting DSN with Freerouting, then run `bun import-display-routes.ts` and `bun normalize-display-routes.ts`. The importer enforces the 0.1124 mm neck-down minimum. Rebuild and rerun CAD and physical connectivity checks after any reroute.
+The current build replays checked copper from `display-routes.json`. Route placement revisions with the default local tscircuit autorouter, maintain the 0.1124 mm neck-down minimum, then rerun CAD and physical connectivity checks. The [autorouter handoff](../../AUTOROUTER-HANDOFF.md) links the flex display fixture and its remaining trace-angle findings.

@@ -6,6 +6,7 @@
       "name": "@tsci/seveibar.basic-usbc-devices",
       "dependencies": {
         "@resvg/resvg-js": "2.6.2",
+        "@tsci/tscircuit.standard-jst-programmer": "^0.8.1",
         "@tscircuit/checks": "0.0.268",
         "@tscircuit/circuit-json-util": "0.0.128",
         "circuit-json-to-3d-png": "0.0.6",
@@ -154,6 +155,8 @@
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.68.8", "", { "os": "win32", "cpu": "x64" }, "sha512-/W1LBsMeQAdiCuH3Z2gkRspl3mlxL+butknhq4vXjmxO45vuT08BqhehxDoE4YS+m6s9lhpq6M9/PjTEAg8PYw=="],
 
     "@thednp/dommatrix": ["@thednp/dommatrix@3.1.4", "", {}, "sha512-vNI1uA4My/z4Z7btrPsQ9mEV/ZC1bzl2ZdXPIHZiY3U6fHREKDFdNA97Z9VE57dzavgG9FHQZ5EKkpLBbwGx7g=="],
+
+    "@tsci/tscircuit.standard-jst-programmer": ["@tsci/tscircuit.standard-jst-programmer@0.8.1", "https://npm.tscircuit.com/package_files/download?package_name=tscircuit%2Fstandard-jst-programmer&package_file_id=bc64bd09-6445-47ce-ab60-8f1e9d416d60&package_release_version=0.8.1&file_path=dist%2Fpackage.tgz", {}, "sha512-1CwWL+hKZ1wJNlnlnjS3WrErsHJeJWNj+HAUebPY0TaCcd7VjkjYZyEDQUupoA16KWbeK5O+heqWtBm3uMlkgw=="],
 
     "@tscircuit/alphabet": ["@tscircuit/alphabet@0.0.25", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-PWLjptI6AlLEtF/wjN1N8uC+n3G7vtg0j3xKE1fgWHDhahtnlQRqHDrtPSLlkIR9aJjRfjplzLuaUEaCRvJmZA=="],
 

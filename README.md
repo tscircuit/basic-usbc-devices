@@ -14,7 +14,7 @@ USB-C device boards, including a computer-powered four-port USB 2.0 hub, designe
 | USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
 | Buzzer | USB controller + externally driven Murata piezo | Timed tones from 20 to 4000 Hz |
 | [USB-C speaker](new-devices/speaker.circuit.tsx) | USB Audio Class 1, mono bridge output on a two-pin JST-SH header | System audio, volume and mute |
-| Embedded motherboard | RP2350 Stamp + four-port hub | Runs a standalone knob-to-display program on product power |
+| RP2350 USB Motherboard | RP2350A + 16 MB flash + four-port hub | Runs a standalone knob-to-display program on product power |
 | Four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
 
 The 177 × 46 mm panel has side breakaway tabs, 0.5 mm mouse-bite holes, 3 mm routing slots, tooling holes, and exposed 1 mm fiducials. Each board has four 2.2 mm non-plated M2 clearance holes, 2.5 mm in from each edge, with 4.6 mm diameter copper and placement keepouts for screw heads. All assembled parts are on the top side. The boards are independent USB devices; the panel is a manufacturing panel, not a USB hub.
@@ -40,6 +40,8 @@ The six original modules and display adapter have mounting centers **(±9.5, ±1
 **Do not submit this panel as Economic PCBA.** JLCPCB lists the onboard sensor [C91199](https://jlcpcb.com/partdetail/STMicroelectronics-VL53L0CXV0DH1/C91199) as **Standard Only** with required X-ray inspection. The other selected components are Basic parts or Economic-compatible Extended parts. Their C-numbers and catalog links are recorded in `sourcing.json` and the BOM.
 
 The current files preserve a complete onboard distance sensor as a reviewable **Standard-assembly candidate**. The requested Economic-only panel is not yet fulfilled. A pending choice is to accept Standard assembly, or redesign the distance board for a plug-in sensor. JLCPCB lists Waveshare [C431944](https://jlcpcb.com/partdetail/Waveshare-VL53L0X_DistanceSensor/C431944) as Economic-compatible, but its current stock and assembly arrangement have not been established. It is not silently substituted into these files. No parts have been bought or reserved.
+
+For new routing work, use the default local tscircuit autorouter. The [autorouter handoff](AUTOROUTER-HANDOFF.md) links each failing board to its standalone reproduction and pass criteria.
 
 ## Fabrication rules
 
@@ -159,7 +161,7 @@ The **42 × 42 mm resetter** adapts [seveibar/usb-reseter@1.1.4](https://tscircu
 
 The **24 × 30 mm buzzer, revision 2**, uses a Murata PKLCS1212E4001-R1 passive piezoelectric sounder. Its four M2 holes have 20 × 20 mm spacing. Send `tone 440 750` over USB serial to generate 440 Hz for 750 ms. The default beep drives 4 kHz, the transducer's rated frequency. Sound level varies with pitch and enclosure. [Murata sounder](https://jlcpcb.com/partdetail/C113159)
 
-The [embedded motherboard](motherboard/README.md) combines a USB host, four protected downstream ports, 16 MB of flash and a separate computer service port on one 46 × 46 mm PCB.
+The [RP2350 USB Motherboard](motherboard/README.md) combines a USB host, four protected downstream ports, 16 MB of flash and a separate computer service port on one 80 × 46 mm PCB.
 
 ```sh
 bun run build:display
@@ -183,3 +185,7 @@ All ten boards now support computer-controlled status indication. The seven boar
 ## Board silkscreen
 
 All ten devices have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.7 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.
+
+## Assembly and panel stackups
+
+Populate components on the top side, including hand-fitted modules. Underside copper pads may be used for programming and product power. The RP2350 USB Motherboard, 3.5-inch video player and 7-inch RGB controller use four copper layers and belong on a dedicated four-layer panel. The USB speaker and other two-layer modules belong on the two-layer panel. Run `python3 verify-assembly-sides.py` after building the boards to check assembly sides and panel membership.

@@ -1,13 +1,15 @@
-# Embedded USB motherboard
+# RP2350 USB Motherboard
 
-A 46 × 46 mm, four-layer controller for an enclosure. The upper edge carries four downstream USB-C sockets. The lower edge carries the computer service socket. Allow clearance beneath the PCB for the castellated, bottom-mounted RP2350 Stamp and access to the power wires. Four M2 clearance holes are centered at (±20, ±5) mm relative to board center.
+A 76 × 46 mm, four-layer controller for an enclosure. The upper edge carries four downstream USB-C sockets. The front edge carries the computer console, power switch and microSD opening, in that order from left to right when viewed from above with the four downstream sockets at the back. The RP2350A is soldered directly to the board in a 7 × 7 mm QFN-60 package. Leave room for the power harness at the underside pads. Four M2 clearance holes are on a 70 × 40 mm grid, at X = ±35 mm, Y = ±20 mm from board center.
 
 ## Integration
 
-- Supply regulated 5 V and ground at the two underside power pads. Budget 1 A at the input for the controller, hub, four 100 mA peripherals and startup margin. The computer port powers its USB-to-UART interface independently. A dual-supply translator isolates the UART when either rail is off.
-- The processor's native USB D+/D− connect to the hub upstream pins. Each downstream port has attachment detection, a current-limited power switch and data-line ESD protection. The hub reports faults as a group. Program the hub status EEPROM with the existing firmware/hub/ch334f-status.bin if using the configurable indicator.
-- Fit the 16 MB Solder Party RP2350 Stamp separately on the underside. Align its pin 1 to the footprint mark. The manual-assembly CSV is separate from the machine BOM/CPL. The Stamp includes the processor, flash, clock, regulator and USB series termination. [Module and schematic](https://www.solder.party/docs/rp2xxx-stamp-related/rp2350-stamp/downloads/) · [Land pattern](https://github.com/solderparty/rp2xxx_stamp_footprints/tree/7676fac43f12f672d9faf6230b40fd48681d7bda/KiCad)
-- Flash the compiled ELF through the four labeled SWD pads with product power applied. The pads in order are 3.3 V reference, SWDIO, SWCLK and ground. The computer socket provides a 115200-baud runtime console on GPIO0/TX and GPIO1/RX.
+- Supply regulated 5 V and ground at the two underside power pads. The edge-facing OFF/ON slider on the J1 edge enables a TPS22918 load switch between input power and the processor, hub and four device supplies. Its contacts only carry the enable signal. Budget 1 A at the input for the controller, hub, four 100 mA peripherals and startup margin. The computer port powers its USB-to-UART interface independently. A dual-supply translator isolates the UART when either rail is off.
+- U_CPU uses the RP2350A internal core buck with an external 3.3 µH inductor, a dedicated 3.3 V regulator, a 12 MHz crystal and 16 MiB of external QSPI flash. The exposed ground pad uses nine 0.25 mm plated holes. Specify filled and capped via-in-pad for assembly. [Raspberry Pi hardware design guide](https://datasheets.raspberrypi.com/rp2350/hardware-design-with-rp2350.pdf)
+- The processor hosts J2–J5 and J1 provides the 115200-baud runtime UART. Each downstream port has attachment detection, a current-limited power switch and ESD protection. The hub reports faults as a group. The optional indicator uses `firmware/hub/ch334f-status.bin`.
+- Program or debug with the [standard JST programmer](https://github.com/tscircuit/standard-jst-programmer). Supply normal product power, switch ON and plug a straight-through cable into the top-entry J_SWD (JST SH, 5 pins, 1 mm). Contacts 1–5 are unconnected programmer power, SWDIO, ground, SWCLK and active-low RUN/reset. The signal lines use 100 Ω series resistors. RUN has a 10 kΩ pull-up to 3.3 V. J1 is a runtime console.
+- The power switch is a Shou Han SK12D07VG5. Its 5 mm actuator slides parallel to the front edge and projects 4.75 mm past the PCB in the assembly model. Provide clearance for the through-hole leads, which extend 1.9 mm below the PCB.
+- The TF-01A microSD socket opens at the front, beside the power lever. The 3D assembly places its mouth 0.30 mm inside the PCB edge and leaves 5.0 mm between the switch and socket housings. Its 3.3 V SPI0 signals are GP4 MISO, GP5 CS, GP6 SCK and GP7 MOSI. Board pull-ups hold CS and the data lines high during reset. Firmware boots from the external QSPI flash with the card inserted or removed. The `sd` command mounts the card on demand and reports the filesystem. The display demo generates its three patterns in code.
 
 ## Standalone program
 
@@ -20,17 +22,25 @@ cmake --build dist/host-fw
 
 | Console command | Reply |
 | --- | --- |
-| `id` | `DEVICE tscircuit motherboard 1.0.0` |
+| `id` | `DEVICE tscircuit motherboard 1.2.0` |
 | `help` | Supported commands |
 | `devices` | Connected serial device types and interface slots, followed by `OK` |
 | `status` | `SCENE 1` through `SCENE 3`, or `SCENE 0` while waiting for a knob |
+| `sd` | `SD FAT32`, `SD exFAT` or the detected FAT variant. A mount failure returns `ERR sd <FatFs result number>`. |
+
+## PCB fabrication
+
+The board uses four copper layers. Inner layer 1 carries the ground plane. Top, inner layer 2 and bottom carry routed traces. All components mount on top. The tscircuit design checks pass, and the exported Gerber and drill files pass an independent check for open and shorted nets. The USB traces were routed individually. Differential impedance and USB operation still need verification on the chosen stackup and first article.
+
+[Gerbers and drills (ZIP)](https://github.com/tscircuit/basic-usbc-devices/releases/download/rp2350-usb-motherboard-compact-routed-v1/motherboard-gerbers.zip) · [BOM](https://github.com/tscircuit/basic-usbc-devices/releases/download/rp2350-usb-motherboard-compact-routed-v1/motherboard-bom.csv) · [Component placements](https://github.com/tscircuit/basic-usbc-devices/releases/download/rp2350-usb-motherboard-compact-routed-v1/motherboard-cpl.csv)
 
 ## Rebuild and check
 
 ```sh
-bun motherboard/build.tsx
+python3 -m pip install -r requirements-routing.txt
+bun run build:motherboard
 python3 verify-module-copper.py --check-shorts --directory dist/motherboard motherboard
-bun motherboard/export.ts
+python3 motherboard/verify-gerbers.py
 ```
 
-Check first-article power-up, host enumeration, hot-plug recovery, per-port fault handling and USB signal quality before embedding the board in a product. Prototype routing has been checked for physical continuity and shorts. USB eye diagrams and enclosure fit require hardware.
+Check first-article power-up, host enumeration, hot-plug recovery, per-port fault handling and USB signal quality before embedding the board in a product. USB eye diagrams and enclosure fit require hardware.

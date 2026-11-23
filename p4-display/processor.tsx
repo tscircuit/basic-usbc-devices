@@ -41,7 +41,6 @@ export function Cap({
   a,
   b = "GND",
   footprint = "0402",
-  bottom = false,
   manufacturerPartNumber,
 }: {
   name: string;
@@ -51,7 +50,6 @@ export function Cap({
   a: string;
   b?: string;
   footprint?: string;
-  bottom?: boolean;
   manufacturerPartNumber?: string;
 }) {
   return (
@@ -60,7 +58,6 @@ export function Cap({
       capacitance={value}
       manufacturerPartNumber={manufacturerPartNumber}
       footprint={footprint}
-      layer={bottom ? "bottom" : "top"}
       pcbX={x}
       pcbY={y}
       connections={{ pin1: "net." + a, pin2: "net." + b }}
@@ -71,9 +68,11 @@ const pin = (p: number) => ".U1 > .pin" + p;
 export const signal = (gpio: number) => ".U1 > .GPIO" + gpio;
 
 export function Processor({
+  bypass,
   usedGpio,
   usbY = -18,
 }: {
+  bypass: readonly (readonly [string, string, number, number])[];
   usedGpio: number[];
   usbY?: number;
 }) {
@@ -249,55 +248,30 @@ export function Processor({
         />
       ))}
       <Res name="RPHY" value={0} x={5.9} y={-8.5} a="LOGIC" b="USBPHY" />
-      {/* Supply bypasses sit on the reverse side below their corresponding package pads. */}
-      {[
-        ["LOGIC", -4, -3],
-        ["LOGIC", -4, 1],
-        ["LOGIC", 4.7, -1.8],
-        ["LOGIC", 1, 4.5],
-        ["LOGIC", -2, 4.5],
-        ["LOGIC", -4.8, 4.3],
-        ["HP", -4.4, -5],
-        ["HP", 4.2, -4.7],
-        ["HP", 4.3, 3.5],
-        ["HP", -0.6, 5.8],
-        ["PSRAM", 4.8, -0.2],
-        ["PSRAM", 4.9, 2],
-        ["FLASHV", -2, -5.8],
-        ["USBPHY", 3.2, -6.2],
-      ].map(([net, x, y], i) => (
+      {/* Place bypass capacitors on the assembly side around the package fanout. */}
+      {bypass.map(([name, net, x, y]) => (
         <Cap
-          key={i}
-          name={"CD" + (i + 1)}
-          value="100nF"
-          x={Number(x)}
-          y={Number(y)}
-          a={String(net)}
-          bottom
-        />
-      ))}
-      {["FLASHV", "PSRAM", "LDO3", "LDO4", "USBPHY"].map((net, i) => (
-        <Cap
-          key={net}
-          name={"CL" + (i + 1)}
-          value={net === "USBPHY" ? "4.7uF" : "1uF"}
-          footprint="0603"
-          x={-3 + i * 3.4}
-          y={-8}
+          key={name}
+          name={name}
+          value={
+            name.startsWith("CD")
+              ? "100nF"
+              : name.startsWith("CB")
+                ? "10uF"
+                : net === "USBPHY"
+                  ? "4.7uF"
+                  : "1uF"
+          }
+          footprint={
+            name.startsWith("CD")
+              ? "0402"
+              : name.startsWith("CB")
+                ? "0805"
+                : "0603"
+          }
+          x={x}
+          y={y}
           a={net}
-          bottom
-        />
-      ))}
-      {["LOGIC", "HP", "LOGIC", "LOGIC"].map((net, i) => (
-        <Cap
-          key={i}
-          name={"CB" + (i + 1)}
-          value="10uF"
-          footprint="0805"
-          x={-3 + i * 3.5}
-          y={8.5}
-          a={net}
-          bottom
         />
       ))}
     </>

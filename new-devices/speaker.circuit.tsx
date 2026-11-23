@@ -75,32 +75,28 @@ export default function Speaker() {
         />
         <UsbSeries
           name="R3"
-          pcbX={0}
-          pcbY={-6.05}
-          layer="bottom"
+          pcbX={-6.25}
+          pcbY={-9.5}
           pcbRotation={90}
           connections={between("DM", "DAC_DM")}
         />
         <UsbSeries
           name="R4"
-          pcbX={1.65}
-          pcbY={-6.05}
-          layer="bottom"
+          pcbX={6.25}
+          pcbY={-11}
           pcbRotation={90}
           connections={between("DP", "DAC_DP")}
         />
         <Pullup
           name="R5"
-          pcbX={0}
-          pcbY={-1.8}
-          layer="bottom"
+          pcbX={7}
+          pcbY={-1.75}
           connections={between("DP", "DAC_VDD")}
         />
         <Pullup
           name="R6"
-          pcbX={-3}
+          pcbX={-10.75}
           pcbY={-2.5}
-          layer="bottom"
           connections={between("DT", "DAC_VDD")}
         />
         <X322512MSB4SI
@@ -117,48 +113,24 @@ export default function Speaker() {
         />
         <CrystalFeedback
           name="R7"
-          pcbX={-7.4}
-          pcbY={0.55}
-          layer="bottom"
+          pcbX={-11.25}
+          pcbY={0.5}
           pcbRotation={90}
           connections={between("XTO", "XTI")}
         />
         <C name="C2" value="33pF" x={-7.4} y={-2.55} a="net.XTO" />
         <C name="C3" value="33pF" x={-7.4} y={3.55} a="net.XTI" />
-        <C
-          name="C4"
-          value="1uF"
-          x={-2.7}
-          y={-4.35}
-          a="net.DAC_VDD"
-          layer="bottom"
-        />
-        <C
-          name="C5"
-          value="1uF"
-          x={5.7}
-          y={-1.2}
-          layer="bottom"
-          a="net.VCCL"
-          rotation={90}
-        />
-        <C name="C6" value="1uF" x={4.2} y={4.2} a="net.VCCR" layer="bottom" />
-        <C name="C7" value="1uF" x={0.8} y={4.2} a="net.VCCP" layer="bottom" />
+        <C name="C4" value="1uF" x={-8.75} y={-8.75} a="net.DAC_VDD" />
+        <C name="C5" value="1uF" x={-0.5} y={6.75} a="net.VCCL" rotation={90} />
+        <C name="C6" value="1uF" x={10.5} y={4.25} a="net.VCCR" />
+        <C name="C7" value="1uF" x={-3.75} y={6.25} a="net.VCCP" />
         <CommonModeCap
           name="C8"
-          pcbX={2.4}
-          pcbY={2.35}
-          layer="bottom"
+          pcbX={-0.25}
+          pcbY={9}
           connections={between("VCOM", "GND")}
         />
-        <C
-          name="C9"
-          value="100nF"
-          x={2.1}
-          y={-3.5}
-          a="net.VBUS"
-          layer="bottom"
-        />
+        <C name="C9" value="100nF" x={10.25} y={-2} a="net.VBUS" />
 
         {/* Sum both channels, limit full-scale level and AC-couple the single-ended input. */}
         <MixInput
@@ -188,14 +160,7 @@ export default function Speaker() {
           a="net.MIX"
           b="net.AMP_IN"
         />
-        <C
-          name="C11"
-          value="1uF"
-          x={4.5}
-          y={6.35}
-          layer="bottom"
-          a="net.AMP_REF"
-        />
+        <C name="C11" value="1uF" x={10.5} y={11} a="net.AMP_REF" />
         <PAM8302AASCR
           name="U2"
           pcbX={3.1}
@@ -234,16 +199,14 @@ export default function Speaker() {
         />
         <FilterCap
           name="C14"
-          pcbX={-4.2}
-          pcbY={13}
-          layer="bottom"
+          pcbX={-4.25}
+          pcbY={8}
           connections={between("SPK_P", "GND")}
         />
         <FilterCap
           name="C15"
-          pcbX={-4.2}
-          pcbY={10.7}
-          layer="bottom"
+          pcbX={-9.25}
+          pcbY={10.75}
           connections={between("SPK_N", "GND")}
         />
         <SpeakerHeader

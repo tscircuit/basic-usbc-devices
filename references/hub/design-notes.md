@@ -35,12 +35,7 @@ The bulk-capacitor footprint follows the manufacturer's 3.5 × 1.6 mm pads with 
 
 `hub-routes.json` holds the final copper, and `hub-route-ports.json` maps its nets to physical pads. `hub-router.ts` transforms both when the hub is placed on a panel, then replays the copper through the normal tscircuit renderer. The renderer regenerates the ground pour and checks the result. The crystal uses four explicit `pcbPath` traces.
 
-To reroute after a placement or connectivity change:
-
-1. Run `HUB_PLACEMENT_ONLY=1 bun build.tsx hub`, then `bun route-hub.ts`. Unconnected-net findings are expected in this intermediate render.
-2. Install `requirements-routing.txt`, then run `python prepare-hub-fanouts.py` and `bun check-hub-fanout-geometry.ts`. This reserves the critical controller pin escapes before global routing. The intermediate geometry check excludes the stale ground pour; the final build regenerates and checks it.
-3. Run `HUB_INCLUDE_FANOUT=1 bun route-hub.ts`, then `java -Xmx3g -Djava.awt.headless=true -jar freerouting-2.5.0.jar -de output/hub.dsn -do output/hub.ses --gui.enabled=false --router.fanout.enabled=false --router.autorouter.max_passes=60 --router.optimizer.max_threads=2 --router.optimizer.max_passes=3 --profile.allow_telemetry=false`.
-4. Run `bun import-hub-routes.ts`, `bun normalize-hub-routes.ts`, `bun run build:hub`, and `bun verify-hub-transform.tsx`. Run `tsci check` and the shorts check on the final circuit JSON.
+For a placement or connectivity change, use the default local tscircuit autorouter with the hub's explicit crystal paths. Reproduce the failing GND branch using the four-port hub fixture in the [autorouter handoff](../../AUTOROUTER-HANDOFF.md). After routing, run `bun verify-hub-transform.tsx`, `tsci check` and the physical copper checks below on the new layout.
 
 The final cache includes a local CC1A route and ground stitching; rebuilding the cache after placement changes requires rechecking physical ground continuity. The normalization step joins independently exported vias to their adjoining wire records and asserts that every copper segment and via is preserved. The DSN/SES files are temporary handoffs; checked copper and its pad metadata are committed. Automatic routing uses 0.15 mm nominal traces with 0.1124 mm neck-downs, 0.16 mm copper clearance, 0.21 mm via-to-SMD clearance, and 0.30/0.60 mm vias. Crystal routes are 0.20 mm wide. Mounting exclusions use square bounding boxes to satisfy tscircuit's keepout checks. Locator-hole obstacles include 0.03 mm additional radial margin. A completed search does not establish that all final checks pass.
 

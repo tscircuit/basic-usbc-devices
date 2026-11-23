@@ -61,6 +61,32 @@ const biasRes = [
   ["RENA", 10000, "BIASEN", "GND", -21.2, -5.0],
   ["RRST", 10000, "RESET", "GND", 3, 20],
 ] as const;
+const bypass = [
+  ["CD1", "LOGIC", -6.5, -7.5],
+  ["CD2", "LOGIC", -9.5, -3.25],
+  ["CD3", "LOGIC", 10.5, -4.5],
+  ["CD4", "LOGIC", 3.5, 7.5],
+  ["CD5", "LOGIC", 0.25, 9],
+  ["CD6", "LOGIC", -4.75, 10.25],
+  ["CD7", "HP", -6.5, -8.75],
+  ["CD8", "HP", 9.5, -6.25],
+  ["CD9", "HP", 5.75, 7.5],
+  ["CD10", "HP", -0.5, 10.25],
+  ["CD11", "PSRAM", 11, 4.25],
+  ["CD12", "PSRAM", 5, 8.75],
+  ["CD13", "FLASHV", -6.25, -11.25],
+  ["CD14", "USBPHY", 6.25, -10],
+  ["CL1", "FLASHV", -3, -13],
+  ["CL2", "PSRAM", 0.5, -13],
+  ["CL3", "LDO3", 6.75, -11.5],
+  ["CL4", "LDO4", 10, -10.25],
+  ["CL5", "USBPHY", 13, -8],
+  ["CB1", "LOGIC", -3.5, 12],
+  ["CB2", "HP", 2.5, 10.75],
+  ["CB3", "LOGIC", 6.25, 11.75],
+  ["CB4", "LOGIC", 7.5, 14],
+] as const;
+
 export default function LargeRgb() {
   return (
     <board
@@ -91,6 +117,7 @@ export default function LargeRgb() {
           spanY={40}
         />
         <Processor
+          bypass={bypass}
           usedGpio={[...Array.from({ length: 22 }, (_, i) => i + 1), 23]}
           usbY={-21}
         />

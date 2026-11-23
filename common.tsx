@@ -12,6 +12,7 @@ export const boardRules = {
 const resistors={
  '5.1k':['C23186','0603WAF5101T5E'],
  '10k':['C25804','0603WAF1002T5E'],
+ '100':['C22775','0603WAF1000T5E'],
  '220':['C22962','0603WAF2200T5E'],
  '2k':['C22975','0603WAF2001T5E'],
 } as const

@@ -19,10 +19,10 @@ export const ASWPA4035S2R2MT = (props: Omit<InductorProps, "inductance">) => {
 <courtyardoutline outline={[{"x":-2.500122499999975,"y":2.2499959999998964},{"x":2.500122499999975,"y":2.2499959999998964},{"x":2.500122499999975,"y":-2.2499959999998964},{"x":-2.500122499999975,"y":-2.2499959999998964},{"x":-2.500122499999975,"y":2.2499959999998964}]} />
       </footprint>}
       cadModel={{
-        objUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C340207.obj?uuid=7c47479ae1e64690a5e3a7b07defea8c",
-        stepUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C340207.step?uuid=7c47479ae1e64690a5e3a7b07defea8c",
-        pcbRotationOffset: 270,
-        modelOriginPosition: { x: 0, y: 0, z: 2.799996 },
+        // Nominal envelope and terminations from the Sunlord ASWPA4035S drawing.
+        objUrl: "https://raw.githubusercontent.com/tscircuit/basic-usbc-devices/f4af684de703843c12220b64ed5d30eb2bc95835/mechanical/aswpa4035s.obj",
+        stepUrl: "https://raw.githubusercontent.com/tscircuit/basic-usbc-devices/f4af684de703843c12220b64ed5d30eb2bc95835/mechanical/aswpa4035s.step",
+        modelOriginPosition: { x: 0, y: 0, z: 0 },
       }}
       {...props}
     />
