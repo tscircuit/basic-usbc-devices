@@ -29,6 +29,7 @@ export function composePanel(positions:{x:number,y:number,rotation?:number,name?
     if(['pcb_silkscreen_rect','pcb_silkscreen_pill','pcb_silkscreen_oval'].includes(e.type))[e.width,e.height]=[e.height,e.width]
    }
    if(e.type==='pcb_plated_hole')e.ccw_rotation=((e.ccw_rotation??0)+rotation)%360
+   if(e.type==='pcb_solder_paste'&&e.shape==='rotated_pill')e.ccw_rotation=((e.ccw_rotation??0)+rotation)%360
    if(e.type==='cad_component')e.rotation.z=(e.rotation.z+rotation)%360
   }
   raw.push(...shifted)
