@@ -98,5 +98,15 @@
     "backLogo": true,
     "topClearanceBeyondExclusionMm": 0.15,
     "bottomClearanceBeyondExclusionMm": 0.7591
+  },
+  {
+    "backTextAlignment": "left",
+    "board": "switchable-hub",
+    "backText": "Made by AI with tscircuit",
+    "backTextStrokeMm": 0.153,
+    "frontLogo": true,
+    "backLogo": true,
+    "topClearanceBeyondExclusionMm": 2.1056,
+    "bottomClearanceBeyondExclusionMm": 1.3183
   }
 ]

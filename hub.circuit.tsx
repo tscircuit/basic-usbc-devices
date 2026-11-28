@@ -1,3 +1,4 @@
+import { HubBulkCap } from './hub-bulk-cap'
 import {StatusLed} from './status-led'
 import {AT24C02D_STUM_T} from './imports/C79996'
 import { createHubRouter } from './hub-router'
@@ -17,16 +18,6 @@ function R(props:Omit<Parameters<typeof BaseR>[0],"x"|"y">){const p=position(pro
 const hres = {'220k':['C22961','0603WAF2203T5E'], '910k':['C23263','0603WAF9103T5E'], '1k':['C21190','0603WAF1001T5E']} as const
 function HR({name,value,a,b}:{name:string,value:keyof typeof hres,a:string,b:string}){
  const [id,mpn]=hres[value]; return <resistor name={name} resistance={value} footprint="0603" {...pcb(name)} {...sch(name)} manufacturerPartNumber={mpn} supplierPartNumbers={{jlcpcb:[id]}} connections={{pin1:`net.${a}`,pin2:`net.${b}`}}/>
-}
-function Bulk({name,net}:{name:string,net:string}){
- // FOSAN FVH datasheet p46: 3.5 x 1.6 mm lands, 1.9 mm gap.
- // 220 uF / 10 V, 6.3 x 5.4 mm; positive terminal remains on the right.
- return <capacitor name={name} capacitance="220uF" polarized maxVoltageRating="10V" {...pcb(name)} {...sch(name)} manufacturerPartNumber="FVH010ADA221M0654" supplierPartNumbers={{jlcpcb:['C7469982']}} connections={{pin1:`net.${net}`,pin2:'net.GND'}} footprint={<footprint>
- <smtpad portHints={['pin1']} pcbX={2.7} pcbY={0} width={3.5} height={1.6} shape="rect"/>
- <smtpad portHints={['pin2']} pcbX={-2.7} pcbY={0} width={3.5} height={1.6} shape="rect"/>
- <silkscreencircle pcbX={0} pcbY={0} radius={3.3}/><silkscreentext text="+" pcbX={3.8} pcbY={1.6} fontSize={1}/>
- <courtyardoutline outline={[{x:-4.8,y:-3.6},{x:4.8,y:-3.6},{x:4.8,y:3.6},{x:-4.8,y:3.6},{x:-4.8,y:-3.6}]}/>
- </footprint>}/>
 }
 function USB({i}:{i:number}){
  const v=i===0?'VBUS':`VBUS${i}`,dp=`DP${i}`,dm=`DM${i}`;
@@ -73,7 +64,7 @@ export function HubBoard({routingDisabled=false,pcbX=0,pcbY=0,pcbRotation=0}:{ro
  <TPS2552DBVR name={`U${u+1}`} {...pcb(`U${u+1}`)} {...sch(`U${u+1}`)} pinAttributes={{pin1:{requiresPower:true},pin2:{requiresGround:true},pin6:{providesPower:true,providesVoltage:5}}} connections={{pin1:'net.VBUS',pin2:'net.GND',pin3:`net.EN${i}_N`,pin4:'net.OC_N',pin5:`net.ILIM${i}`,pin6:`net.VBUS${i}`}}/>
  <HR name={`R${base+2}`} value="220k" a={`ILIM${i}`} b="GND"/>
  <C name={`C${base+1}`} value="100nF" a="net.VBUS"/>
- <Bulk name={`C${base+2}`} net={`VBUS${i}`}/>
+ <HubBulkCap name={`C${base+2}`} net={`VBUS${i}`} {...pcb(`C${base+2}`)} {...sch(`C${base+2}`)}/>
  <C name={`C${base+3}`} value="100nF" a={`net.VBUS${i}`}/>
  <A_2N7002 name={`MOSFET${i}`} {...pcb(`MOSFET${i}`)} {...sch(`MOSFET${i}`)} pinAttributes={{pin1:{isPassive:true},pin2:{isPassive:true,requiresGround:true},pin3:{isPassive:true}}} connections={{pin1:`net.EN${i}_N`,pin2:'net.GND',pin3:`net.DIS${i}`}}/>
  <HR name={`R${base+3}`} value="1k" a={`VBUS${i}`} b={`DIS${i}`}/>

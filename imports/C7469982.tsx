@@ -1,5 +1,12 @@
 import type { ChipProps } from "@tscircuit/props"
 
+export const fosanBulkCapModel = {
+  objUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C7469982.obj?uuid=598b475098c54ca7bbe8879f37d2b014",
+  stepUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C7469982.step?uuid=598b475098c54ca7bbe8879f37d2b014",
+  pcbRotationOffset: 0,
+  modelOriginPosition: { x: 0.000025400000026820635, y: -0.000038099999983387534, z: -1 },
+}
+
 const pinLabels = {
   pin1: ["pin1"],
   pin2: ["pin2"]
@@ -40,12 +47,7 @@ export const FVH010ADA221M0654 = (props: ChipProps<typeof pinLabels>) => {
 <fabricationnotepath route={[{"x":-2.8049982,"y":0.6599427999999534},{"x":-2.8049982,"y":-0.6600444000000607},{"x":-2.6070052000000032,"y":-0.6600444000000607},{"x":-2.6070052000000032,"y":0.6599427999999534},{"x":-2.8049982,"y":0.6599427999999534}]} strokeWidth="0mm" isFilled hasStroke={false} />
 <courtyardoutline outline={[{"x":-4.670044500000131,"y":3.5000316000000566},{"x":4.670044500000017,"y":3.5000316000000566},{"x":4.670044500000017,"y":-3.49995540000009},{"x":-4.670044500000131,"y":-3.49995540000009},{"x":-4.670044500000131,"y":3.5000316000000566}]} />
       </footprint>}
-      cadModel={{
-        objUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C7469982.obj?uuid=598b475098c54ca7bbe8879f37d2b014",
-        stepUrl: "https://modelcdn.tscircuit.com/easyeda_models/assets/C7469982.step?uuid=598b475098c54ca7bbe8879f37d2b014",
-        pcbRotationOffset: 0,
-        modelOriginPosition: { x: 0.000025400000026820635, y: -0.000038099999983387534, z: -1 },
-      }}
+      cadModel={fosanBulkCapModel}
       {...props}
     />
   )

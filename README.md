@@ -1,6 +1,6 @@
 # Basic USB-C devices
 
-Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed in tscircuit. The six original input modules and the buzzer are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hub and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
+Eleven USB-C boards designed in tscircuit, including a computer-powered hub and a [self-powered four-port hub with individual port switching](#individually-switched-four-port-hub). The six original input modules and the buzzer are 24 × 30 mm with the same 19 × 25 mm mounting pattern. The display adapter is 32 × 42 mm and retains that pattern; the hubs and resetter have separate mounting patterns. The distance board is 29% smaller in area than the previous 28 × 36 mm revision, using a CH341T SSOP20 instead of CH341A SOP28.
 
 | Board | Interface | Host reading |
 |---|---|---|
@@ -13,9 +13,10 @@ Ten USB-C boards, including a computer-powered four-port USB 2.0 hub, designed i
 | Display adapter | CH552T + ILI9488 50-pin parallel LCD interface | Host sends RGB565 pixels and commands over USB CDC |
 | USB resetter | RP2040 + TPS22918, adapted from seveibar/usb-reseter | Host switches downstream USB power, passthrough data |
 | Buzzer | CH552E + 5 V active buzzer | Host commands timed 2.8 kHz beeps |
-| Four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
+| Computer-powered four-port hub | CH334F + four TUSB321AI USB-C controllers | One upstream + four downstream USB-C ports, USB 2.0, computer-powered |
+| Individually switched four-port hub | USB2514B + four TPS25821 USB-C power switches | Standard hub commands switch each 5 V output separately using `uhubctl`. Designed for 1.5 A per port. |
 
-The 177 × 46 mm panel has side breakaway tabs, 0.5 mm mouse-bite holes, 3 mm routing slots, tooling holes, and exposed 1 mm fiducials. Each board has four 2.2 mm non-plated M2 clearance holes, 2.5 mm in from each edge, with 4.6 mm diameter copper and placement keepouts for screw heads. All assembled parts are on the top side. The boards are independent USB devices; the panel is a manufacturing panel, not a USB hub.
+The 177 × 46 mm panel has side breakaway tabs, 0.5 mm mouse-bite holes, 3 mm routing slots, tooling holes, and exposed 1 mm fiducials. Each board on this panel has four 2.2 mm non-plated M2 clearance holes, 2.5 mm in from each edge, with 4.6 mm diameter copper and placement keepouts for screw heads. All assembled parts are on the top side. The boards are independent USB devices; the panel is a manufacturing panel, not a USB hub.
 
 ## Enclosure interface
 
@@ -41,6 +42,8 @@ The current files preserve a complete onboard distance sensor as a reviewable **
 
 ## Fabrication rules
 
+These rules apply to the two-layer panel designs. The individually switched hub has its own four-layer stackup.
+
 - Two copper layers, 1.6 mm FR-4; JLCPCB economy fabrication preset.
 - All routing vias: **0.30 mm drill / 0.60 mm pad**, through both layers.
 - Original six modules and buzzer: minimum trace width 0.20 mm, trace-to-pad/pad-to-pad clearance 0.15 mm, via-to-pad clearance 0.20 mm. Hub and display: 0.15 mm nominal routing with 0.1124 mm neck-downs. Resetter: 0.15 mm or wider traces with 0.10 mm copper clearance. Panel4 uses the strictest common fabrication minimum of 0.10 mm, with every module checked separately against its own rules.
@@ -48,7 +51,7 @@ The current files preserve a complete onboard distance sensor as a reviewable **
 - Top assembly, 0402/0603 passives (1206 backlight resistor), no via-in-pad or blind/buried vias.
 - Milled slot corners may have the fabricator's normal cutter radius. No component depends on a sharp internal corner.
 
-Both CC pins have independent 5.1 kΩ pull-downs for USB-C device operation. D+/D− are connected for both cable orientations. USBLC6-2SC6 protection is provided on every USB interface. Use USB data cables, not charge-only cables.
+Both CC pins have independent 5.1 kΩ pull-downs for USB-C device operation. D+/D− are connected for both cable orientations. The two-layer designs use USBLC6-2SC6 protection. The individually switched hub uses TPD2EUSB30 protection on all five data pairs. Use USB data cables, not charge-only cables.
 
 ## Electrical behavior
 
@@ -64,7 +67,7 @@ The absolute-position board uses a VCC-referenced 8-bit ADC, a 220 Ω / 100 nF w
 
 ## Schematics
 
-Each board has exactly one populated schematic sheet (A4, or A2 for the wider inherited resetter diagram). All components and wiring are children of that sheet, so they render in the interactive viewer. The panel4 viewer contains ten sheets, one per independent board, with references matching the fabrication panel. `make-viewer.ts` combines those schematic drawings with the unchanged manufacturing geometry and verifies sheet membership and CAD checks.
+Each of the ten panel boards has one populated schematic sheet (A4, or A2 for the wider inherited resetter diagram). All components and wiring are children of that sheet, so they render in the interactive viewer. The panel4 viewer contains ten sheets, one per independent board, with references matching the fabrication panel. `make-viewer.ts` combines those schematic drawings with the unchanged manufacturing geometry and verifies sheet membership and CAD checks.
 
 ## Files and reproducibility
 
@@ -87,7 +90,7 @@ bun run test
 
 `compose-panel.ts` translates each checked board, preserving all copper, drills, component attributes and schematic sheets without rerouting. `export.tsx` converts the selected six-, seven-, or ten-board design into one physical fabrication-panel outline, merges touching routing slots, and assigns unique references and net names. It preserves routed copper. This normalization is needed because the standalone checks API applies the first board outline to the entire input; running it directly on unrelated board envelopes produces false edge-clearance findings. Individual boards run the full `runAllChecks` suite. The fabrication panel runs the same suite with connector orientation evaluated against each retained module outline: connectors are used after depanelization, and the upstream rule otherwise compares them to the outer manufacturing rails. A reversed-connector regression verifies that this scoped check still catches real orientation errors. Individual schematics are checked before the manufacturing export removes schematic drawing records.
 
-The build also verifies power and USB pin connectivity, distinct CC resistors and USB data nets, switch polarity connections, two layers, minimum trace widths, exact via sizes, unique references, and JLCPCB part coverage. Python tests cover debounce, polarity, invalid readings and distance hysteresis. These are CAD/software checks: no physical boards have been fabricated or tested, and no JLCPCB order-specific DFM review has been run. Review the assembler's component orientation preview, especially the USB connectors, switch, crystal, and optical sensor.
+The build also verifies power and USB pin connectivity, distinct CC resistors and USB data nets, switch polarity connections, layer counts, minimum trace widths, exact via sizes, unique references, and JLCPCB part coverage. Python tests cover debounce, polarity, invalid readings and distance hysteresis. These are CAD/software checks: no physical boards have been fabricated or tested, and no JLCPCB order-specific DFM review has been run. Review the assembler's component orientation preview, especially the USB connectors, switch, crystal, and optical sensor.
 
 ## Computer connection
 
@@ -124,7 +127,7 @@ The distance reader is implemented for Linux; the digital reader supports pyseri
 
 After building the individual modules, run `bun run build:panel2`. Outputs include `panel2.circuit.json`, the six-sheet `panel2.viewer.circuit.json`, Gerbers, BOM, placement CSV, PCB preview and `panel2.validation.json` in `output/`.
 
-## Four-port hub
+## Computer-powered four-port hub
 
 `hub.circuit.tsx` is a 44 × 42 mm, two-layer, 1.6 mm board (40% less area than the previous 64 × 48 mm revision), with four M2 holes on a 38 × 10 mm pattern. Hub routing uses 0.15 mm nominal traces with 0.1124 mm neck-downs, above JLCPCB’s 0.10 mm minimum for two-layer 1 oz copper. Its four outputs use attach detection, current-limited switching, ganged overcurrent reporting and switched discharge. Allocate up to 100 mA per downstream module; this is not a charging hub. `panel3.tsx` includes the hub and all six modules; `panel2.tsx` remains the original six-module grid.
 
@@ -141,6 +144,20 @@ tsci build --site --use-cdn-javascript
 
 The default published preview uses the checked, routed `output/panel4.viewer.circuit.json`. All TSX design sources, firmware, host tools and generated manufacturing files are included. `tscircuit.config.json` lists each board and all four panels for the site viewer.
 
+## Individually switched four-port hub
+
+`switchable-hub.circuit.tsx` is a standalone **66 × 46 mm USB 2.0 high-speed hub**. Plug the host into **J1 (HOST)**. Feed a regulated **5.1 V** into the marked **GND / +5V** screw terminal J6. A current-limited supply rated for **8 A** provides headroom for four simultaneous 1.5 A loads. Each downstream USB-C receptacle has its own attach detection, power switch, overcurrent feedback and VBUS indicator. USB data and port-control commands both travel over J1.
+
+On Linux, run `uhubctl` to find the hub location. With a device attached to P2, the following example removes and restores power to that port.
+
+```sh
+hub=1-2  # replace with the location printed for this hub
+uhubctl -e -l "$hub" -p 2 -a off
+uhubctl -e -l "$hub" -p 2 -a on
+```
+
+Build the board with `bun run build:switchable-hub`. The two schematic sheets cover the hub core and the four downstream ports. The routed design and Gerbers have been checked for opens and shorts. Physical port switching, signal quality and sustained full-load operation still require a prototype. [3D preview](output/switchable-hub.3d.png) · [PCB layout](output/switchable-hub.pcb.png) · [Hub schematic](output/switchable-hub.schematic.svg) · [Port schematic](output/switchable-hub.ports.schematic.svg) · [Parts, fabrication and bring-up](references/switchable-hub/design-notes.md)
+
 ## Hub-inclusive panel
 
 `panel3.tsx` is **67 × 157 mm**, containing all seven independent boards. Six 24 × 30 mm modules form two columns and three rows; the 44 × 42 mm hub sits at one end. This is the minimum-area guillotine packing among the rectangular board orientations evaluated, including 3 mm channels and 5 mm solid outer rails. All seven share a two-layer, 1.6 mm stackup and 0.30 mm via drills. Each board has four mounting holes; the hub alone uses the narrower 38 × 10 mm pattern.
@@ -149,7 +166,7 @@ Run `bun run build:panel3` after building the individual boards. The exported pa
 
 ## Panel4: ten boards
 
-`panel4.tsx` packs all ten boards into **112 × 140 mm**, with 3 mm routed channels, breakaway mouse-bite tabs and 5 mm solid handling rails. `pack-panel4.py` exhaustively searches guillotine arrangements with quarter-turn rotations; this is the minimum area within that search class. It is a fabrication panel: depanelize and connect modules separately. The four-port hub connects up to four devices at once, not all nine peripherals.
+`panel4.tsx` packs the ten two-layer boards into **112 × 140 mm**, with 3 mm routed channels, breakaway mouse-bite tabs and 5 mm solid handling rails. `pack-panel4.py` exhaustively searches guillotine arrangements with quarter-turn rotations; this is the minimum area within that search class. It is a fabrication panel: depanelize and connect modules separately. The four-port hub connects up to four devices at once, not all nine peripherals.
 
 The display adapter uses the 8-bit ILI9488 interface from [abse/gameboy-advance@0.0.45](https://tscircuit.com/abse/gameboy-advance). Its **32 × 42 mm** PCB retains the common four-hole M2 pattern. The actual 3.5-inch LCD is larger and mounts separately. Order the **BuyDisplay ER-TFT035IPS-6 non-touch LCD** separately; it is not a JLCPCB component. The adapter supports host-controlled images through USB CDC, not an operating-system monitor interface. The 100 Ω backlight resistor intentionally limits brightness to fit the low-power budget. See [display provenance](references/display/README.md) and [firmware and host instructions](firmware/USB-OUTPUTS.md).
 
@@ -174,8 +191,8 @@ Panel4 validation checks all ten populated schematic sheets, 40 mounting holes, 
 
 ## Computer-controlled status LEDs
 
-All ten boards now support computer-controlled status indication. The eight boards with the common 19 × 25 mm mounting pattern place their LED 3.5 mm inward from the lower-left mounting hole, at the same coordinates and orientation. The hub and resetter use documented exceptions. Board and panel dimensions are unchanged. See [LED controls, enclosure coordinates, firmware, and hub EEPROM programming](STATUS-LEDS.md). Program the supplied hub EEPROM image before assembly; a blank EEPROM does not enable its host-controlled indicator.
+The ten panel boards support computer-controlled status indication. The eight boards with the common 19 × 25 mm mounting pattern place their LED 3.5 mm inward from the lower-left mounting hole, at the same coordinates and orientation. The hub and resetter use documented exceptions. Board and panel dimensions are unchanged. See [LED controls, enclosure coordinates, firmware, and hub EEPROM programming](STATUS-LEDS.md). Program the supplied hub EEPROM image before assembly; a blank EEPROM does not enable its host-controlled indicator.
 
 ## Board silkscreen
 
-All ten devices have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.7 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.
+The panel boards and the individually switched hub have the official tscircuit TS logo and “Made by AI with tscircuit” on the back, plus a smaller TS logo on the front. The rear attribution uses two lines. See [artwork provenance and placement](branding/README.md) and the Gerber-derived `output/*.back-silkscreen.png` previews. Version 0.0.7 changes silkscreen only; the checked electrical layout and mounting pattern are unchanged.

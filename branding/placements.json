@@ -278,5 +278,33 @@
       "y": -0.35,
       "size": 3.5
     }
+  },
+  "switchable-hub": {
+    "back": {
+      "logo": {
+        "x": -12,
+        "y": 18,
+        "size": 5
+      },
+      "text": [
+        {
+          "text": "Made by AI",
+          "x": -21.19647257805022,
+          "y": 19.1,
+          "fontSize": 1.7
+        },
+        {
+          "text": "with tscircuit",
+          "x": -23.6,
+          "y": 16.9,
+          "fontSize": 1.7
+        }
+      ]
+    },
+    "front": {
+      "x": -21,
+      "y": 17,
+      "size": 4
+    }
   }
 }

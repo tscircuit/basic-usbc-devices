@@ -9,7 +9,7 @@
         "@tscircuit/checks": "0.0.268",
         "@tscircuit/circuit-json-util": "0.0.128",
         "circuit-json-to-3d-png": "0.0.6",
-        "circuit-json-to-gerber": "0.0.120",
+        "circuit-json-to-gerber": "0.0.124",
         "circuit-to-svg": "0.0.455",
         "dsn-converter": "0.0.90",
         "easyeda": "0.0.388",
@@ -265,7 +265,7 @@
 
     "circuit-json-to-connectivity-map": ["circuit-json-to-connectivity-map@0.0.33", "", { "dependencies": { "@tscircuit/math-utils": "^0.0.9" }, "peerDependencies": { "typescript": "^5.9.3" } }, "sha512-SltOv/z75I1iulu4egIVeLst6CHQL/dmllBMIBNaDejNKQscomUpvNjnPaGd3GruyOKnP4DqRvPPVHHrMh6IXw=="],
 
-    "circuit-json-to-gerber": ["circuit-json-to-gerber@0.0.120", "", { "dependencies": { "@tscircuit/alphabet": "^0.0.25", "fast-json-stable-stringify": "^2.1.0", "polygon-clipping": "^0.15.7", "transformation-matrix": "^3.0.0" }, "peerDependencies": { "circuit-json": "*", "tscircuit": "*", "typescript": "^5.0.0" }, "bin": { "circuit-to-gerber": "dist/cli.js" } }, "sha512-dQVMkR63amJPXJVTyZ9J6ZF+dEVA1jDXY/I/GtGLCnpPcNuhSOS268SfcUqOmwG2e/+VnhpscIGpSBtvVjnmvQ=="],
+    "circuit-json-to-gerber": ["circuit-json-to-gerber@0.0.124", "", { "dependencies": { "@tscircuit/alphabet": "^0.0.25", "fast-json-stable-stringify": "^2.1.0", "polygon-clipping": "^0.15.7", "transformation-matrix": "^3.0.0" }, "peerDependencies": { "@tscircuit/circuit-json-util": "*", "circuit-json": "*", "tscircuit": "*", "typescript": "^5.0.0" }, "bin": { "circuit-to-gerber": "dist/cli.js" } }, "sha512-J/ymc43+qQUvPT2g1M7lSoDOqqMk+nsQyT4rcWSZHvvJ9AXuAQ4EN2d3w4MvYuPbzi1p78NULHU1/67cjSVzfA=="],
 
     "circuit-json-to-gltf": ["circuit-json-to-gltf@0.0.164", "", { "dependencies": { "@jscad/modeling": "^2.12.6", "@tscircuit/alphabet": "^0.0.25", "@tscircuit/cableprinter": "^0.0.6", "@tscircuit/footprinter": "^0.0.431", "earcut": "^3.0.2", "gl-matrix": "^3.4.4", "jscad-electronics": "^0.0.243", "jscad-planner": "^0.0.19", "jscad-to-gltf": "^0.0.5", "occt-import-js": "^0.0.23" }, "peerDependencies": { "@resvg/resvg-js": "2", "@resvg/resvg-wasm": "2", "@tscircuit/circuit-json-util": "*", "circuit-json": ">=0.0.539", "circuit-to-svg": ">=0.0.445", "typescript": "^5" }, "optionalPeers": ["@resvg/resvg-js", "@resvg/resvg-wasm"] }, "sha512-a03y7Md+EnM2wO+KKKpAg+i5TVpbJEbGvPUSq58VT5ybx9ui5CxeLiuyE5EcubDTeP2Y0IQd/XUfqlbz2eYO6A=="],
 

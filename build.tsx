@@ -1,3 +1,4 @@
+import { SwitchableHubBoard } from './switchable-hub.circuit'
 import {addBoardBranding} from './branding'
 import {BuzzerBoard} from './buzzer.circuit'
 import { DisplayBoard } from './display.circuit'
@@ -15,12 +16,15 @@ for (const kind of process.argv.slice(2).length?process.argv.slice(2):['limit','
  console.log('Building',kind)
  const c=new Circuit()
  if(kind==='hub'){c.on("autorouting:start",(e:any)=>console.log("Routing", e.phaseName??e.simpleRouteJson?.connections?.length, "connections")); c.on("autorouting:end",()=>console.log("Routing pass complete"))}
- c.add(kind==='buzzer'?<BuzzerBoard/>:kind==='display'?<DisplayBoard routingDisabled={process.env.DISPLAY_PLACEMENT_ONLY==='1'}/>:kind==='hub'?<HubBoard routingDisabled={process.env.HUB_PLACEMENT_ONLY==='1'}/>:kind==='position'?<PositionBoard/>:kind==='dial'?<DialBoard/>:kind==='distance'?<DistanceBoard/>:<DigitalBoard kind={kind as any}/>)
+ c.add(kind==='switchable-hub'?<SwitchableHubBoard routingDisabled={process.env.SWITCHABLE_HUB_PLACEMENT_ONLY==='1'}/>:kind==='buzzer'?<BuzzerBoard/>:kind==='display'?<DisplayBoard routingDisabled={process.env.DISPLAY_PLACEMENT_ONLY==='1'}/>:kind==='hub'?<HubBoard routingDisabled={process.env.HUB_PLACEMENT_ONLY==='1'}/>:kind==='position'?<PositionBoard/>:kind==='dial'?<DialBoard/>:kind==='distance'?<DistanceBoard/>:<DigitalBoard kind={kind as any}/>)
  await c.renderUntilSettled()
  const json=addBoardBranding(c.getCircuitJson(),kind)
  await writeFile(`output/${kind}.circuit.json`,JSON.stringify(json,null,2))
  await writeFile(`output/${kind}.pcb.svg`,convertCircuitJsonToPcbSvg(json))
  await writeFile(`output/${kind}.schematic.svg`,convertCircuitJsonToSchematicSvg(json))
+ if (kind === "switchable-hub") {
+   await writeFile("output/switchable-hub.ports.schematic.svg", convertCircuitJsonToSchematicSvg(json,{schematicSheetIndex:1}))
+ }
  const errors=json.filter((e:any)=>e.type.endsWith('_error')||e.type.endsWith('_warning'))
  const checks=await runAllChecks(json)
  await writeFile(`output/${kind}.checks.json`,JSON.stringify({render:errors,checks},null,2))

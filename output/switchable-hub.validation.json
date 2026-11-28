@@ -1,0 +1,46 @@
+{
+  "components": 75,
+  "copperLayers": 4,
+  "traces": 478,
+  "vias": 172,
+  "usbPairs": [
+    {
+      "connector": "J1",
+      "skewMm": [
+        0.084,
+        0
+      ]
+    },
+    {
+      "connector": "J2",
+      "skewMm": [
+        0.084,
+        0
+      ]
+    },
+    {
+      "connector": "J3",
+      "skewMm": [
+        0.084,
+        0
+      ]
+    },
+    {
+      "connector": "J4",
+      "skewMm": [
+        0.084,
+        0
+      ]
+    },
+    {
+      "connector": "J5",
+      "skewMm": [
+        0.084,
+        0
+      ]
+    }
+  ],
+  "renderFindings": 0,
+  "checkFindings": 0,
+  "hardwareTested": false
+}

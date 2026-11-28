@@ -649,6 +649,78 @@
       "class": "Extended Part",
       "available_order_quantity": 5744,
       "stock_checked_at": "2026-11-09T01:10:57.010333+00:00"
+    },
+    {
+      "lcsc": "C16251",
+      "mpn": "USB2514B-AEZC-TR",
+      "package": "TQFN-36-EP(6x6)",
+      "url": "https://jlcpcb.com/partdetail/C16251",
+      "available_order_quantity": 15516,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C2861545",
+      "mpn": "TPS25821DSSR",
+      "package": "WSON-12-EP(2x3)",
+      "url": "https://jlcpcb.com/partdetail/C2861545",
+      "available_order_quantity": 2614,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C474952",
+      "mpn": "KF128-5.08-2P-AA",
+      "package": "Through Hole,P=5.08mm",
+      "url": "https://jlcpcb.com/partdetail/C474952",
+      "available_order_quantity": 34528,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C51118",
+      "mpn": "AP2112K-3.3TRG1",
+      "package": "SOT-23-5",
+      "url": "https://jlcpcb.com/partdetail/C51118",
+      "available_order_quantity": 34984,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C164058",
+      "mpn": "TAXM24M4RFBCCT2T",
+      "package": "SMD3225-4P",
+      "url": "https://jlcpcb.com/partdetail/C164058",
+      "available_order_quantity": 55031,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C97502",
+      "mpn": "TPD2EUSB30DRTR",
+      "package": "SOT(9x3)",
+      "url": "https://jlcpcb.com/partdetail/C97502",
+      "available_order_quantity": 8006,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C122538",
+      "mpn": "RT0603BRD07100KL",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C122538",
+      "available_order_quantity": 1083562,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C22790",
+      "mpn": "0603WAF1202T5E",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C22790",
+      "available_order_quantity": 898205,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
+    },
+    {
+      "lcsc": "C1647",
+      "mpn": "CL10C180JB8NNNC",
+      "package": "0603",
+      "url": "https://jlcpcb.com/partdetail/C1647",
+      "available_order_quantity": 403591,
+      "stock_checked_at": "2026-11-28T17:14:13.368627+00:00"
     }
   ],
   "external_items": [
