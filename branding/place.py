@@ -5,7 +5,7 @@ import numpy as np
 from shapely.geometry import Point,Polygon,LineString,box
 from shapely.ops import unary_union
 from shapely.affinity import translate,scale,rotate
-names=['limit','button','toggle','dial','position','distance','hub','display','resetter','buzzer']
+names=['limit','button','toggle','dial','position','distance','hub','display','resetter','buzzer','switchable-hub']
 font=json.load(open('branding/font-metrics.json'))
 logo=unary_union([Polygon(p[0],p[1:])for p in json.load(open('branding/logo-polygons.json'))])
 def text_shape(text,size):

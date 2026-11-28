@@ -8,6 +8,8 @@ from shapely.ops import unary_union
 
 def audit(name):
  j=json.load(open(f'output/{name}.circuit.json'));parent={}
+ board=next(e for e in j if e['type']=='pcb_board')
+ copper_layers=['top',*[f'inner{i+1}' for i in range(board['num_layers']-2)],'bottom']
  def root(x):
   while x in parent:x=parent[x]
   return x
@@ -45,7 +47,7 @@ def audit(name):
    port=pp.get(e.get('pcb_port_id'))
    if not port:continue
    net=root(port['source_port_id']);g=shape(e)
-   layers=['top','bottom'] if e['type']=='pcb_plated_hole' else [e['layer']]
+   layers=e.get('layers',copper_layers) if e['type']=='pcb_plated_hole' else [e['layer']]
    for l in layers:shapes.append((net,l,g));pads.append((net,l,g,port['source_port_id']))
    if len(layers)>1:bridges.append((net,g.centroid.x,g.centroid.y))
   elif e['type']=='pcb_trace':
@@ -70,7 +72,7 @@ def audit(name):
  disconnected={}
  for net in {n for n,l,g,p in pads}:
   chunks=[]
-  for layer in ['top','bottom']:
+  for layer in copper_layers:
    u=unary_union([g.buffer(.00002) for n,l,g in shapes if n==net and l==layer])
    chunks += [(layer,g) for g in (list(u.geoms) if hasattr(u,'geoms') else [u]) if not g.is_empty]
   par=list(range(len(chunks)))
@@ -92,7 +94,20 @@ def audit(name):
     connected=[p for n,pl,pg,p in pads if n==net and any(rt(i)==group and pl==l and pg.intersects(g) for i,(l,g) in enumerate(chunks))]
     print('island',labels.get(net,net),[(next((e.get('name') for e in j if e['type']=='source_port' and e['source_port_id']==p),'?'), next(((e['x'],e['y']) for e in pp.values() if e['source_port_id']==p),None)) for p in set(connected)],flush=True)
  report=dict(checkedNets=len({n for n,l,g,p in pads}),disconnectedNets=disconnected,includesFinalGroundPour=True)
+ if '--check-shorts' in sys.argv:
+  from shapely.strtree import STRtree
+  shorts=set()
+  for layer in copper_layers:
+   conductors=[(labels.get(n,n),g) for n,l,g in shapes if l==layer]
+   tree=STRtree([g for n,g in conductors])
+   for i,(net,g) in enumerate(conductors):
+    for k in tree.query(g,predicate='intersects'):
+     other=conductors[k][0]
+     if k>i and net!=other:shorts.add((layer,*sorted([net,other])))
+  report['shortedNets']=sorted(shorts)
+  assert not shorts,report['shortedNets']
  json.dump(report,open(f'output/{name}.physical-connectivity.json','w'),indent=2)
  print(name,report,flush=True)
  assert not disconnected,disconnected
-for name in sys.argv[1:]:audit(name)
+for name in sys.argv[1:]:
+ if name!='--check-shorts':audit(name)

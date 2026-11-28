@@ -40,7 +40,7 @@ for name in names:
   original=json.loads(baseline.read_text());assert original==plain,f'{name}: non-branding geometry changed'
  rows.append(result)
 Path('output/branding.validation.json').write_text(json.dumps(rows,indent=2)+'\n')
-print('All ten back attributions/logos and front logos clear pads, holes, component bodies and existing legends; rear artwork mirrored.')
+print(f'All {len(rows)} boards have clear front and rear artwork and mirrored rear text.')
 
 panel=json.load(open('output/panel4.circuit.json'))
 for module in json.load(open('panel4-layout.json'))['modules']:

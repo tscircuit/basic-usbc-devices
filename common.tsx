@@ -10,12 +10,16 @@ export const boardRules = {
  pcbStyle:{viaHoleDiameter:0.3,viaPadDiameter:0.6},
 } as const
 const resistors={
+ '100k':['C122538','RT0603BRD07100KL'],
+ '12k':['C22790','0603WAF1202T5E'],
+ '1k':['C21190','0603WAF1001T5E'],
  '5.1k':['C23186','0603WAF5101T5E'],
  '10k':['C25804','0603WAF1002T5E'],
  '220':['C22962','0603WAF2200T5E'],
  '2k':['C22975','0603WAF2001T5E'],
 } as const
 const capacitors={
+ '18pF':['C1647','CL10C180JB8NNNC'],
  '100nF':['C14663','CC0603KRX7R9BB104'],
  '1uF':['C15849','CL10A105KB8NNNC'],
  '4.7uF':['C19666','CL10A475KO8NNNC'],
